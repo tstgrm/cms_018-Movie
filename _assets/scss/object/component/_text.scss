@@ -1,16 +1,16 @@
 @use "../../global-setting" as *;
 
 .c-text-link {
-  color: $blue-link;
-  transition: opacity 0.3s ease;
+	color: $main-color;
+	transition: opacity 0.3s ease;
 
-  @media screen and (min-width: $breakpoint-tablet-min) {
-    &:hover {
-      opacity: $opacity;
-    }
-  }
+	@media screen and (min-width: $breakpoint-tablet-min) {
+		&:hover {
+			opacity: $opacity;
+		}
+	}
 
-  &--underline {
-    text-decoration: underline;
-  }
+	&--underline {
+		text-decoration: underline;
+	}
 }

@@ -2,7 +2,7 @@
 /**
  * This is 404 page.
  *
- * @package cms_12a WebAR
+ * @package cms_018 Movie
  */
 
 ?>
@@ -18,7 +18,7 @@
 					<span class="c-section-ttl__main">お探しのページは見つかりませんでした。</span>
 				</h2>
 				<div class="c-section__desc">ページがすでに存在しないか、入力したURLが誤っている可能性があります。</div>
-				<div class="c-shadow-btn p-404__btn">
+				<div class="c-btn p-404__btn">
 					<a href="<?php echo esc_url( home_url() ); ?>">TOP PAGE</a>
 				</div>
 			</div>

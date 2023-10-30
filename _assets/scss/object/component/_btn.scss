@@ -43,14 +43,6 @@
 			max-width: 100%;
 			height: 56px;
 		}
-
-		@media screen and (min-width: $breakpoint-tablet-min) {
-			&:hover {
-				// background-color: $blue;
-				// color: $white;
-				// box-shadow: none;
-			}
-		}
 	}
 
 	&--white {
@@ -69,7 +61,7 @@
 	a {
 		display: inline-block;
 		border-radius: $radius-round;
-		background: linear-gradient(45deg, $blue, $yellow);
+		background: linear-gradient(45deg, $green1, $green2);
 		padding: 2px;
 		transition: 0.3s;
 
@@ -108,7 +100,7 @@
 	}
 }
 
-.c-shadow-btn {
+.c-btn {
 	a,
 	button {
 		background: transparent;
@@ -127,7 +119,6 @@
 		z-index: 0;
 		background-color: $white;
 		border-radius: $radius-round;
-		box-shadow: $box-shadow;
 
 		@include is-sp {
 			max-width: 100%;
@@ -136,41 +127,10 @@
 
 		@media screen and (min-width: $breakpoint-tablet-min) {
 			&:hover {
-				background-color: $white-gray2;
-				box-shadow: none;
-				transform: translateY(2px);
-			}
-		}
-	}
-
-	&--blue {
-		a,
-		button {
-			color: $white;
-			background-color: $blue;
-			box-shadow: $box-shadow-blue;
-
-			@media screen and (min-width: $breakpoint-tablet-min) {
-				&:hover {
-					background-color: $blue-hover;
-					box-shadow: none;
-				}
-			}
-		}
-	}
-
-	&--yellow {
-		a,
-		button {
-			color: $white;
-			background-color: $yellow;
-			box-shadow: $box-shadow-yellow;
-
-			@media screen and (min-width: $breakpoint-tablet-min) {
-				&:hover {
-					background-color: $yellow-hover;
-					box-shadow: none;
-				}
+				opacity: 0.7;
+				// background-color: $white-gray2;
+				// box-shadow: none;
+				// transform: translateY(2px);
 			}
 		}
 	}
@@ -178,202 +138,28 @@
 	// KVボタン
 	&--kv {
 		a {
-			border: 2px solid $blue;
-			background-color: $white;
-			color: $blue;
 			max-width: 264px;
 			width: 100%;
 			height: 56px;
-			// box-shadow: 0 16px 32px $blue-shadow;
-			// box-shadow: $box-shadow-blue;
-			// box-shadow: $box-shadow3-blue;
-			// box-shadow: $box-shadow2-blue;
 
 			@include is-sp {
 				height: 48px;
 			}
-
-			@media screen and (min-width: $breakpoint-tablet-min) {
-				&:hover {
-					// background-color: $white-gray2;
-					// box-shadow: none;
-					box-shadow: $box-shadow3-blue;
-				}
-			}
-
-			// &::after {
-			//   background-image: url(../img/icon/arrow_blue_short.svg);
-			// }
 		}
 	}
 
-	&--gradient {
+	&--cv {
 		a {
 			position: relative;
-			background-image: linear-gradient(to right, $blue 0%, $yellow 100%);
+			background-image: linear-gradient(to right, $green1 0%, $green2 100%);
 			color: $white;
-			box-shadow: none;
 
 			@media screen and (min-width: $breakpoint-tablet-min) {
 				&:hover {
 					&::before {
-						opacity: 0.5;
+						opacity: 0.7;
 					}
 				}
-			}
-
-			//Gradient Drop Shadow
-			&::before {
-				content: "";
-				position: absolute;
-				z-index: -1;
-				top: 16px; //ドロップシャドウ：縦位置調整
-				left: 0px; //ドロップシャドウ：横位置調整
-				width: 100%;
-				height: 100%;
-				border-radius: $radius-round;
-				background: linear-gradient(to right, $blue 0%, $yellow 100%);
-				filter: blur(32px);
-				opacity: 0;
-				transition: $transition;
-			}
-
-			// span {
-			//   display: flex;
-			//   align-items: center;
-			// }
-
-			svg {
-				margin-left: 8px;
-			}
-		}
-	}
-
-	// &--border-gradient {
-	//   a {
-	//     border-bottom: 4px solid $blue;
-	//     border-image: linear-gradient(to right, $blue 0%, $yellow 100%);
-	//     border-image-slice: 1;
-	//   }
-	// }
-
-	// &--w {
-	// 	a,
-	// 	button {
-	// 		border: 2px solid $color-border-gray;
-	// 	}
-	// }
-
-	// 白背景ボタン
-	&--w-blue {
-		a {
-			// border: 1px solid $blue-hover;
-			background-color: $white;
-			color: $blue;
-			// max-width: 192px;
-			width: 100%;
-			// height: 56px;
-			// box-shadow: 0 16px 32px $blue-shadow;
-			// box-shadow: $box-shadow-blue;
-			// box-shadow: $box-shadow3-blue;
-			// box-shadow: $box-shadow2-blue;
-
-			@include is-sp {
-				height: 56px;
-			}
-
-			@media screen and (min-width: $breakpoint-tablet-min) {
-				&:hover {
-					// background-color: $white-gray2;
-					// box-shadow: none;
-					box-shadow: $box-shadow3-blue;
-				}
-			}
-
-			// &::after {
-			//   background-image: url(../img/icon/arrow_blue_short.svg);
-			// }
-		}
-	}
-
-	&--w-yellow {
-		a {
-			// border: 1px solid $yellow-hover;
-			background-color: $white;
-			color: $yellow;
-			// max-width: 192px;
-			width: 100%;
-			// height: 56px;
-			// box-shadow: 0 16px 32px $yellow-shadow;
-			// box-shadow: $box-shadow-yellow;
-			box-shadow: $box-shadow3-yellow;
-			// box-shadow: $box-shadow2-yellow;
-
-			@include is-sp {
-				height: 48px;
-			}
-
-			@media screen and (min-width: $breakpoint-tablet-min) {
-				&:hover {
-					background-color: $white-gray2;
-					box-shadow: none;
-				}
-			}
-
-			// &::after {
-			//   background-image: url(../img/icon/arrow_yellow_short.svg);
-			// }
-		}
-	}
-
-	// フッターCTAのボタン
-	&--a-blue,
-	&--a-yellow {
-		a {
-			max-width: 340px;
-			width: 100%;
-			height: 80px;
-			box-shadow: 0 8px 16px rgba(26, 25, 2, 0.16);
-			@include fz(20);
-
-			@include is-sp {
-				height: 56px;
-				@include fz(16);
-			}
-
-			&::after {
-				width: 24px;
-				height: 12px;
-			}
-
-			@media screen and (min-width: $breakpoint-tablet-min) {
-				&:hover {
-					background-color: $white-gray2;
-					box-shadow: none;
-					// opacity: 0.7;
-				}
-			}
-		}
-	}
-
-	&--a-blue {
-		a {
-			background-color: $white;
-			color: $blue;
-
-			&::after {
-				background-image: url(../img/icon/arrow_blue_short.svg);
-			}
-		}
-	}
-
-	&--a-yellow {
-		a {
-			background-color: $white;
-			color: $yellow;
-
-			&::after {
-				background-image: url(../img/icon/arrow_yellow_short.svg);
 			}
 		}
 	}
@@ -429,136 +215,3 @@
 		}
 	}
 }
-
-// .c-bg-leave-btn {
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-family: $font-en;
-//   @include fz(14);
-//   color: $white;
-//   letter-spacing: 0.1em;
-//   text-align: center;
-//   width: 240px;
-//   height: 48px;
-//   margin: 0 auto;
-//   background: $primary;
-//   border: 1px solid $primary;
-//   overflow: hidden;
-//   z-index: 0;
-//   transition: color $ease-fade 0.3s;
-
-//   @include is-sp {
-//     width: 100%;
-//   }
-//   &::before {
-//     content: "";
-//     z-index: -1;
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     top: 0em;
-//     left: 0;
-//     background-color: $white;
-//     transform: translateX(-100%);
-//     animation: c-btn-leave 0.3s $ease-fade forwards;
-//     //transition: 0.2s;
-//   }
-
-//   @media screen and (min-width: $breakpoint-tablet-min) {
-//     &:hover {
-//       color: $primary;
-//       border-color: $primary;
-//       &::before {
-//         //left: 0;
-//         animation: c-btn-enter 0.3s $ease-fade 1 forwards;
-//       }
-//     }
-//   }
-// }
-
-// .c-cta-btn {
-//   display: block;
-//   margin-top: auto;
-//   text-align: center;
-//   $this: &;
-
-//   &__body {
-//     position: relative;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-//     height: 50px;
-//     padding: 0 10px;
-//     // background-color: $blue;
-//     background-color: $red;
-//     border-radius: $radius-round;
-//     // box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-//     color: $white;
-//     // @include fz(18);
-//     // font-weight: $bold;
-//     text-align: center;
-//     transition: 0.3s ease;
-
-//     @include is-tab {
-//       // @include fz(14);
-//     }
-
-//     @include is-sp {
-//       @include fz(16);
-//     }
-
-//     &:hover {
-//       @media screen and (min-width: $breakpoint-tablet-min) {
-//         opacity: $opacity;
-//       }
-//     }
-
-//     svg {
-//       margin-right: 5px;
-//     }
-//   }
-
-//   &__icon {
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-
-//     &::before {
-//       content: "";
-//       display: inline-block;
-//       flex-shrink: 0;
-//       width: 22px;
-//       height: 22px;
-//       margin-right: 5px;
-//       background: url(../img/icon/edit.svg) 80% / contain no-repeat;
-//     }
-//   }
-
-//   &__info {
-//     @include fz(11);
-//     padding: 5px 0;
-//   }
-
-//   &--tel {
-//     #{$this}__body {
-//       background-color: $white;
-//       border: 2px solid $red;
-//       color: $primary2;
-//       @include fz(16);
-//     }
-//     #{$this}__icon {
-//       &::before {
-//         background: url(../img/icon/tel.svg) 80% / contain no-repeat;
-//       }
-//     }
-//   }
-
-//   &--large {
-//     height: 64px;
-//     margin: auto;
-//     max-width: 350px;
-//   }
-// }

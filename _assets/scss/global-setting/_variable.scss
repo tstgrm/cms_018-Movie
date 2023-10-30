@@ -33,6 +33,16 @@ $bg-gray: rgba(0, 0, 0, 0.03);
 $color-shadow-gray: #ebebeb;
 $blue-link: #51d1e2;
 
+$green1:#19C2A4;
+$green2:#53EEAE;
+$main-color:#3BACB6;
+$main-color-alpha: rgba(59, 172, 182, 0.70);
+$main-color-light:#82DBD8;
+$main-color-dark:#2F8F9D;
+$main-color-bg:#EDF4F5;
+$main-color-bg-light:#E5F9F8;
+$marker: #F5FCCD;
+
 $blue: #51d1e2;
 $blue-thick: #3fa1ad;
 $blue-hover: #44bece;
@@ -66,8 +76,7 @@ $radius-circle: 50%;
 // Shadow
 $box-shadow-header: 0 6px 9px -4px rgba(10, 10, 10, 0.03),
 	0 6px 10px 5px rgba(10, 10, 10, 0.01);
-$box-shadow: 0 4px 10px -2px rgba(0, 16, 14, 0.08),
-	0 4px 20px 8px rgba(0, 16, 14, 0.03);
+$box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
 $box-shadow-lg: 0px 4px 10px -2px rgba(0, 16, 14, 0.08),
 	0px 16px 32px 0px rgba(0, 0, 0, 0.08);
 $box-shadow-circle: 0 8px 18px -2px rgba(0, 12, 16, 0.078),

@@ -2,7 +2,7 @@
 /**
  * This is modal menu
  *
- * @package cms_12a WebAR
+ * @package cms_018 Movie
  */
 
 ?>
@@ -124,7 +124,7 @@
 									}
 									?>
 									<li class="g-modal-menu-cta__item">
-										<div class="g-modal-menu-cta__btn c-shadow-btn c-shadow-btn--blue">
+										<div class="g-modal-menu-cta__btn c-btn c-btn--blue">
 											<a href="<?php echo esc_url( $page_link ); ?>"
 											<?php
 											if ( $target ) {
@@ -165,7 +165,7 @@
 									}
 									?>
 									<li class="g-modal-menu-cta__item">
-										<div class="g-modal-menu-cta__btn c-shadow-btn c-shadow-btn--yellow">
+										<div class="g-modal-menu-cta__btn c-btn c-btn--yellow">
 											<a href="<?php echo esc_url( $page_link ); ?>"
 											<?php
 											if ( $target ) {

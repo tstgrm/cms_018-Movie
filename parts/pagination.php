@@ -2,7 +2,7 @@
 /**
  * This is pagination.
  *
- * @package cms_12a WebAR
+ * @package cms_018 Movie
  */
 
 ?>

@@ -2,7 +2,7 @@
 /**
  * This is front page.
  *
- * @package cms_12a WebAR
+ * @package cms_018 Movie
  */
 
 ?>
@@ -62,7 +62,7 @@
 												$page_link .= '#' . get_sub_field( 'tab' );
 											}
 											?>
-												<div class="c-shadow-btn p-top-visual-cta__btn">
+												<div class="c-btn p-top-visual-cta__btn">
 													<a href="<?php echo esc_url( $page_link ); ?>"
 														<?php
 														if ( $target ) {
@@ -100,7 +100,7 @@
 												$page_link .= '#' . get_sub_field( 'tab' );
 											}
 											?>
-												<div class="c-shadow-btn c-shadow-btn--yellow  p-top-visual-cta__btn">
+												<div class="c-btn c-btn--yellow  p-top-visual-cta__btn">
 													<a href="<?php echo esc_url( $page_link ); ?>"
 														<?php
 														if ( $target ) {
@@ -174,17 +174,17 @@
 									$color = '';
 									break;
 								case 'blue':
-									$color = ' c-shadow-btn--blue';
+									$color = ' c-btn--blue';
 									break;
 								case 'yellow':
-									$color = ' c-shadow-btn--yellow';
+									$color = ' c-btn--yellow';
 									break;
 								default:
 									$color = '';
 									break;
 							}
 							?>
-							<div class="c-section__btn c-shadow-btn<?php echo esc_attr( $color ); ?> p-top-about__btn c-btn--center">
+							<div class="c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-about__btn c-btn--center">
 								<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 									<?php
 									if ( get_sub_field( 'target' ) ) {
@@ -295,17 +295,17 @@
 											$color = '';
 											break;
 										case 'blue':
-											$color = ' c-shadow-btn--blue';
+											$color = ' c-btn--blue';
 											break;
 										case 'yellow':
-											$color = ' c-shadow-btn--yellow';
+											$color = ' c-btn--yellow';
 											break;
 										default:
 											$color = '';
 											break;
 									}
 									?>
-									<div class="l-inner c-section__btn c-shadow-btn<?php echo esc_attr( $color ); ?> p-top-intro__btn c-btn--center">
+									<div class="l-inner c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-intro__btn c-btn--center">
 										<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 											<?php
 											if ( get_sub_field( 'target' ) ) {
@@ -396,17 +396,17 @@
 									$color = '';
 									break;
 								case 'blue':
-									$color = ' c-shadow-btn--blue';
+									$color = ' c-btn--blue';
 									break;
 								case 'yellow':
-									$color = ' c-shadow-btn--yellow';
+									$color = ' c-btn--yellow';
 									break;
 								default:
 									$color = '';
 									break;
 							}
 							?>
-							<div class="c-section__btn c-shadow-btn<?php echo esc_attr( $color ); ?> p-top-case__btn c-btn--center">
+							<div class="c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-case__btn c-btn--center">
 								<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 									<?php
 									if ( get_sub_field( 'target' ) ) {
@@ -478,17 +478,17 @@
 									$color = '';
 									break;
 								case 'blue':
-									$color = ' c-shadow-btn--blue';
+									$color = ' c-btn--blue';
 									break;
 								case 'yellow':
-									$color = ' c-shadow-btn--yellow';
+									$color = ' c-btn--yellow';
 									break;
 								default:
 									$color = '';
 									break;
 							}
 							?>
-							<div class="c-section__btn c-shadow-btn<?php echo esc_attr( $color ); ?> p-top-flow__btn c-btn--center">
+							<div class="c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-flow__btn c-btn--center">
 								<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 									<?php
 									if ( get_sub_field( 'target' ) ) {
@@ -568,7 +568,7 @@
 							while ( have_rows( 'btn' ) ) :
 								the_row();
 								?>
-								<div class="c-section__btn c-shadow-btn p-top-faq__btn c-btn--center">
+								<div class="c-section__btn c-btn p-top-faq__btn c-btn--center">
 									<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 										<?php
 										if ( get_sub_field( 'target' ) ) {
@@ -633,7 +633,7 @@
 										while ( have_rows( 'btn' ) ) :
 											the_row();
 											?>
-											<div class="c-section__btn c-shadow-btn p-top-faq__btn c-btn--center">
+											<div class="c-section__btn c-btn p-top-faq__btn c-btn--center">
 												<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 													<?php
 													if ( get_sub_field( 'target' ) ) {

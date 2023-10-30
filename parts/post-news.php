@@ -2,7 +2,7 @@
 /**
  * This is news post parts.
  *
- * @package cms_12a WebAR
+ * @package cms_018 Movie
  */
 
 ?>

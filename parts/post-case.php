@@ -2,7 +2,7 @@
 /**
  * This is post parts.
  *
- * @package cms_12a WebAR
+ * @package cms_018 Movie
  */
 
 ?>
@@ -104,7 +104,7 @@
 			while ( have_rows( 'ar_btn' ) ) :
 				the_row();
 				?>
-					<div class="c-shadow-btn c-shadow-btn--gradient u-mt-20">
+					<div class="c-btn c-btn--gradient u-mt-20">
 						<object>
 							<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
 								<?php
