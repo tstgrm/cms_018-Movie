@@ -109,7 +109,7 @@
 											$page_link .= '#' . get_sub_field( 'tab' );
 										}
 										?>
-											<li class="g-header-cta-nav__item g-header-cta-nav__item--contact c-btn">
+											<li class="g-header-cta-nav__item g-header-cta-nav__item--contact c-btn c-btn--cv">
 												<a href="<?php echo esc_url( $page_link ); ?>"
 													<?php
 													if ( $target ) {

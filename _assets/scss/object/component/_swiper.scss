@@ -7,9 +7,28 @@
 
 .swiper-button-prev,
 .swiper-button-next {
+	width: 48px;
+	height: 48px;
+	box-shadow: $box-shadow;
+	border-radius: $radius-circle;
+	background-color: #fff;
+
 	&::after {
 		color: $primary;
-		@include fz(32);
+		content: "";
+		// @include fz(24);
+		background-image: url(../img/icon_caret.svg);
+		width: 32px;
+		height: 32px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+.swiper-button-prev {
+	&::after {
+		transform: scale(-1, 1);
 	}
 }
 
@@ -56,7 +75,7 @@
 }
 
 .swiper-pagination-bullet-active {
-	background: $primary !important;
+	background: $primary;
 }
 
 .swiper-scrollbar {

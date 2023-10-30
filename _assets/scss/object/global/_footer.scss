@@ -46,18 +46,6 @@
 		}
 	}
 
-	&--download {
-		#{$this}__bg::after {
-			background-color: $yellow-alpha2;
-		}
-
-		#{$this}__icon::before {
-			width: 52px;
-			height: 64px;
-			background-image: url(../img/icon/icon_download.png);
-		}
-	}
-
 	&__bg {
 		position: absolute;
 		top: 0;

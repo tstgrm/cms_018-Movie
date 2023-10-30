@@ -219,7 +219,7 @@ const font = () => {
 function browserSyncFunc(done) {
   browserSync.init({
 		//proxy: "localhost:10020", // ローカルにある「Site Domain」に合わせる
-		proxy: "http://cms012a-webar.local/", // Local by Flywheelのドメイン
+		proxy: "http://cms018-movie.local/", // Local by Flywheelのドメイン
 		// notify: false, // ブラウザ更新時に出てくる通知を非表示にする
 		//open: "external", // ローカルIPアドレスでサーバを立ち上げる
 		open: true,

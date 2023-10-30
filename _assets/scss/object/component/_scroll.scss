@@ -3,18 +3,15 @@
 .c-scroll {
 	display: inline-block;
 	position: absolute;
-	left: 8vw;
+	left: 0;
 	bottom: 0;
 	z-index: 2;
-	padding: 10px 0px 160px;
+	padding: 0 0 140px;
 	overflow: hidden;
-	color: $primary;
-	font-size: 14px;
-	font-family: "brandon-grotesque", sans-serif;
+	color: $main-color;
+	@include fz(20);
 	font-weight: $bold;
 	line-height: 1;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
 	text-decoration: none;
 	writing-mode: vertical-lr;
 	z-index: 1;
@@ -38,8 +35,8 @@
 		bottom: 0;
 		left: 50%;
 		width: 1px;
-		height: 140px;
-		background: rgba(0, 0, 0, 0.2);
+		height: 120px;
+		background: $main-color;
 
 		@include is-tab {
 			//height: 100px;
@@ -49,190 +46,190 @@
 		}
 	}
 
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		width: 1px;
-		height: 140px;
-		background: $primary;
-		animation: arrow 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+	// &::after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 50%;
+	// 	width: 1px;
+	// 	height: 140px;
+	// 	background: $primary;
+	// 	animation: arrow 1.5s cubic-bezier(1, 0, 0, 1) infinite;
 
-		@include is-tab {
-			//height: 100px;
-		}
-		@include is-sp {
-			//height: 54px;
-		}
-	}
+	// 	@include is-tab {
+	// 		//height: 100px;
+	// 	}
+	// 	@include is-sp {
+	// 		//height: 54px;
+	// 	}
+	// }
 }
 
-@keyframes arrow {
-	0% {
-		transform: scale(1, 0);
-		transform-origin: 0 0;
-	}
-	50% {
-		transform: scale(1, 1);
-		transform-origin: 0 0;
-	}
-	50.1% {
-		transform: scale(1, 1);
-		transform-origin: 0 100%;
-	}
-	100% {
-		transform: scale(1, 0);
-		transform-origin: 0 100%;
-	}
-}
+// @keyframes arrow {
+// 	0% {
+// 		transform: scale(1, 0);
+// 		transform-origin: 0 0;
+// 	}
+// 	50% {
+// 		transform: scale(1, 1);
+// 		transform-origin: 0 0;
+// 	}
+// 	50.1% {
+// 		transform: scale(1, 1);
+// 		transform-origin: 0 100%;
+// 	}
+// 	100% {
+// 		transform: scale(1, 0);
+// 		transform-origin: 0 100%;
+// 	}
+// }
 
-.c-scroll-arrow {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	padding: 20px 10px;
-	color: $primary;
-	@include fz(12);
-	@include ls(3);
-	transform: rotate(-90deg);
-	transform-origin: top center;
+// .c-scroll-arrow {
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 0;
+// 	padding: 20px 10px;
+// 	color: $primary;
+// 	@include fz(12);
+// 	@include ls(3);
+// 	transform: rotate(-90deg);
+// 	transform-origin: top center;
 
-	@media screen and (min-width: $breakpoint-tablet-min) {
-		&:hover {
-			&::before {
-				width: 120%;
-			}
+// 	@media screen and (min-width: $breakpoint-tablet-min) {
+// 		&:hover {
+// 			&::before {
+// 				width: 120%;
+// 			}
 
-			&::after {
-				left: -20%;
-			}
-		}
-	}
+// 			&::after {
+// 				left: -20%;
+// 			}
+// 		}
+// 	}
 
-	&::before,
-	&::after {
-		bottom: 0;
-		content: "";
-		position: absolute;
-		transition: all 0.3s ease;
-	}
+// 	&::before,
+// 	&::after {
+// 		bottom: 0;
+// 		content: "";
+// 		position: absolute;
+// 		transition: all 0.3s ease;
+// 	}
 
-	&::before {
-		right: 0;
-		width: 100%;
-		margin-top: -1px;
-		border-top: 2px solid #222;
-		transition: all 0.3s ease;
-	}
+// 	&::before {
+// 		right: 0;
+// 		width: 100%;
+// 		margin-top: -1px;
+// 		border-top: 2px solid #222;
+// 		transition: all 0.3s ease;
+// 	}
 
-	&::after {
-		left: 0;
-		height: 6px;
-		margin-top: -4px;
-		border-left: 2px solid #222;
-		transform: skewX(-45deg);
-	}
-}
+// 	&::after {
+// 		left: 0;
+// 		height: 6px;
+// 		margin-top: -4px;
+// 		border-left: 2px solid #222;
+// 		transform: skewX(-45deg);
+// 	}
+// }
 
-.c-scroll-mouse {
-	position: absolute;
-	left: $side-padding;
-	bottom: 0;
-	// padding: 20px 10px;
-	// color: $primary;
-	// @include fz(12);
-	// @include ls(3);
-	// transform: rotate(-90deg);
-	// transform-origin: top center;
+// .c-scroll-mouse {
+// 	position: absolute;
+// 	left: $side-padding;
+// 	bottom: 0;
+// 	// padding: 20px 10px;
+// 	// color: $primary;
+// 	// @include fz(12);
+// 	// @include ls(3);
+// 	// transform: rotate(-90deg);
+// 	// transform-origin: top center;
 
-	/*マウスの動き1.6秒かけて動く永遠にループ*/
-	animation: mousemove 1.6s ease-in-out infinite;
+// 	/*マウスの動き1.6秒かけて動く永遠にループ*/
+// 	animation: mousemove 1.6s ease-in-out infinite;
 
-	/*マウスの描写 */
-	&::before {
-		content: "";
-		/*描画位置*/
-		position: absolute;
-		bottom: 0;
-		left: -10px;
-		/*マウスの形状*/
-		width: 25px;
-		height: 37px;
-		border-radius: 10px;
-		border: 1px solid $primary;
-	}
+// 	/*マウスの描写 */
+// 	&::before {
+// 		content: "";
+// 		/*描画位置*/
+// 		position: absolute;
+// 		bottom: 0;
+// 		left: -10px;
+// 		/*マウスの形状*/
+// 		width: 25px;
+// 		height: 37px;
+// 		border-radius: 10px;
+// 		border: 1px solid $primary;
+// 	}
 
-	/*マウスの中の丸の描写*/
-	&::after {
-		content: "";
-		/*描画位置*/
-		position: absolute;
-		bottom: 26px;
-		left: 0;
-		/*丸の形状*/
-		width: 5px;
-		height: 5px;
-		border-radius: 50%;
-		border: 1px solid $primary;
-	}
+// 	/*マウスの中の丸の描写*/
+// 	&::after {
+// 		content: "";
+// 		/*描画位置*/
+// 		position: absolute;
+// 		bottom: 26px;
+// 		left: 0;
+// 		/*丸の形状*/
+// 		width: 5px;
+// 		height: 5px;
+// 		border-radius: 50%;
+// 		border: 1px solid $primary;
+// 	}
 
-	/* Scrollテキストの描写 */
-	span {
-		/*描画位置*/
-		position: absolute;
-		left: -15px;
-		bottom: 45px;
-		/*テキストの形状*/
-		color: $primary;
-		@include fz(12);
-		letter-spacing: 0.05em;
+// 	/* Scrollテキストの描写 */
+// 	span {
+// 		/*描画位置*/
+// 		position: absolute;
+// 		left: -15px;
+// 		bottom: 45px;
+// 		/*テキストの形状*/
+// 		color: $primary;
+// 		@include fz(12);
+// 		letter-spacing: 0.05em;
 
-		/*マウスの中の線描写 */
-		&::after {
-			content: "";
-			/*描画位置*/
-			position: absolute;
-			top: 10px;
-			left: 18px;
-			/*線の形状*/
-			width: 1px;
-			height: 15px;
-			background: $primary;
-			/*線の動き1.4秒かけて動く。永遠にループ*/
-			animation: mousepathmove 1.4s linear infinite;
-			opacity: 0;
-		}
-	}
-}
+// 		/*マウスの中の線描写 */
+// 		&::after {
+// 			content: "";
+// 			/*描画位置*/
+// 			position: absolute;
+// 			top: 10px;
+// 			left: 18px;
+// 			/*線の形状*/
+// 			width: 1px;
+// 			height: 15px;
+// 			background: $primary;
+// 			/*線の動き1.4秒かけて動く。永遠にループ*/
+// 			animation: mousepathmove 1.4s linear infinite;
+// 			opacity: 0;
+// 		}
+// 	}
+// }
 
-/*下からの距離が変化して上から下に動く*/
-@keyframes mousemove {
-	0% {
-		bottom: 10px;
-	}
-	50% {
-		bottom: 5px;
-	}
-	100% {
-		bottom: 10px;
-	}
-}
+// /*下からの距離が変化して上から下に動く*/
+// @keyframes mousemove {
+// 	0% {
+// 		bottom: 10px;
+// 	}
+// 	50% {
+// 		bottom: 5px;
+// 	}
+// 	100% {
+// 		bottom: 10px;
+// 	}
+// }
 
-/*上からの距離・不透明度・高さが変化して上から下に流れる*/
-@keyframes mousepathmove {
-	0% {
-		height: 0;
-		top: 10px;
-		opacity: 0;
-	}
-	50% {
-		height: 15px;
-		opacity: 1;
-	}
-	100% {
-		height: 0;
-		top: 30px;
-		opacity: 0;
-	}
-}
+// /*上からの距離・不透明度・高さが変化して上から下に流れる*/
+// @keyframes mousepathmove {
+// 	0% {
+// 		height: 0;
+// 		top: 10px;
+// 		opacity: 0;
+// 	}
+// 	50% {
+// 		height: 15px;
+// 		opacity: 1;
+// 	}
+// 	100% {
+// 		height: 0;
+// 		top: 30px;
+// 		opacity: 0;
+// 	}
+// }

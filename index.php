@@ -74,44 +74,6 @@
 									<?php endif; ?>
 								<?php endwhile; ?>
 							<?php endif; ?>
-
-							<?php if ( have_rows( 'cta_download', 'option' ) ) : ?>
-								<?php
-								while ( have_rows( 'cta_download', 'option' ) ) :
-									the_row();
-									if ( have_rows( 'btn', 'option' ) ) :
-										while ( have_rows( 'btn', 'option' ) ) :
-											the_row();
-											?>
-											<?php
-											$page_link = '';
-											$target    = false;
-											if ( get_sub_field( 'link' ) ) {
-												$page_link = get_sub_field( 'link' );
-											} else {
-												// 外部リンクが設定されてるとき.
-												$page_link = get_sub_field( 'url' );
-												if ( strpos( $page_link, isset( $_SERVER['SERVER_NAME'] ) ) === false ) :
-													$target = true;
-													endif;
-											}
-											if ( get_sub_field( 'tab' ) ) {
-												// アンカーリンクが設定されているとき.
-												$page_link .= '#' . get_sub_field( 'tab' );
-											}
-											?>
-												<div class="c-btn c-btn--yellow  p-top-visual-cta__btn">
-													<a href="<?php echo esc_url( $page_link ); ?>"
-														<?php
-														if ( $target ) {
-															echo ' target="_blank" rel="nofollow noopener"';}
-														?>
-													><?php the_sub_field( 'ttl' ); ?></a>
-												</div>
-										<?php endwhile; ?>
-									<?php endif; ?>
-								<?php endwhile; ?>
-							<?php endif; ?>
 						</div>
 					</div>
 

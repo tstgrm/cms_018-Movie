@@ -36,13 +36,18 @@
 
 .c-section-ttl {
 	display: block;
-	@include fz(32);
-	font-family: $font-en;
+	@include fz(40);
 	font-weight: $bold;
 	text-align: center;
 	line-height: 1.6;
 
 	@include is-sp {
 		@include fz(24);
+	}
+
+	&__sub {
+		color: $main-color;
+		font-family: $font-en;
+		margin-bottom: 16px;
 	}
 }

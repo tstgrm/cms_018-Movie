@@ -116,7 +116,7 @@
 	<?php endif; */
 	?>
 
-	<?php if ( get_field( 'cta_contact', 'option' )['disp'] || get_field( 'cta_download', 'option' )['disp'] ) : ?>
+	<?php if ( get_field( 'cta_contact', 'option' )['disp'] ) : ?>
 		<div class="g-foot-cta">
 			<div class="g-foot-cta__inner">
 				<?php
@@ -125,51 +125,6 @@
 					$bg_sp = get_sub_field( 'bg_sp' ) ? get_sub_field( 'bg_sp' ) : get_sub_field( 'bg' );
 					?>
 					<div class="g-foot-cta-block g-foot-cta-block--contact">
-						<div class="g-foot-cta-block__bg" style="background-image:url(<?php the_sub_field( 'bg' ); ?>)"></div>
-						<?php if ( have_rows( 'btn' ) ) : ?>
-							<?php
-							while ( have_rows( 'btn' ) ) :
-								the_row();
-								?>
-								<?php
-									$page_link = '';
-									$target    = false;
-								if ( get_sub_field( 'link' ) ) {
-									$page_link = get_sub_field( 'link' );
-								} else {
-									// 外部リンクが設定されてるとき.
-									$page_link = get_sub_field( 'url' );
-									if ( strpos( $page_link, isset( $_SERVER['SERVER_NAME'] ) ) === false ) :
-										$target = true;
-										endif;
-								}
-								if ( get_sub_field( 'tab' ) ) {
-									// アンカーリンクが設定されているとき.
-									$page_link .= '#' . get_sub_field( 'tab' );
-								}
-								?>
-									<a href="<?php echo esc_url( $page_link ); ?>"
-										<?php
-										if ( $target ) {
-											echo ' target="_blank" rel="nofollow noopener"';}
-										?>
-										class="g-foot-cta-block__link">
-										<span class="g-foot-cta-block__link-inner">
-											<span class="g-foot-cta-block__icon"></span>
-											<span class="g-foot-cta-block__ttl"><?php the_sub_field( 'ttl' ); ?></span>
-										</span>
-									</a>
-							<?php endwhile; ?>
-						<?php endif; ?>
-					</div>
-				<?php endwhile; ?>
-
-				<?php
-				while ( have_rows( 'cta_download', 'option' ) ) :
-					the_row();
-					$bg_sp = get_sub_field( 'bg_sp' ) ? get_sub_field( 'bg_sp' ) : get_sub_field( 'bg' );
-					?>
-					<div class="g-foot-cta-block g-foot-cta-block--download">
 						<div class="g-foot-cta-block__bg" style="background-image:url(<?php the_sub_field( 'bg' ); ?>)"></div>
 						<?php if ( have_rows( 'btn' ) ) : ?>
 							<?php

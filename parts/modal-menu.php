@@ -94,7 +94,7 @@
 				<?php endif; ?>
 			</nav>
 
-			<?php if ( get_field( 'cta_contact', 'option' )['disp'] || get_field( 'cta_download', 'option' )['disp'] ) : ?>
+			<?php if ( get_field( 'cta_contact', 'option' )['disp'] ) : ?>
 				<div class="g-modal-menu-cta">
 					<ul class="g-modal-menu-cta__list">
 						<?php
@@ -138,45 +138,6 @@
 
 						<?php endwhile; ?>
 
-						<?php
-						while ( have_rows( 'cta_download', 'option' ) ) :
-							the_row();
-							?>
-							<?php if ( have_rows( 'btn' ) ) : ?>
-								<?php
-								while ( have_rows( 'btn' ) ) :
-									the_row();
-									?>
-									<?php
-										$page_link = '';
-										$target    = false;
-									if ( get_sub_field( 'link' ) ) {
-										$page_link = get_sub_field( 'link' );
-									} else {
-										// 外部リンクが設定されてるとき.
-										$page_link = get_sub_field( 'url' );
-										if ( strpos( $page_link, isset( $_SERVER['SERVER_NAME'] ) ) === false ) :
-											$target = true;
-											endif;
-									}
-									if ( get_sub_field( 'tab' ) ) {
-										// アンカーリンクが設定されているとき.
-										$page_link .= '#' . get_sub_field( 'tab' );
-									}
-									?>
-									<li class="g-modal-menu-cta__item">
-										<div class="g-modal-menu-cta__btn c-btn c-btn--yellow">
-											<a href="<?php echo esc_url( $page_link ); ?>"
-											<?php
-											if ( $target ) {
-												echo ' target="_blank" rel="nofollow noopener"';}
-											?>
-											><?php the_sub_field( 'ttl' ); ?></a>
-										</div>
-									</li>
-								<?php endwhile; ?>
-							<?php endif; ?>
-						<?php endwhile; ?>
 					</ul>
 				</div>
 			<?php endif; ?>

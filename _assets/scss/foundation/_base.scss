@@ -16,7 +16,7 @@ body {
 	color: $primary;
 	@include fz(16);
 	font-weight: $medium;
-	line-height: 1.7;
+	line-height: 1.6;
 	// word-wrap: break-word;
 	// word-break: normal;
 	// font-feature-settings: normal;
@@ -41,7 +41,7 @@ body {
 	// }
 }
 
-body:not(.home)::before {
+body::before {
 	display: block;
 	padding: $header-height-pc 0 0;
 	content: "";
