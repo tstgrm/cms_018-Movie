@@ -1,0 +1,21 @@
+@use "../../global-setting" as *;
+
+.u-arrow {
+  &-right {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%) rotate(45deg);
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      border-radius: 1px;
+    }
+  }
+}

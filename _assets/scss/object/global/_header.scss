@@ -1,0 +1,286 @@
+@use "../../global-setting" as *;
+
+body:not(.home),
+.is-scroll {
+	.g-header-sp-menu-icon__line {
+		background-color: $primary;
+	}
+}
+
+body[data-modal-menu="active"] {
+	.g-header {
+		box-shadow: none;
+		background-color: $white;
+	}
+
+	.g-header-sp-menu-icon__line {
+		background-color: $primary;
+
+		&:nth-of-type(1) {
+			transform: rotate(45deg);
+		}
+		&:nth-of-type(2) {
+			transform: rotate(-45deg);
+		}
+		&:nth-of-type(3) {
+			opacity: 0;
+		}
+	}
+}
+
+body[data-modal="active"] {
+	.g-header {
+		box-shadow: none;
+	}
+}
+
+.g-header {
+	position: fixed;
+	z-index: $zindex-header;
+	top: 0;
+	right: 0;
+	left: 0;
+	$this: &;
+	transition: 0.3s;
+	color: $white;
+
+	&.is-scroll {
+		box-shadow: $box-shadow-header;
+		background-color: $white;
+		color: $primary;
+	}
+
+	body:not(.home) & {
+		background-color: $white;
+	}
+
+	body[data-modal-menu="active"] &,
+	body[data-modal="active"] & {
+		box-shadow: none;
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: $header-height-pc;
+		padding: 0 40px;
+		max-width: 1440px;
+		margin: 0 auto;
+		// background-color: $white;
+		// color: $primary;
+		transition: height 0.2s;
+
+		@include is-tab {
+			// height: $header-height-tab; // is-scroll
+			height: $header-height-tab;
+			padding: 0 8px 0 32px;
+			align-items: flex-start;
+		}
+
+		@include is-sp {
+			padding: 0 0 0 20px;
+			height: $header-height-sp;
+		}
+	}
+}
+
+.g-header-logo {
+	display: flex;
+	align-items: center;
+	width: 170px;
+	height: 100%;
+	transition: 0.2s;
+
+	@include is-tab {
+		// width: 150px;
+		// padding: 16px 0px;
+		// height: $header-height-tab; // is-scroll
+	}
+
+	&__txt {
+		@include fz(30);
+
+		font-weight: $medium;
+
+		@include is-sp {
+			@include fz(25);
+		}
+	}
+
+	&__link {
+		display: block;
+		color: $primary;
+		font-weight: $medium;
+	}
+
+	&__img {
+		max-height: calc($header-height-pc - 32px);
+		width: auto;
+		transition: 0.2s;
+
+		@include is-tab {
+			max-height: calc($header-height-sp - 16px);
+		}
+	}
+}
+
+.g-header-nav {
+	display: flex;
+	// max-width: 720px;
+
+	@include is-tab {
+		display: none;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		margin: 0 -16px;
+	}
+
+	&__item {
+		padding: 0 16px;
+	}
+
+	&__link {
+		position: relative;
+		display: flex;
+		padding: 8px 0;
+		@include fz(14);
+		white-space: nowrap;
+		font-weight: $medium;
+		color: $white;
+		transition: 0.3s;
+
+		.is-scroll &,
+		body:not(.home) & {
+			color: $primary2;
+
+			@media screen and (min-width: $breakpoint-tablet-min) {
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+.g-header-cta-nav {
+	display: flex;
+	gap: 16px;
+	margin-left: 32px;
+	width: 100%;
+
+	&__item {
+		&--contact {
+			a {
+				body:not(.home) &,
+				.is-scroll & {
+					background-color: $blue;
+					color: $white;
+					box-shadow: $box-shadow-blue;
+
+					@media screen and (min-width: $breakpoint-tablet-min) {
+						&:hover {
+							background-color: $blue-hover;
+							box-shadow: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.c-shadow-btn {
+		a {
+			@include fz(14);
+			width: 152px;
+			height: 40px;
+		}
+	}
+}
+
+.g-header-sp-menu {
+	display: none;
+	transition: background-color 0.3s, border-radius 0.3s;
+	border-radius: 0 0 0 50%;
+
+	@include is-tab {
+		display: flex;
+	}
+
+	&__link {
+		$this: &;
+		cursor: pointer;
+
+		@include is-tab {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: $header-height-tab;
+			height: $header-height-tab;
+		}
+
+		@include is-sp {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: $header-height-sp;
+			height: $header-height-sp;
+		}
+	}
+
+	&__txt {
+		// font-size: $primary;
+
+		@include is-tab {
+			@include fz(12);
+		}
+		@include is-sp {
+			@include fz(10);
+		}
+	}
+}
+
+// humbarger icon
+.g-header-sp-menu-icon {
+	position: relative;
+
+	&__line {
+		position: absolute;
+		display: inline-block;
+		width: 32px;
+		height: 3px;
+		top: calc(50% - 2px);
+		left: calc(50% - 14px);
+		margin: auto;
+		background-color: $white;
+		transition: $transition;
+
+		@include is-sp {
+			width: 24px;
+			height: 2px;
+			top: calc(50% - 1px);
+			left: calc(50% - 11px);
+		}
+
+		&:nth-of-type(1) {
+			transform: translateY(-10px);
+
+			@include is-sp {
+				transform: translateY(-7px);
+			}
+		}
+
+		&:nth-of-type(2) {
+			transform: translateY(10px);
+
+			@include is-sp {
+				transform: translateY(7px);
+			}
+		}
+	}
+}

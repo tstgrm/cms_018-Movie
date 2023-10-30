@@ -1,0 +1,23 @@
+@use "../../global-setting" as *;
+
+.c-page-ttl {
+  @include fz(28);
+  font-weight: $bold;
+
+  @include is-sp {
+    @include fz(18);
+		text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}

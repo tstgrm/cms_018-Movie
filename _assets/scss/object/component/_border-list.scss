@@ -1,0 +1,10 @@
+@use "../../global-setting" as *;
+
+.c-border-list {
+  &__item {
+    &:first-child {
+      border-top: 1px solid $color-border-gray;
+    }
+    border-bottom: 1px solid $color-border-gray;
+  }
+}

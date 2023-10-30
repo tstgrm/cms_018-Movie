@@ -1,0 +1,21 @@
+@use "../../global-setting" as *;
+
+.c-sns-share {
+	display: flex;
+	align-items: center;
+
+	&__label{
+		margin-right: 16px;
+		@include fz(14);
+		font-weight: $regular;
+	}
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 12px;
+  }
+}

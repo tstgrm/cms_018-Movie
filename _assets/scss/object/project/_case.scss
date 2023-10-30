@@ -1,0 +1,40 @@
+@use "../../global-setting" as *;
+
+// archive-case
+.p-case {
+	.c-page-header {
+		background-color: $blue-pale;
+	}
+
+	&__filter {
+		margin-bottom: 40px;
+
+		@include is-sp {
+			margin-bottom: 32px;
+		}
+	}
+	&__selected {
+		margin: 40px 0;
+
+		@include is-sp {
+			margin: 32px 0;
+		}
+	}
+
+	&__posts {
+		// background-color: $white-gray;
+		padding: 64px 0 120px;
+
+		@include is-sp {
+			padding: 64px 0;
+		}
+	}
+
+	&__no-exist {
+		text-align: center;
+
+		@include is-sp {
+			text-align: left;
+		}
+	}
+}

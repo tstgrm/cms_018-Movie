@@ -1,0 +1,23 @@
+{
+  "autorun": true,
+  "autokill": true,
+
+  "terminals": [
+    {
+      "name": "git",
+      "icon": "logo-github",
+      "description": "This is a git ",
+      "command": "",
+      "onlyMultiple": true,
+      "focus": true
+    },
+    {
+      "name": "gulp",
+      "description": "Gulp action",
+      "icon": "gulp",
+      "onlyMultiple": true,
+      "commands": ["cd _gulp", "npx gulp"],
+      "open": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+@use "../../global-setting" as *;
+
+.p-contact {
+	position: relative;
+
+	&__inner {
+		max-width: 640px;
+	}
+}

@@ -1,0 +1,189 @@
+@use "../../global-setting" as *;
+
+.c-post-pickup {
+	display: flex;
+	$this: &;
+	// padding: 32px;
+	overflow: hidden;
+	background-color: $white;
+	border-radius: $radius;
+	// border: 1px solid transparent;
+	box-shadow: $box-shadow;
+	transition: $transition;
+	$this: &;
+
+	@include is-sp {
+		flex-direction: column;
+		// padding: 24px;
+	}
+
+	@media screen and (min-width: $breakpoint-pc-min) {
+		&:hover {
+			box-shadow: none;
+			transform: translateY(2px);
+
+			#{$this}__content {
+				border: 1px solid $color-border-gray;
+				border-left: none;
+			}
+		}
+	}
+
+	&__thumb {
+		width: $ratio-golden-sm;
+
+		@include is-sp {
+			width: 100%;
+		}
+	}
+
+	&__figure {
+		// border-radius: $radius-sm 0 0 $radius-sm;
+		// transition: box-shadow 0.3s;
+		// padding-top: 82%;
+		height: 100%;
+
+		@include is-sp {
+			position: relative;
+			padding-top: 56.25%;
+		}
+	}
+
+	&__img {
+		height: 100%;
+		object-fit: cover;
+
+		@include is-sp {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__content {
+		position: relative;
+		display: block;
+		width: $ratio-golden-lg;
+		padding: 32px;
+		border: 1px solid transparent;
+		border-radius: 0 $radius $radius 0;
+		border-left: none;
+
+		@include is-sp {
+			width: 100%;
+			// margin-top: 8px;
+			// padding-left: 0;
+			padding: 24px;
+		}
+
+		&--qr {
+			@include is-sp {
+				padding-top: 40px;
+			}
+		}
+	}
+
+	&__qr-sp {
+		position: absolute;
+		top: 0;
+		left: 24px;
+		transform: translateY(-50%);
+		width: 80px;
+		height: 80px;
+	}
+
+	&__ttl {
+		margin-bottom: 20px;
+		@include fz(28);
+		font-weight: $bold;
+		letter-spacing: 0.08em;
+		line-height: 1.5;
+		text-align: left;
+		font-feature-settings: "palt";
+		border-bottom: 1px solid $color-border-gray2;
+
+		@include is-sp {
+			padding: 16px 0;
+			@include fz(18);
+			letter-spacing: 0.04em;
+		}
+	}
+
+	&__meta {
+		display: flex;
+		gap: 8px;
+		margin-top: 16px;
+
+		.c-tags {
+			@include is-sp {
+				row-gap: 8px;
+			}
+		}
+
+		.c-tag {
+			border-color: $color-border-gray2;
+			color: $primary;
+			@include fz(12);
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		gap: 24px;
+		margin-top: 24px;
+		align-items: center;
+	}
+
+	&__qr {
+		// position: absolute;
+		// top: 0px;
+		// transform: translateY(-50%);
+		width: 80px;
+		height: 80px;
+	}
+
+	.c-shadow-btn {
+		@include is-sp {
+			width: 100%;
+		}
+
+		a {
+			width: 240px;
+			height: 48px;
+			@include fz(14);
+
+			@include is-sp {
+				height: 44px;
+				max-width: 100%;
+				width: 100%;
+				height: 44px;
+			}
+		}
+	}
+}
+
+.c-post-pickup-company {
+	display: flex;
+	align-items: center;
+
+	&__logo {
+		height: 48px;
+		max-width: 30%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+		}
+	}
+
+	&__name {
+		@include fz(14);
+		padding: 0 16px;
+	}
+}

@@ -1,0 +1,32 @@
+@use "../../global-setting" as *;
+
+.c-post-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  width: 100%;
+  $this: &;
+
+  & > [class^="c-post"] {
+    width: 100%;
+  }
+
+  &--col2 {
+    gap: 40px;
+
+    @include is-sp {
+      gap: 20px;
+    }
+
+    & > [class^="c-post"] {
+      width: calc(50% - 20px);
+
+      @include is-sp {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+
+  &--case {
+  }
+}

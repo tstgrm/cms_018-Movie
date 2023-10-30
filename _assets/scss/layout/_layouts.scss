@@ -1,0 +1,112 @@
+@use "../global-setting" as *;
+
+.l-main {
+	position: relative;
+}
+
+.l-col2 {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	max-width: $content-width;
+	position: relative;
+	width: 84.375%;
+
+	@include is-sp {
+		width: 100%;
+		padding: 0 24px;
+		display: block;
+	}
+
+	&__main {
+		width: $ratio-shilver-lg;
+		// max-width: calc(100% - 64px - 320px);
+		max-width: 816px;
+
+		@include is-tab {
+			// max-width: calc(100% - 40px - 320px);
+		}
+
+		@include is-sp {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	&__aside {
+		width: $ratio-shilver-sm;
+		min-width: 200px;
+		max-width: 320px;
+		margin-left: 64px;
+
+		@include is-tab {
+			margin-left: 40px;
+		}
+
+		@include is-sp {
+			max-width: 100%;
+			width: 100%;
+			// padding-top: 20px;
+			// padding-bottom: 20px;
+			margin-left: 0;
+			margin-top: 120px;
+		}
+	}
+}
+
+.l-news {
+	padding-bottom: 140px;
+
+	@include is-sp {
+		padding-bottom: 64px;
+	}
+}
+
+.l-inner {
+	max-width: $content-width;
+	width: 84.375%;
+	margin: 0 auto;
+
+	@include is-sp {
+		width: 100%;
+		padding: 0 $side-padding-sp;
+	}
+
+	&--narrow {
+		max-width: $content-width-narrow;
+	}
+
+	&--tiny {
+		max-width: $content-width-tiny;
+	}
+}
+
+.l-window {
+	&-full {
+		margin: 0 calc(50% - 50vw);
+		overflow: hidden;
+		width: 100vw;
+	}
+
+	&-right {
+		display: block;
+		margin: 0 calc(50% - 50vw);
+		overflow: hidden;
+		padding: 0 0 0 calc(50vw - 50%);
+		width: 100vw;
+	}
+
+	&-left {
+		display: block;
+		margin: 0 calc(50% - 50vw);
+		overflow: hidden;
+		padding: 0 calc(50vw - 50%) 0 0;
+		width: 100vw;
+	}
+}
+
+.l-footer {
+	width: 100%;
+	background: $primary;
+	color: $white;
+}

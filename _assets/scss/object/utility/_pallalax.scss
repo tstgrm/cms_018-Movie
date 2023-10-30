@@ -1,0 +1,173 @@
+@use "../../global-setting" as *;
+
+/*------------------------------------------------------------------------
+	fade-in
+------------------------------------------------------------------------*/
+.js-fade-in {
+  opacity: 0;
+  transition: opacity 1s $ease;
+
+  &.is-animated {
+    opacity: 1;
+  }
+}
+
+.js-fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1s $ease, opacity 1s $ease;
+
+  &[data-animate="text"] {
+    transform: translateY(2.5rem);
+  }
+
+  &.is-animated {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.js-fade-in-down {
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: transform 1s $ease, opacity 1s $ease;
+
+  &[data-animate="text"] {
+    transform: translateY(-2.5rem);
+  }
+
+  &.is-animated {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.js-fade-in-left {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: transform 1s $ease, opacity 1s $ease;
+
+  &[data-animate="text"] {
+    transform: translateX(2.5rem);
+  }
+
+  &.is-animated {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.js-fade-in-right {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: transform 1s $ease, opacity 1s $ease;
+
+  &[data-animate="text"] {
+    transform: translateX(-2.5rem);
+  }
+
+  &.is-animated {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*------------------------------------------------------------------------
+	slide-in
+------------------------------------------------------------------------*/
+[class^="js-slide-in"],
+[class*=" js-slide-in"] {
+  opacity: 1 !important;
+
+  &.js-text-split > span {
+    overflow: hidden;
+    display: inline-block;
+  }
+}
+[class^="js-slide-in"],
+[class*=" js-slide-in"] {
+  opacity: 1;
+  overflow: hidden;
+  display: block;
+
+  & > span {
+    display: inline-block;
+  }
+}
+
+.js-slide-in-up {
+  transform: translateY(105%);
+  transition: transform 1s $ease;
+
+  &.is-animated {
+    transform: translateY(0);
+  }
+
+  &.js-text-split {
+    transform: none;
+    transition: none;
+		line-height: 1;
+
+    & > span span {
+			display: inline-block;
+      opacity: 0;
+      transform: translate(0, 100%) skewX(12deg);
+      transition: opacity 1s $ease, transform 1s $ease;
+    }
+
+    &.is-animated {
+      transform: none;
+
+      span span {
+        padding-top: 0.15rem;
+        opacity: 1;
+        transform: translate(0, 0%) skewX(0deg);
+      }
+    }
+  }
+}
+
+.js-slide-in-down {
+  transform: translateY(-105%);
+  transition: transform 1s $ease;
+
+  &.is-animated {
+    transform: translateY(0);
+  }
+}
+
+.js-slide-in-left {
+  transform: translateX(105%);
+  transition: transform 1s $ease;
+
+  &.is-animated {
+    transform: translateX(0);
+  }
+}
+
+.js-slide-in-right {
+  transform: translateX(-105%);
+  transition: transform 1s $ease;
+
+  &.is-animated {
+    transform: translateX(0);
+  }
+}
+
+
+.js-animate-queue {
+  &__item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 1s $ease, opacity 1s $ease;
+
+    &[data-animate="text"] {
+      transform: translateY(2.5rem);
+    }
+
+    &.is-animated {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

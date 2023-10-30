@@ -1,0 +1,40 @@
+@use "../../global-setting" as *;
+
+.u-hover {
+  &-opacity {
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &-scale {
+    transition: all 0.3s ease;
+
+    @media screen and (min-width: $breakpoint-tablet-min) {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &-up {
+    transition: all 0.3s ease;
+
+    @media screen and (min-width: $breakpoint-tablet-min) {
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  &-color-border {
+    transition: all 0.3s ease;
+
+    @media screen and (min-width: $breakpoint-tablet-min) {
+      &:hover {
+        border-color: $blue;
+      }
+    }
+  }
+}

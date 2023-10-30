@@ -1,0 +1,30 @@
+@use "../../global-setting" as *;
+
+.c-post-news {
+	display: flex;
+	padding: 32px 0;
+
+	@include is-sp {
+		flex-direction: column;
+		padding: 20px 0;
+	}
+
+	&__date {
+		display: flex;
+		align-items: center;
+		color: $secondary;
+		font-family: $font-en;
+		// font-weight: $regular;
+		margin-right: 32px;
+
+		@include is-sp {
+			@include fz(14);
+		}
+	}
+
+	&__ttl {
+		@include is-sp {
+			@include fz(14);
+		}
+	}
+}

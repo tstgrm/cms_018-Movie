@@ -1,0 +1,29 @@
+@use "../../global-setting" as *;
+
+.c-figure {
+  position: relative;
+  width: 100%;
+  padding: 56.25% 0 0;
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--vertical {
+    padding: 156% 0 0;
+  }
+
+	&--square{
+		padding: 100% 0 0;
+	}
+
+	&--square{
+		padding: 100% 0 0;
+	}
+}

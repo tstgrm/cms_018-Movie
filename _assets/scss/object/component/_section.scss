@@ -1,0 +1,48 @@
+@use "../../global-setting" as *;
+
+.c-section {
+	padding: 104px 0;
+	$this: &;
+
+	@include is-sp {
+		padding: 64px 0;
+	}
+
+	&__desc {
+		margin-top: 24px;
+		text-align: center;
+
+		@include is-sp {
+			margin-top: 32px;
+		}
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 40px;
+	}
+
+	&__btn {
+		margin-top: 56px;
+		display: flex;
+		justify-content: center;
+
+		@include is-sp {
+			margin-top: 40px;
+		}
+	}
+}
+
+.c-section-ttl {
+	display: block;
+	@include fz(32);
+	font-family: $font-en;
+	font-weight: $bold;
+	text-align: center;
+	line-height: 1.6;
+
+	@include is-sp {
+		@include fz(24);
+	}
+}

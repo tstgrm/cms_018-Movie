@@ -1,0 +1,48 @@
+@use "sass:math";
+
+// Mixin
+
+@mixin fz($size: 24, $base: 16) {
+  font-size: $size + px; /*IE9以下で反映されるよう記述*/
+  // font-size: ($size / ($base * .625)) + rem;
+  font-size: math.div($size, $base * 0.625) + rem;
+}
+
+@mixin ls($size: 0, $base: 16) {
+  letter-spacing: $size + px;
+  // letter-spacing: ($size / ($base * .625)) + rem;
+  letter-spacing: math.div($size, $base * 0.625) + rem;
+}
+
+// ellipsis
+@mixin el($line-num: 0) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-num;
+}
+
+// l-window-full
+@mixin l-window-full() {
+  margin: 0 calc(50% - 50vw);
+  overflow: hidden;
+  width: 100vw;
+}
+
+// l-window-full
+@mixin l-window-right() {
+  display: block;
+  margin: 0 calc(50% - 50vw);
+  overflow: hidden;
+  padding: 0 0 0 calc(50vw - 50%);
+  width: 100vw;
+}
+
+// l-window-full
+@mixin l-window-left() {
+  display: block;
+  margin: 0 calc(50% - 50vw);
+  overflow: hidden;
+  padding: 0 calc(50vw - 50%) 0 0;
+  width: 100vw;
+}

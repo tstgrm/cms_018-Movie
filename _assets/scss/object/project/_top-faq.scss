@@ -1,0 +1,22 @@
+@use "../../global-setting" as *;
+
+/*----------------------------------------
+	FAQ
+----------------------------------------*/
+.p-top-faq {
+	background-color: $white-gray;
+
+	&__body {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__desc {
+		line-height: 2;
+	}
+
+	&__btn {
+		margin-top: 40px;
+		width: 100%;
+	}
+}

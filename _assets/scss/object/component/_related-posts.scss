@@ -1,0 +1,75 @@
+@use "../../global-setting" as *;
+
+.c-related-posts {
+	$this: &;
+	word-break: break-all;
+	margin: 64px 0;
+
+	&__ttl {
+		display: flex;
+		align-items: center;
+		margin-bottom: 32px;
+		@include fz(22);
+		font-weight: $bold;
+		line-height: 1.4;
+
+		@include is-sp {
+			margin-bottom: 24px;
+			@include fz(20);
+		}
+	}
+
+	&__ttl-icon {
+		margin-right: 8px;
+	}
+
+	&__list {
+		display: flex;
+
+		@include is-sp {
+			flex-wrap: wrap;
+		}
+	}
+
+	.c-post {
+		width: calc(100% / 3 - 10px);
+
+		@include is-sp {
+			width: 100%;
+		}
+
+		&:not(:first-child) {
+			margin-left: 16px;
+
+			@include is-sp {
+				margin-left: 0;
+				margin-top: 32px;
+			}
+		}
+	}
+
+	.c-post-case {
+		width: calc(100% / 3 - 10px);
+
+		@include is-sp {
+			width: 100%;
+		}
+
+		&:not(:first-child) {
+			margin-left: 32px;
+
+			@include is-tab {
+				margin-left: 24px;
+			}
+
+			@include is-sp {
+				margin-left: 0;
+				margin-top: 32px;
+			}
+		}
+	}
+
+	&--case {
+		margin: 0;
+	}
+}

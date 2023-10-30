@@ -1,0 +1,132 @@
+@use "../global-setting" as *;
+
+body[data-status="loading"] .l-loader-lower {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+body[data-status="loadstart"] .l-loader-lower {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.l-loader-lower {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity $ease 1s;
+
+  &__bg {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $white;
+    // transition: opacity $ease 1s;
+  }
+}
+
+/*----------------------------------------
+l-loader
+----------------------------------------*/
+// body[data-status="loading"] {
+//   .l-loader {
+//     pointer-events: auto;
+//     opacity: 1;
+//     // transition-delay: 1s;
+//     // transition: $ease 1s;
+//     transition: 1s $ease 1s;
+
+// 		&__inner{
+
+// 		}
+
+//     &__progress {
+//       opacity: 1;
+//       transition: all $ease 1s;
+//     }
+//   }
+// }
+
+// .l-loader {
+//   position: fixed;
+//   z-index: 99999;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   pointer-events: none;
+
+//   opacity: 0;
+//   // transition-delay: 1s;
+//   transition: 1s $ease 1s;
+
+//   &__bg {
+//     position: absolute;
+//     z-index: 99999;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: $white;
+//     transition: transform $ease 1.5s;
+//     //transition: transform $ease 2s,
+//     //  -webkit-transform $ease 2s;
+//     // transform: translateX(100%);
+//     animation: $ease 1s forwards;
+//   }
+
+//   &__inner {
+//     position: absolute;
+//     z-index: 999999;
+//     top: 50%;
+//     left: 50%;
+//     opacity: 1;
+//     transition: opacity $ease 1s;
+//     transform: translate(-50%, -50%);
+//   }
+
+//   &__progress {
+//     position: absolute;
+//     z-index: 1;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     opacity: 0;
+//     background: rgba(255, 255, 255, 1);
+//     transition: all  2s;
+//   }
+
+//   &__logo {
+//     max-width: 280px;
+
+//     img {
+//       width: 100%;
+//       height: auto;
+//     }
+//   }
+
+//   &__text {
+//     // font-family: $font-en;
+//     @include fz(28);
+//   }
+// }
+
+// @keyframes loadstart {
+//   0% {
+//     // transform: translateX(-100%);
+//     opacity: 1;
+//   }
+//   100% {
+//     // transform: translateX(0);
+//     opacity: 0;
+//   }
+// }

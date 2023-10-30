@@ -1,0 +1,250 @@
+@use "../../global-setting" as *;
+
+// archive-caseで使用
+/* 検索フォームの絞り込みフィルター */
+.c-search-filter {
+  @include fz(14);
+  $this: &;
+  border: 1px solid $color-border-gray2;
+  border-radius: $radius-sm;
+  overflow: hidden;
+
+  @include is-sp {
+    // border: none;
+    // border-color: $color-border-gray;
+  }
+
+  &__head {
+    position: relative;
+    background-color: $blue;
+    @include fz(24);
+    color: $white;
+    line-height: 56px;
+    text-align: center;
+
+    @include is-sp {
+      @include fz(18);
+      line-height: 64px;
+      pointer-events: none;
+    }
+
+    @include is-sp {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__body {
+    padding: 20px 32px;
+    background-color: $white;
+
+    @include is-sp {
+      padding: 0;
+    }
+  }
+
+  &__submit-area {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto 16px;
+
+    @include is-sp {
+      margin: 0 20px;
+      padding: 20px 0;
+    }
+  }
+
+  &__submit-btn {
+    height: 48px !important;
+    @include fz(16);
+
+    @include is-sp {
+      height: 56px !important;
+    }
+  }
+}
+
+// 絞り込みフィルター内のテーブル
+.c-search-filter-table {
+  width: 100%;
+  $this: &;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px dashed $color-border-gray2;
+
+    @include is-sp {
+      border-bottom: 2px solid $color-border-gray2;
+    }
+
+    &:last-child {
+      border: none;
+
+      @include is-sp {
+        border-bottom: 2px solid $color-border-gray2;
+      }
+    }
+
+    &.is-active {
+      #{$this}__head {
+        &::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__head {
+    position: relative;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $bold;
+
+    // border-right
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      bottom: 16px;
+      right: 0;
+      background-color: $color-border-gray2;
+      display: block;
+      width: 2px;
+      border-radius: $radius-round;
+    }
+
+    // SP時、アコーディオン
+    @include is-sp {
+      width: 100%;
+      line-height: 64px;
+      @include fz(18);
+      justify-content: flex-start;
+      padding: 0 20px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        bottom: unset;
+        // left: 50%;
+        right: 22px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 3px;
+        background-color: $blue;
+        border-radius: $radius-round;
+        transition: $transition;
+      }
+
+      &::after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+  }
+
+  &__body {
+    width: calc(100% - 160px);
+    padding: 16px 24px;
+
+    @include is-sp {
+      width: 100%;
+      padding: 24px 20px;
+      border-top: 2px solid $color-border-gray2;
+      display: none;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 12px;
+  }
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: $radius-round;
+    border: 1px solid transparent;
+    line-height: 1;
+    // color: $blue;
+    transition: $transition;
+    background-color: $white-gray2;
+
+    &.is-active {
+      background-color: $blue-pale;
+      border: 1px solid $blue;
+    }
+    @media screen and (min-width: $breakpoint-tablet-min) {
+      &:hover {
+        background-color: $blue-pale;
+        border: 1px solid $blue;
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+  }
+}
+
+// 指定した絞り込み条件を表示するエリア
+.c-search-filter-selected {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  background-color: $white-gray;
+  border-radius: $radius-sm;
+  display: none;
+
+  @include is-sp {
+    flex-direction: column;
+		align-items: flex-start;
+    padding: 16px;
+  }
+
+  &.is-show {
+    display: flex;
+  }
+
+  &__head {
+    color: $blue-thick;
+    padding-right: 32px;
+    min-width: 128px;
+    font-weight: $bold;
+
+    @include is-sp {
+      min-width: 100%;
+      padding-right: 0;
+      text-align: center;
+      @include fz(16);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+
+    @include is-sp {
+      padding-top: 16px;
+      gap: 12px 24px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    @include fz(14);
+    line-height: 1;
+  }
+}

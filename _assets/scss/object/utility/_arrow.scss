@@ -1,0 +1,60 @@
+@use "../../global-setting" as *;
+
+.u-arrow {
+  &-right {
+    position: relative;
+    padding-right: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%) rotate(45deg);
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      border-radius: 1px;
+    }
+  }
+
+  &-left {
+    position: relative;
+    padding-left: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%) rotate(-45deg);
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-left: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      border-radius: 1px;
+    }
+  }
+
+  &-bottom {
+    position: relative;
+    padding-right: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%) rotate(135deg);
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-right: 2px solid currentColor;
+      border-top: 2px solid currentColor;
+      border-radius: 1px;
+    }
+  }
+}

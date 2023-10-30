@@ -1,0 +1,141 @@
+@use "../../global-setting" as *;
+
+.c-faq-list {
+	width: 100%;
+	$this: &;
+
+	&__item {
+		border-radius: $radius;
+		border: 1px solid transparent;
+		background-color: $white;
+		padding: 0 40px;
+		transition: 0.3s;
+
+		@include is-sp {
+			padding: 0 16px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+
+			@include is-sp {
+				margin-bottom: 8px;
+			}
+		}
+
+		&.is-active {
+			#{$this}__icon::after {
+				opacity: 0;
+			}
+			#{$this}__answer {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__qa {
+		position: absolute;
+		top: 32px;
+		left: 0;
+		@include fz(20);
+		font-family: $font-en;
+		font-weight: $bold;
+		// line-height: 1.6;
+		color: $blue;
+
+		@include is-sp {
+			top: 16px;
+			@include fz(18);
+		}
+
+		&--a {
+			top: -2px;
+			color: $yellow;
+		}
+	}
+
+	&__question {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		cursor: pointer;
+		@include fz(18);
+		font-weight: $semi-bold;
+
+		@include is-sp {
+			@include fz(14);
+		}
+	}
+
+	&__question-detail {
+		display: block;
+		width: 100%;
+		padding: 32px 46px 32px 46px;
+		transition: 0.3s;
+		// line-height: 2;
+
+		@include is-sp {
+			padding: 20px 24px;
+		}
+	}
+
+	&__answer {
+		position: relative;
+		display: none;
+		padding: 0px 46px 32px 46px;
+
+		@include is-sp {
+			padding: 0 24px 24px 24px;
+		}
+	}
+
+	&__answer-detail {
+		overflow: hidden;
+		@include fz(16);
+		// line-height: 2;
+		color: $secondary;
+
+		@include is-sp {
+			@include fz(14);
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		// top: 50%;
+		top: 51px;
+		right: 0;
+		// transform: translateY(-50%);
+		transition: 0.3s;
+
+		cursor: pointer;
+
+		@include is-sp {
+			top: 25px;
+			width: 12px;
+			height: 12px;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 16px;
+			height: 2px;
+			background-color: $primary;
+			// transition: 0.3s;
+
+			@include is-sp {
+				width: 12px;
+			}
+		}
+
+		&::after {
+			transform: translateY(-50%) rotate(90deg);
+		}
+	}
+}

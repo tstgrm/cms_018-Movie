@@ -1,0 +1,207 @@
+@use "../../global-setting" as *;
+
+.p-price {
+	&__body {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr 64px 1fr;
+		grid-template-rows: 64px 16px 1fr 24px 120px;
+
+		@include is-sp {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.p-price-cost {
+	&__head {
+		grid-column: 1/2;
+		grid-row: 1/2;
+		@include fz(24);
+		text-align: center;
+		font-weight: $bold;
+		line-height: 1.4;
+
+		@include is-sp {
+			@include fz(20);
+			margin-bottom: 8px;
+		}
+
+		span {
+			@include fz(16);
+			display: block;
+
+			@include is-sp {
+				@include fz(14);
+			}
+		}
+	}
+
+	&__body {
+		grid-column: 1/2;
+		grid-row: 3/4;
+		height: 100%;
+
+		span {
+			@include fz(16);
+
+			@include is-sp {
+				@include fz(14);
+			}
+		}
+	}
+}
+
+.p-price-plus {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-column: 2/3;
+	grid-row: 3/4;
+
+	svg {
+		@include is-sp {
+			width: 34px;
+			height: 34px;
+		}
+	}
+
+	@include is-sp {
+		padding: 32px 0 32px;
+	}
+}
+
+.p-price-plan {
+	&__head {
+		grid-column: 3/4;
+		grid-row: 1/2;
+		@include fz(24);
+		text-align: center;
+		font-weight: $bold;
+		line-height: 1.4;
+
+		@include is-sp {
+			@include fz(20);
+			margin-bottom: 8px;
+		}
+
+		span {
+			@include fz(16);
+			display: block;
+
+			@include is-sp {
+				@include fz(14);
+			}
+		}
+	}
+
+	&__body {
+		grid-column: 3/4;
+		grid-row: 3/4;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+}
+
+.p-price-box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	// padding: 32px 20px;
+	background-color: $white;
+	border-radius: $radius;
+	text-align: center;
+	$this: &;
+	height: 100%;
+
+	&__inner {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		padding: 32px 20px;
+		text-align: center;
+		flex: 1;
+	}
+
+	&__ttl {
+		@include fz(24);
+		font-weight: $bold;
+		line-height: 1.4;
+
+		@include is-sp {
+			@include fz(20);
+		}
+	}
+
+	&__desc {
+		@include fz(24);
+		font-weight: $bold;
+		line-height: 1.4;
+		margin-top: 20px;
+		margin-bottom: 24px;
+
+		@include is-sp {
+			@include fz(20);
+		}
+
+		span {
+			@include fz(32);
+
+			@include is-sp {
+				@include fz(22);
+			}
+		}
+	}
+
+	&__note {
+		color: $secondary;
+		@include fz(13);
+		font-weight: $medium;
+	}
+
+	&--plan {
+		&::before {
+			content: "";
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 8px;
+			width: 100%;
+			border-radius: $radius $radius 0 0;
+			background-color: $blue;
+		}
+
+		&:nth-child(2) {
+			&::before {
+				background-color: $yellow;
+			}
+		}
+	}
+
+	&--attention {
+		grid-column: 1/4;
+		grid-row: 5/6;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 32px;
+		padding: 32px 40px;
+		text-align: left;
+
+		@include is-sp {
+			margin-top: 24px;
+			flex-direction: column;
+			align-items: center;
+			gap: 24px;
+		}
+	}
+}

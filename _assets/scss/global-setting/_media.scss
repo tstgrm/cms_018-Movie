@@ -1,0 +1,45 @@
+// Media
+
+// breakpoint
+$breakpoint-pc: 1600px;
+$breakpoint-tablet-min: 1025px;
+$breakpoint-tablet: 1024px;
+$breakpoint-pc-min: 768px;
+$breakpoint-min: 767px;
+$breakpoint-extra-min: 414px;
+$breakpoint: 1440px;
+
+// PC
+@mixin is-pc() {
+	@media screen and (max-width: $breakpoint-pc) {
+		@content;
+	}
+}
+
+// Tablet
+@mixin is-tab() {
+	@media screen and (max-width: $breakpoint-tablet) {
+		@content;
+	}
+}
+
+// SP
+@mixin is-sp() {
+	@media screen and (max-width: $breakpoint-min) {
+		@content;
+	}
+}
+
+// Mobile Small
+@mixin is-sp-small() {
+	@media screen and (max-width: $breakpoint-extra-min) {
+		@content;
+	}
+}
+
+// custom
+@mixin mediaquery-max() {
+	@media screen and (max-width: $breakpoint) {
+		@content;
+	}
+}

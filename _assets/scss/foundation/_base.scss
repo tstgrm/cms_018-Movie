@@ -1,0 +1,136 @@
+@use "../global-setting" as *;
+
+html,
+body {
+	height: 100vh;
+}
+
+html {
+	font-size: 62.5%; //1emが10pxになるように調整
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	font-family: $font;
+	color: $primary;
+	@include fz(16);
+	font-weight: $medium;
+	line-height: 1.7;
+	// word-wrap: break-word;
+	// word-break: normal;
+	// font-feature-settings: normal;
+	// text-rendering: optimizespeed; // アンチエイリアス
+	// -webkit-font-smoothing: antialiased; // アンチエイリアス
+	// text-size-adjust: 100%;
+	// overflow-wrap: break-word;
+	// font-weight: $medium;
+	// font-feature-settings: 'palt' 1;	//自動カーニング
+	// letter-spacing: 0.08em;
+
+	// display: block;
+	// padding: $header-height-pc 0 0;
+	// content: "";
+
+	// @include is-tab {
+	// 	padding: $header-height-tab 0 0;
+	// }
+
+	// @include is-sp {
+	// 	padding: $header-height-sp 0 0;
+	// }
+}
+
+body:not(.home)::before {
+	display: block;
+	padding: $header-height-pc 0 0;
+	content: "";
+
+	@include is-tab {
+		padding: $header-height-tab 0 0;
+	}
+
+	@include is-sp {
+		padding: $header-height-sp 0 0;
+	}
+}
+
+::placeholder {
+	color: $gray;
+}
+
+::selection {
+	// background-color: $primary;
+	// color: $white;
+}
+
+/* スライダーちらつき防止 */
+.swiper-wrapper {
+	// backface-visibility: hidden;
+	// transition-delay: 0s;
+}
+
+.swiper-slide {
+	// backface-visibility: hidden;
+	// transition-delay: 0s;
+}
+
+strong,
+b {
+	font-weight: $bold;
+}
+
+.u-hidden {
+	display: none;
+}
+
+.u-hidden-pc {
+	@media screen and (min-width: $breakpoint-pc-min) {
+		display: none !important;
+	}
+}
+.u-hidden-tab {
+	@include is-tab {
+		display: none !important;
+	}
+}
+.u-hidden-sp {
+	@include is-sp {
+		display: none !important;
+	}
+}
+
+/*----------------------------------------
+	Media
+----------------------------------------*/
+.is-pc,
+.pc,
+.u-visible-pc {
+	@include is-tab {
+		display: none !important;
+	}
+
+	@include is-sp {
+		display: none !important;
+	}
+}
+
+.is-tab,
+.tablet,
+.u-visible-tab {
+	display: none !important;
+
+	@include is-tab {
+		display: block !important;
+	}
+}
+
+.is-sp,
+.sp,
+.u-visible-sp {
+	display: none !important;
+
+	@include is-sp {
+		display: block !important;
+	}
+}

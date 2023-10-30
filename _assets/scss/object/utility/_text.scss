@@ -1,0 +1,27 @@
+@use "../../global-setting" as *;
+
+.u-text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+
+  &-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+	&-bold{
+		font-weight: $bold;
+	}
+
+	&-underline{
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,161 @@
+@use "../../global-setting" as *;
+
+.c-page-header {
+	position: relative;
+	padding: 104px 0;
+	$this: &;
+
+	@include is-sp {
+		padding: 64px 0;
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 6;
+		text-align: center;
+	}
+
+	&__desc {
+		margin-top: 40px;
+		@include fz(16);
+		line-height: 2;
+		letter-spacing: 0.06em;
+
+		@include is-sp {
+			max-width: 82.53968%;
+			@include fz(15);
+			line-height: 1.8;
+			margin-top: 32px;
+		}
+	}
+
+	&__list {
+		margin-top: 80px;
+
+		@include is-sp {
+			margin-top: 60px;
+		}
+	}
+
+	&__slider {
+		margin-top: 44px;
+
+		@include is-sp {
+			margin-top: 64px;
+		}
+	}
+}
+
+.c-page-header-ttl {
+	font-weight: $bold;
+
+	@include is-sp {
+		padding-top: 0;
+	}
+
+	&__main {
+		display: inline-block;
+		@include fz(40);
+		// font-weight: $bold;
+		// line-height: 1.4;
+		line-height: 1.1;
+		// letter-spacing: 0.05em;
+		// margin-left: -2px;
+
+		@include is-sp {
+			@include fz(28);
+		}
+	}
+
+	&__sub {
+		display: block;
+		margin-top: 16px;
+		@include fz(16);
+		line-height: 1;
+		// letter-spacing: 0.1em;
+
+		@include is-sp {
+			margin-top: 8px;
+		}
+	}
+}
+
+
+// archive-case slider
+.c-page-header-slider {
+	position: relative;
+
+	.swiper {
+		overflow: visible;
+		padding: 0 48px;
+		margin-left: -96px;
+		margin-right: -96px;
+
+		@media screen and (max-width: 1200px) {
+			padding: 0;
+			margin-left: -48px;
+			margin-right: -48px;
+		}
+
+		@include is-sp {
+			@include l-window-full();
+			margin-top: -32px;
+		}
+	}
+
+	&__slide {
+		padding: 20px 48px;
+
+		@include is-sp {
+			padding: 32px 24px;
+		}
+	}
+}
+
+.c-page-header-slider-nav {
+	&__prev,
+	&__next {
+		@include is-sp {
+			top: unset;
+			bottom: -40px !important;
+		}
+
+		&::after {
+			@include is-sp {
+				@include fz(20);
+			}
+		}
+	}
+
+	&__prev {
+		left: -64px;
+
+		@include is-tab {
+			left: -7%;
+		}
+
+		@include is-sp {
+			left: 24%;
+		}
+	}
+
+	&__next {
+		right: -64px;
+
+		@include is-tab {
+			right: -7%;
+		}
+
+		@include is-sp {
+			right: 24%;
+		}
+	}
+
+	&__page {
+		bottom: -40px !important;
+
+		@include is-sp {
+			bottom: -20px !important;
+		}
+	}
+}

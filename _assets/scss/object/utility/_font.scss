@@ -1,0 +1,83 @@
+@use "../../global-setting" as *;
+
+.u-fz {
+	&-10 {
+		@include fz(10);
+	}
+	&-11 {
+		@include fz(11);
+	}
+	&-12 {
+		@include fz(12);
+	}
+	&-13 {
+		@include fz(13);
+	}
+	&-14 {
+		@include fz(14);
+	}
+	&-15 {
+		@include fz(15);
+	}
+	&-16 {
+		@include fz(16);
+	}
+	&-17 {
+		@include fz(17);
+	}
+	&-18 {
+		@include fz(18);
+	}
+	&-19 {
+		@include fz(19);
+	}
+	&-20 {
+		@include fz(20);
+	}
+	&-21 {
+		@include fz(21);
+	}
+	&-22 {
+		@include fz(22);
+	}
+	&-23 {
+		@include fz(23);
+	}
+	&-24 {
+		@include fz(24);
+	}
+	&-25 {
+		@include fz(25);
+	}
+	&-26 {
+		@include fz(26);
+	}
+	&-27 {
+		@include fz(27);
+	}
+	&-28 {
+		@include fz(28);
+	}
+	&-29 {
+		@include fz(29);
+	}
+	&-30 {
+		@include fz(30);
+	}
+	&-40 {
+		@include fz(40);
+	}
+}
+
+.u-fw-regular {
+	font-weight: $regular;
+}
+.u-fw-semibold {
+	font-weight: $semi-bold;
+}
+.u-fw-bold {
+	font-weight: $bold;
+}
+.u-fw-black {
+	font-weight: $ex-bold;
+}

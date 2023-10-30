@@ -1,0 +1,16 @@
+@use "../../global-setting" as *;
+
+.u-col2,
+.u-col2,
+.u-col2 {
+  display: flex;
+}
+
+@media screen and (min-width: $breakpoint-pc-min) {
+  .u-pc-col2,
+  .u-pc-col3,
+  .u-pc-col4 {
+    display: flex;
+    justify-content: space-between;
+  }
+}

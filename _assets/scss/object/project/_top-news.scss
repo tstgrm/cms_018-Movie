@@ -1,0 +1,14 @@
+@use "../../global-setting" as *;
+
+.p-top-news {
+	position: relative;
+
+	&__body {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__list {
+		width: 100%;
+	}
+}

@@ -1,0 +1,46 @@
+@use "../../global-setting" as *;
+
+.c-cats {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 4px;
+  @include fz(12);
+  $this: &;
+}
+
+.c-cat {
+  display: inline-block;
+  // padding: 4px 8px;
+  background-color: $blue;
+  border-radius: $radius-sm;
+  border: 1px solid $blue;
+  color: $white;
+  @include fz(12);
+  line-height: 1;
+  vertical-align: 1px;
+  font-weight: $regular;
+  letter-spacing: 0.05em;
+
+  // デザイン変更
+  padding: 6px 8px;
+  border-radius: $radius-round;
+  transition: background-color 0.3s, color 0.3s;
+
+  // &:hover {
+  //   color: $white;
+  //   background-color: $blue;
+  // }
+
+  @include is-sp {
+    @include fz(10);
+  }
+
+  &--mini {
+    @include fz(11);
+
+    @include is-sp {
+      @include fz(10);
+    }
+  }
+}
