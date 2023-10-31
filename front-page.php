@@ -269,7 +269,7 @@
 		while ( have_rows( 'top_reason' ) ) :
 			the_row();
 			?>
-			<section id="instro" class="p-top-reason">
+			<section id="instro" class="c-section p-top-reason">
 				<div class="l-inner p-top-reason__inner">
 					<h2 class="c-section-ttl p-top-reason__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>

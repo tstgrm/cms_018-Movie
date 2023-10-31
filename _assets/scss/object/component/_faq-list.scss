@@ -3,11 +3,12 @@
 .c-faq-list {
 	width: 100%;
 	$this: &;
+	border-top: 1px solid $color-border-gray;
 
 	&__item {
 		border-radius: $radius;
-		border: 1px solid transparent;
-		background-color: $white;
+		border-bottom: 1px solid $color-border-gray;
+		// background-color: $white;
 		padding: 0 40px;
 		transition: 0.3s;
 
@@ -35,13 +36,13 @@
 
 	&__qa {
 		position: absolute;
-		top: 32px;
+		top: 29px;
 		left: 0;
 		@include fz(20);
 		font-family: $font-en;
 		font-weight: $bold;
 		// line-height: 1.6;
-		color: $blue;
+		color: $main-color;
 
 		@include is-sp {
 			top: 16px;
@@ -50,7 +51,7 @@
 
 		&--a {
 			top: -2px;
-			color: $yellow;
+			color: $main-color-light;
 		}
 	}
 
@@ -60,8 +61,8 @@
 		align-items: center;
 		width: 100%;
 		cursor: pointer;
-		@include fz(18);
-		font-weight: $semi-bold;
+		// @include fz(18);
+		font-weight: $bold;
 
 		@include is-sp {
 			@include fz(14);
@@ -93,8 +94,7 @@
 	&__answer-detail {
 		overflow: hidden;
 		@include fz(16);
-		// line-height: 2;
-		color: $secondary;
+		// color: $secondary;
 
 		@include is-sp {
 			@include fz(14);
@@ -104,7 +104,7 @@
 	&__icon {
 		position: absolute;
 		// top: 50%;
-		top: 51px;
+		top: 44px;
 		right: 0;
 		// transform: translateY(-50%);
 		transition: 0.3s;
@@ -126,7 +126,7 @@
 			transform: translateY(-50%);
 			width: 16px;
 			height: 2px;
-			background-color: $primary;
+			background-color: $main-color;
 			// transition: 0.3s;
 
 			@include is-sp {
