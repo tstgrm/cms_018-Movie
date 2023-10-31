@@ -509,6 +509,38 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 
+	<!-- CONTACT -->
+	<?php if ( get_field( 'top_contact' )['disp'] ) : ?>
+		<?php
+		while ( have_rows( 'top_contact' ) ) :
+			the_row();
+			?>
+			<section id="contact" class="c-section p-top-contact">
+				<div class="l-inner p-top-contact__inner">
+
+					<h2 class="c-section-ttl p-top-contact__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub"><?php the_sub_field( 'ttl_sub' ); ?></span>
+						<?php endif; ?>
+						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
+						<?php endif; ?>
+					</h2>
+
+					<div class="c-section__body">
+						<div class="p-top-contact__form">
+							<?php echo do_shortcode( '[contact-form-7 id="516a5e1" title="お問い合わせ"]' ); ?>
+						</div>
+					</div>
+
+				</div>
+
+			</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
 </div>
 
 <?php get_footer(); ?>

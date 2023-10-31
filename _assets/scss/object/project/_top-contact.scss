@@ -1,2 +1,16 @@
 @use "../../global-setting" as *;
 
+.p-top-contact {
+	position: relative;
+	background-color: $main-color-bg;
+
+	&__inner{
+		background-color: $white;
+		padding: 80px;
+		max-width: 1120px;
+	}
+
+	&__form{
+		width: 100%;
+	}
+}
