@@ -299,7 +299,7 @@ input[type="file"] {
 	//     @include fz(16);
 	//   }
 
-	//   @media screen and (min-width: $breakpoint-tablet-min) {
+	//   @media screen and (min-width: $breakpoint-tab-min) {
 	//     &:hover {
 	//       // background-color: $blue-hover;
 	//       box-shadow: $box-shadow3-blue;
@@ -322,7 +322,7 @@ input[type="file"] {
 	//     // box-shadow: $box-shadow;
 	//     transition: $transition;
 
-	//     @media screen and (min-width: $breakpoint-tablet-min) {
+	//     @media screen and (min-width: $breakpoint-tab-min) {
 	// 			&:hover {
 	// 				// box-shadow: none;
 	// 				box-shadow: $box-shadow3;

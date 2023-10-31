@@ -2,8 +2,8 @@
 
 // breakpoint
 $breakpoint-pc: 1600px;
-$breakpoint-tablet-min: 1025px;
-$breakpoint-tablet: 1024px;
+$breakpoint-tab-min: 1025px;
+$breakpoint-tab: 1024px;
 $breakpoint-pc-min: 768px;
 $breakpoint-min: 767px;
 $breakpoint-extra-min: 414px;
@@ -18,7 +18,7 @@ $breakpoint: 1440px;
 
 // Tablet
 @mixin is-tab() {
-	@media screen and (max-width: $breakpoint-tablet) {
+	@media screen and (max-width: $breakpoint-tab) {
 		@content;
 	}
 }

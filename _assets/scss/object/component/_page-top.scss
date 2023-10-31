@@ -16,7 +16,7 @@
 
 	$this: &;
 
-	@media screen and (min-width: $breakpoint-tablet-min) {
+	@media screen and (min-width: $breakpoint-tab-min) {
 		&:hover {
 			#{$this}__link {
 				padding-bottom: 60px;

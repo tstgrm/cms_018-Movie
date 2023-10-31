@@ -152,7 +152,7 @@ body[data-modal="active"] {
 		color: $primary;
 		transition: 0.3s;
 
-		@media screen and (min-width: $breakpoint-tablet-min) {
+		@media screen and (min-width: $breakpoint-tab-min) {
 			&:hover {
 				opacity: 0.7;
 			}

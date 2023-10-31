@@ -1,0 +1,186 @@
+@use "../../global-setting" as *;
+
+.p-top-voice {
+	&__body {
+		position: relative;
+		margin-top: 20px;
+		margin-right: -10px;
+		margin-left: -10px;
+		margin-bottom: -10px;
+
+		@include is-sp {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
+	&__slider {
+		width: 100%;
+		margin: 0 auto;
+		overflow: visible;
+		// z-index: 0;
+		// margin: 0 16px;
+	}
+
+	// &__list {
+	// 	display: flex;
+	// 	gap: 0px;
+	// 	width: 100%;
+
+	// 	@include is-sp {
+	// 		gap: 0;
+	// 	}
+	// }
+
+	&__item {
+		// width: calc(100% / 3);
+		max-width: 580px;
+		width: 100%;
+		height: auto;
+
+		@include is-sp {
+			width: 100%;
+		}
+	}
+
+	&__item-inner {
+		height: 100%;
+		padding: 10px;
+	}
+}
+
+.p-post-voice {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: $radius;
+	box-shadow: $box-shadow;
+	padding: 24px 40px;
+	height: 100%;
+	width: 560px;
+
+	&__label {
+		position: absolute;
+		width: 288px;
+		white-space: nowrap;
+		top: 0;
+		right: 0;
+		color: $white;
+		font-weight: $bold;
+		background-color: $main-color-light;
+		padding: 16px 24px;
+		text-align: center;
+		// border-radius: 0 $radius 0 0;
+
+		&--standard {
+			background-color: $main-color;
+		}
+
+		&--premium {
+			background-color: $main-color-dark;
+		}
+	}
+
+	&__profile {
+		display: inline-flex;
+		gap: 16px;
+		align-items: center;
+	}
+
+	&__img {
+		border-radius: $radius-circle;
+		width: 80px;
+		height: 80px;
+		object-fit: cover;
+	}
+
+	&__name {
+		@include fz(18);
+	}
+
+	&__ttl-wrap {
+		display: flex;
+		justify-content: center;
+		margin-top: 16px;
+	}
+
+	&__ttl {
+		@include fz(20);
+	}
+
+	&__desc {
+		margin-top: 20px;
+	}
+
+	&__ba {
+		margin-top: 40px;
+		position: relative;
+		display: flex;
+		gap: 72px;
+		justify-content: space-between;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-image: url("../img/triangles.png");
+			width: 48px;
+			height: 20px;
+		}
+	}
+
+	&__before,
+	&__after {
+		position: relative;
+		width: calc(100% - 36px);
+		padding: 20px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			color: $main-color;
+			top: -0.9em;
+			left: 1em;
+		}
+	}
+
+	&__before {
+		background-color: $main-color-bg;
+		&::before {
+			content: "Before";
+		}
+	}
+
+	&__after {
+		background-color: $main-color-bg-light;
+		&::before {
+			content: "After";
+		}
+	}
+}
+
+.p-top-voice-slider-nav {
+	&__prev {
+		left: calc(50% - 314px);
+	}
+
+	&__next {
+		right: calc(50% - 314px);
+	}
+
+	&__pagination {
+		position: relative;
+		margin-top: 40px;
+
+		.swiper-pagination-bullet {
+			background-color: $secondary;
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: $main-color;
+		}
+	}
+}

@@ -4,7 +4,7 @@
 	color: $main-color;
 	transition: opacity 0.3s ease;
 
-	@media screen and (min-width: $breakpoint-tablet-min) {
+	@media screen and (min-width: $breakpoint-tab-min) {
 		&:hover {
 			opacity: $opacity;
 		}

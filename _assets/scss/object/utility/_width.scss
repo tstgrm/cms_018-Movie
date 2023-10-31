@@ -1,0 +1,403 @@
+@use '../../global-setting' as *;
+
+.u-1\/1 {
+  width: 100%;
+}
+
+.u-1\/2 {
+  width: 50%;
+}
+
+.u-2\/2 {
+  width: 100%;
+}
+
+.u-1\/3 {
+  width: 33.33333%;
+}
+
+.u-2\/3 {
+  width: 66.66667%;
+}
+
+.u-3\/3 {
+  width: 100%;
+}
+
+.u-1\/4 {
+  width: 25%;
+}
+
+.u-2\/4 {
+  width: 50%;
+}
+
+.u-3\/4 {
+  width: 75%;
+}
+
+.u-4\/4 {
+  width: 100%;
+}
+
+.u-1\/5 {
+  width: 20%;
+}
+
+.u-2\/5 {
+  width: 40%;
+}
+
+.u-3\/5 {
+  width: 60%;
+}
+
+.u-4\/5 {
+  width: 80%;
+}
+
+.u-5\/5 {
+  width: 100%;
+}
+
+.u-1\/8 {
+  width: 12.5%;
+}
+
+.u-2\/8 {
+  width: 25%;
+}
+
+.u-3\/8 {
+  width: 37.5%;
+}
+
+.u-4\/8 {
+  width: 50%;
+}
+
+.u-5\/8 {
+  width: 62.5%;
+}
+
+.u-6\/8 {
+  width: 75%;
+}
+
+.u-7\/8 {
+  width: 87.5%;
+}
+
+.u-8\/8 {
+  width: 100%;
+}
+
+.u-1\/10 {
+  width: 10%;
+}
+
+.u-2\/10 {
+  width: 20%;
+}
+
+.u-3\/10 {
+  width: 30%;
+}
+
+.u-4\/10 {
+  width: 40%;
+}
+
+.u-5\/10 {
+  width: 50%;
+}
+
+.u-6\/10 {
+  width: 60%;
+}
+
+.u-7\/10 {
+  width: 70%;
+}
+
+.u-8\/10 {
+  width: 80%;
+}
+
+.u-9\/10 {
+  width: 90%;
+}
+
+.u-10\/10 {
+  width: 100%;
+}
+
+// tablet
+@media screen and (max-width: $breakpoint-tab) {
+  .u-1\/1\@tab {
+    width: 100%;
+  }
+
+  .u-1\/2\@tab {
+    width: 50%;
+  }
+
+  .u-2\/2\@tab {
+    width: 100%;
+  }
+
+  .u-1\/3\@tab {
+    width: 33.33333%;
+  }
+
+  .u-2\/3\@tab {
+    width: 66.66667%;
+  }
+
+  .u-3\/3\@tab {
+    width: 100%;
+  }
+
+  .u-1\/4\@tab {
+    width: 25%;
+  }
+
+  .u-2\/4\@tab {
+    width: 50%;
+  }
+
+  .u-3\/4\@tab {
+    width: 75%;
+  }
+
+  .u-4\/4\@tab {
+    width: 100%;
+  }
+
+  .u-1\/5\@tab {
+    width: 20%;
+  }
+
+  .u-2\/5\@tab {
+    width: 40%;
+  }
+
+  .u-3\/5\@tab {
+    width: 60%;
+  }
+
+  .u-4\/5\@tab {
+    width: 80%;
+  }
+
+  .u-5\/5\@tab {
+    width: 100%;
+  }
+
+  .u-1\/8\@tab {
+    width: 12.5%;
+  }
+
+  .u-2\/8\@tab {
+    width: 25%;
+  }
+
+  .u-3\/8\@tab {
+    width: 37.5%;
+  }
+
+  .u-4\/8\@tab {
+    width: 50%;
+  }
+
+  .u-5\/8\@tab {
+    width: 62.5%;
+  }
+
+  .u-6\/8\@tab {
+    width: 75%;
+  }
+
+  .u-7\/8\@tab {
+    width: 87.5%;
+  }
+
+  .u-8\/8\@tab {
+    width: 100%;
+  }
+
+  .u-1\/10\@tab {
+    width: 10%;
+  }
+
+  .u-2\/10\@tab {
+    width: 20%;
+  }
+
+  .u-3\/10\@tab {
+    width: 30%;
+  }
+
+  .u-4\/10\@tab {
+    width: 40%;
+  }
+
+  .u-5\/10\@tab {
+    width: 50%;
+  }
+
+  .u-6\/10\@tab {
+    width: 60%;
+  }
+
+  .u-7\/10\@tab {
+    width: 70%;
+  }
+
+  .u-8\/10\@tab {
+    width: 80%;
+  }
+
+  .u-9\/10\@tab {
+    width: 90%;
+  }
+
+  .u-10\/10\@tab {
+    width: 100%;
+  }
+}
+
+// sp
+@media screen and (max-width: $breakpoint-min) {
+  .u-1\/1\@sp {
+    width: 100%;
+  }
+
+  .u-1\/2\@sp {
+    width: 50%;
+  }
+
+  .u-2\/2\@sp {
+    width: 100%;
+  }
+
+  .u-1\/3\@sp {
+    width: 33.33333%;
+  }
+
+  .u-2\/3\@sp {
+    width: 66.66667%;
+  }
+
+  .u-3\/3\@sp {
+    width: 100%;
+  }
+
+  .u-1\/4\@sp {
+    width: 25%;
+  }
+
+  .u-2\/4\@sp {
+    width: 50%;
+  }
+
+  .u-3\/4\@sp {
+    width: 75%;
+  }
+
+  .u-4\/4\@sp {
+    width: 100%;
+  }
+
+  .u-1\/5\@sp {
+    width: 20%;
+  }
+
+  .u-2\/5\@sp {
+    width: 40%;
+  }
+
+  .u-3\/5\@sp {
+    width: 60%;
+  }
+
+  .u-4\/5\@sp {
+    width: 80%;
+  }
+
+  .u-5\/5\@sp {
+    width: 100%;
+  }
+
+  .u-1\/8\@sp {
+    width: 12.5%;
+  }
+
+  .u-2\/8\@sp {
+    width: 25%;
+  }
+
+  .u-3\/8\@sp {
+    width: 37.5%;
+  }
+
+  .u-4\/8\@sp {
+    width: 50%;
+  }
+
+  .u-5\/8\@sp {
+    width: 62.5%;
+  }
+
+  .u-6\/8\@sp {
+    width: 75%;
+  }
+
+  .u-7\/8\@sp {
+    width: 87.5%;
+  }
+
+  .u-8\/8\@sp {
+    width: 100%;
+  }
+
+  .u-1\/10\@sp {
+    width: 10%;
+  }
+
+  .u-2\/10\@sp {
+    width: 20%;
+  }
+
+  .u-3\/10\@sp {
+    width: 30%;
+  }
+
+  .u-4\/10\@sp {
+    width: 40%;
+  }
+
+  .u-5\/10\@sp {
+    width: 50%;
+  }
+
+  .u-6\/10\@sp {
+    width: 60%;
+  }
+
+  .u-7\/10\@sp {
+    width: 70%;
+  }
+
+  .u-8\/10\@sp {
+    width: 80%;
+  }
+
+  .u-9\/10\@sp {
+    width: 90%;
+  }
+
+  .u-10\/10\@sp {
+    width: 100%;
+  }
+}

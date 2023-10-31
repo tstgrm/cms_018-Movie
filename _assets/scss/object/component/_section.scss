@@ -46,8 +46,9 @@
 	}
 
 	&__sub {
+		display: block;
 		color: $main-color;
 		font-family: $font-en;
-		margin-bottom: 16px;
+		@include fz(16);
 	}
 }

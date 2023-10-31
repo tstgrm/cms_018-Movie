@@ -283,7 +283,7 @@
 			box-shadow: 1px 1px 0 $white, 2px 2px 0 currentColor;
 		}
 
-		@media screen and (min-width: $breakpoint-tablet-min) {
+		@media screen and (min-width: $breakpoint-tab-min) {
 			&:hover {
 				color: $blue;
 			}
@@ -323,7 +323,7 @@
 			box-shadow: 1px 1px 0 #fff, 2px 2px 0 currentColor;
 		}
 
-		@media screen and (min-width: $breakpoint-tablet-min) {
+		@media screen and (min-width: $breakpoint-tab-min) {
 			&:hover {
 				color: $primary;
 			}
