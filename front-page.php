@@ -326,19 +326,15 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-	<!-- COURSE	 -->
+	<!-- COURSE -->
 	<?php if ( get_field( 'top_course' )['disp'] ) : ?>
 		<?php
 		while ( have_rows( 'top_course' ) ) :
 			the_row();
 			?>
-			<section id="course" class="c-section p-top-course
-			<?php
-			if ( ! get_sub_field( 'btn' )['disp'] ) {
-				echo esc_attr( ' is-no-btn' );}
-			?>
-			">
-				<div class="l-inner p-top-course__inner">
+			<section id="course" class="c-section p-top-course">
+				<div class="p-top-course__inner">
+
 					<h2 class="c-section-ttl p-top-course__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
 							<span class="c-section-ttl__sub">
@@ -346,31 +342,41 @@
 							</span>
 						<?php endif; ?>
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-							<?php the_sub_field( 'ttl_main' ); ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
 						<?php endif; ?>
 					</h2>
 
-					<?php if ( get_sub_field( 'desc' ) ) : ?>
-						<p class="c-section__desc p-top-course__desc">
-							<?php the_sub_field( 'desc' ); ?>
-						</p>
-					<?php endif; ?>
-
-					<?php if ( have_rows( 'list' ) ) : ?>
+					<?php	if ( have_rows( 'course' ) ) : ?>
 						<div class="c-section__body p-top-course__body">
-							<ul class="p-top-course__list js-scrollable-sp">
+							<ul class="p-top-course__list">
 								<?php
-								while ( have_rows( 'list' ) ) :
+								while ( have_rows( 'course' ) ) :
 									the_row();
 									?>
 									<li class="p-top-course-item">
-										<div class="p-top-course-item__index">
-											STEP
-										</div>
-										<p class="p-top-course-item__ttl"><?php the_sub_field( 'ttl' ); ?></p>
-										<p class="p-top-course-item__desc"><?php the_sub_field( 'desc' ); ?></p>
+										<div class="p-top-course-item__label"><?php the_sub_field( 'label' ); ?></div>
+										<?php if ( get_sub_field( 'ttl' ) ) : ?>
+											<h3 class="p-top-course-item__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+											<p class="p-top-course-item__price"><?php the_sub_field( 'price' ); ?></p>
+										<?php endif; ?>
+										<?php
+										if ( have_rows( 'list' ) ) :
+											?>
+											<ul class="p-top-course-item__list">
+												<?php
+												while ( have_rows( 'list' ) ) :
+													the_row();
+													?>
+												<li class="p-top-course-item__item">
+													<p class="p-top-course-item__desc"><i class="c-icon-check-circle"></i><?php the_sub_field( 'desc' ); ?></p>
+												</li>
+												<?php endwhile; ?>
+											</ul>
+										<?php endif; ?>
 									</li>
-								<?php endwhile; ?>
+								<?php	endwhile; ?>
 							</ul>
 						</div>
 					<?php endif; ?>

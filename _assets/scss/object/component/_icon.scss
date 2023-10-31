@@ -1,179 +1,219 @@
 @use "../../global-setting" as *;
 
 .c-icon-check {
-  position: relative;
-  width: 35px;
+	position: relative;
+	width: 35px;
 
-  @include is-sp {
-    width: 18px;
-  }
+	@include is-sp {
+		width: 18px;
+	}
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-  }
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
 
-  &::after {
-    border-left: 7px solid #cfded1;
-    border-bottom: 7px solid #cfded1;
-    width: 31px;
-    height: 20px;
-    transform: rotate(-45deg);
-    left: 3px;
-    // top: 8px;
-    top: calc(50% - 4px);
-    transform: translateY(-50%) rotate(-45deg);
+	&::after {
+		border-left: 7px solid #cfded1;
+		border-bottom: 7px solid #cfded1;
+		width: 31px;
+		height: 20px;
+		transform: rotate(-45deg);
+		left: 3px;
+		// top: 8px;
+		top: calc(50% - 4px);
+		transform: translateY(-50%) rotate(-45deg);
 
-    @include is-sp {
-      border-left: 3.5px solid #cfded1;
-      border-bottom: 3.5px solid #cfded1;
-      width: 15px;
-      height: 10px;
-      left: 1.5px;
-      top: calc(50% - 2px);
-    }
-  }
+		@include is-sp {
+			border-left: 3.5px solid #cfded1;
+			border-bottom: 3.5px solid #cfded1;
+			width: 15px;
+			height: 10px;
+			left: 1.5px;
+			top: calc(50% - 2px);
+		}
+	}
+}
+
+.c-icon-check-circle {
+	position: relative;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: $main-color;
+	border-radius: $radius-circle;
+
+	@include is-sp {
+		width: 18px;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
+
+	&::after {
+		border-left: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		width: 8px;
+		height: 4px;
+		transform: rotate(-45deg);
+		left: 5px;
+		// top: 8px;
+		top: calc(50% - 1px);
+		transform: translateY(-50%) rotate(-45deg);
+
+		@include is-sp {
+			border-left: 3.5px solid #fff;
+			border-bottom: 3.5px solid #fff;
+			width: 15px;
+			height: 10px;
+			left: 1.5px;
+			top: calc(50% - 2px);
+		}
+	}
 }
 
 .c-icon-arrow {
-  position: relative;
-  display: inline-block;
-  vertical-align: sub;
-  width: 10px;
-  height: 1em;
+	position: relative;
+	display: inline-block;
+	vertical-align: sub;
+	width: 10px;
+	height: 1em;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 6px;
-    height: 6px;
-    margin: auto;
-    border-top: 1px solid $primary;
-    border-right: 1px solid $primary;
-    transform: rotate(45deg);
-  }
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 6px;
+		height: 6px;
+		margin: auto;
+		border-top: 1px solid $primary;
+		border-right: 1px solid $primary;
+		transform: rotate(45deg);
+	}
 }
 
 .c-link-icon-arrow-right {
-  &::after {
-    content: "";
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translate(0, -50%) rotate(45deg);
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid $primary;
-    border-top: 2px solid $primary;
-    border-radius: 1px;
-  }
+	&::after {
+		content: "";
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		transform: translate(0, -50%) rotate(45deg);
+		display: block;
+		width: 8px;
+		height: 8px;
+		border-right: 2px solid $primary;
+		border-top: 2px solid $primary;
+		border-radius: 1px;
+	}
 }
 
 .c-icon-checkbox {
-  position: relative;
+	position: relative;
 
-  @include is-sp {
-    width: 20px;
-    top: -5px;
-  }
+	@include is-sp {
+		width: 20px;
+		top: -5px;
+	}
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-  }
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
 
-  &::before {
-    width: 20px;
-    height: 20px;
-    border: 2px solid $primary;
+	&::before {
+		width: 20px;
+		height: 20px;
+		border: 2px solid $primary;
 		border-radius: 3px;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 
-  &::after {
-    border-left: 3px solid $main-color;
-    border-bottom: 3px solid $main-color;
-    width: 13px;
-    height: 5px;
-    transform: rotate(-45deg);
-    left: 4px;
-    top: calc(50% - 2px);
-    transform: translateY(-50%) rotate(-45deg);
-  }
+	&::after {
+		border-left: 3px solid $main-color;
+		border-bottom: 3px solid $main-color;
+		width: 13px;
+		height: 5px;
+		transform: rotate(-45deg);
+		left: 4px;
+		top: calc(50% - 2px);
+		transform: translateY(-50%) rotate(-45deg);
+	}
 }
 
 .c-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 
-  &::before {
-    content: "";
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
+	&::before {
+		content: "";
+		position: relative;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
 
-  &--article {
-    &::before {
-      background-image: url("../img/icon/icon_article.png");
-    }
-  }
+	&--article {
+		&::before {
+			background-image: url("../img/icon/icon_article.png");
+		}
+	}
 
-  &--trend-tag {
-    &::before {
-      background-image: url("../img/icon/icon_trend-tag.png");
-    }
-  }
+	&--trend-tag {
+		&::before {
+			background-image: url("../img/icon/icon_trend-tag.png");
+		}
+	}
 
-  &--tag {
-    &::before {
-      background-image: url("../img/icon/icon_tag.png");
-    }
-  }
+	&--tag {
+		&::before {
+			background-image: url("../img/icon/icon_tag.png");
+		}
+	}
 
-  &--search {
-    &::before {
-      background-image: url("../img/icon/icon_search.png");
+	&--search {
+		&::before {
+			background-image: url("../img/icon/icon_search.png");
 			width: 12px;
 			height: 12px;
-    }
-  }
+		}
+	}
 
-  &--twitter {
-    &::before {
-      background-image: url("../img/icon/icon_twitter.png");
+	&--twitter {
+		&::before {
+			background-image: url("../img/icon/icon_twitter.png");
 			width: 32px;
 			height: 32px;
-    }
-  }
+		}
+	}
 
-  &--facebook {
-    &::before {
-      background-image: url("../img/icon/icon_facebook.png");
+	&--facebook {
+		&::before {
+			background-image: url("../img/icon/icon_facebook.png");
 			width: 32px;
 			height: 32px;
-    }
-  }
+		}
+	}
 
-  &--line {
-    &::before {
-      background-image: url("../img/icon/icon_line.png");
+	&--line {
+		&::before {
+			background-image: url("../img/icon/icon_line.png");
 			width: 32px;
 			height: 32px;
-    }
-  }
+		}
+	}
 }

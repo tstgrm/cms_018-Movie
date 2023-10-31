@@ -1,186 +1,113 @@
 @use "../../global-setting" as *;
 
-.p-top-voice {
-	&__body {
-		position: relative;
-		margin-top: 20px;
-		margin-right: -10px;
-		margin-left: -10px;
-		margin-bottom: -10px;
+.p-top-course {
+	$this: &;
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 48px;
+		width: 100%;
+		padding: 0 48px;
 
 		@include is-sp {
-			margin-right: 0;
-			margin-left: 0;
+			gap: 0;
 		}
-	}
-
-	&__slider {
-		width: 100%;
-		margin: 0 auto;
-		overflow: visible;
-		// z-index: 0;
-		// margin: 0 16px;
-	}
-
-	// &__list {
-	// 	display: flex;
-	// 	gap: 0px;
-	// 	width: 100%;
-
-	// 	@include is-sp {
-	// 		gap: 0;
-	// 	}
-	// }
-
-	&__item {
-		// width: calc(100% / 3);
-		max-width: 580px;
-		width: 100%;
-		height: auto;
-
-		@include is-sp {
-			width: 100%;
-		}
-	}
-
-	&__item-inner {
-		height: 100%;
-		padding: 10px;
 	}
 }
 
-.p-post-voice {
+.p-top-course-item {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
-	border-radius: $radius;
-	box-shadow: $box-shadow;
-	padding: 24px 40px;
+	box-shadow: 8px 8px 0 $main-color-light;
+	padding: 24px 32px;
 	height: 100%;
-	width: 560px;
+	width: calc(100% / 3 - 32px);
+	max-width: 560px;
+	width: 100%;
+	$this: &;
+	padding-top: 112px;
+	border: 1px solid $main-color-light;
 
-	&__label {
-		position: absolute;
-		width: 288px;
-		white-space: nowrap;
-		top: 0;
-		right: 0;
-		color: $white;
-		font-weight: $bold;
-		background-color: $main-color-light;
-		padding: 16px 24px;
-		text-align: center;
-		// border-radius: 0 $radius 0 0;
+	&:nth-child(1) {
+		box-shadow: 8px 8px 0 $main-color-light;
 
-		&--standard {
+		#{$this}__label,
+		.c-icon-check-circle {
+			background-color: $main-color-light;
+		}
+	}
+	&:nth-child(2) {
+		border-color: $main-color;
+		box-shadow: 8px 8px 0 $main-color;
+
+		#{$this}__label,
+		.c-icon-check-circle {
 			background-color: $main-color;
 		}
+	}
+	&:nth-child(3) {
+		border-color: $main-color-dark;
+		box-shadow: 8px 8px 0 $main-color-dark;
 
-		&--premium {
+		#{$this}__label,
+		.c-icon-check-circle {
 			background-color: $main-color-dark;
 		}
 	}
 
-	&__profile {
-		display: inline-flex;
-		gap: 16px;
-		align-items: center;
-	}
-
-	&__img {
-		border-radius: $radius-circle;
-		width: 80px;
-		height: 80px;
-		object-fit: cover;
-	}
-
-	&__name {
-		@include fz(18);
-	}
-
-	&__ttl-wrap {
-		display: flex;
-		justify-content: center;
-		margin-top: 16px;
+	&__label {
+		position: absolute;
+		max-width: 302px;
+		width: 100%;
+		top: 24px;
+		right: 0;
+		white-space: nowrap;
+		color: $white;
+		// font-weight: $bold;
+		background-color: $main-color-light;
+		padding: 16px 24px;
+		text-align: center;
 	}
 
 	&__ttl {
 		@include fz(20);
+		text-align: center;
+		font-weight: $bold;
+	}
+
+	&__price {
+		text-align: center;
+		font-weight: $bold;
+		@include fz(28);
+
+		.tax {
+			@include fz(14);
+			font-weight: $regular;
+		}
+	}
+
+	&__list {
+		margin-top: 24px;
+	}
+
+	&__item {
+		display: flex;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
 	}
 
 	&__desc {
-		margin-top: 20px;
-	}
-
-	&__ba {
-		margin-top: 40px;
-		position: relative;
 		display: flex;
-		gap: 72px;
-		justify-content: space-between;
 
-		&::before {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background-image: url("../img/triangles.png");
-			width: 48px;
-			height: 20px;
-		}
-	}
-
-	&__before,
-	&__after {
-		position: relative;
-		width: calc(100% - 36px);
-		padding: 20px;
-
-		&::before {
-			content: "";
-			position: absolute;
-			color: $main-color;
-			top: -0.9em;
-			left: 1em;
-		}
-	}
-
-	&__before {
-		background-color: $main-color-bg;
-		&::before {
-			content: "Before";
-		}
-	}
-
-	&__after {
-		background-color: $main-color-bg-light;
-		&::before {
-			content: "After";
-		}
-	}
-}
-
-.p-top-voice-slider-nav {
-	&__prev {
-		left: calc(50% - 314px);
-	}
-
-	&__next {
-		right: calc(50% - 314px);
-	}
-
-	&__pagination {
-		position: relative;
-		margin-top: 40px;
-
-		.swiper-pagination-bullet {
-			background-color: $secondary;
-		}
-
-		.swiper-pagination-bullet-active {
-			background-color: $main-color;
+		.c-icon-check-circle {
+			position: relative;
+			top: 3px;
+			min-width: 20px;
+			margin-right: 8px;
 		}
 	}
 }
