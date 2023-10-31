@@ -78,7 +78,7 @@
   position: relative;
 
   @include is-sp {
-    width: 18px;
+    width: 20px;
     top: -5px;
   }
 
@@ -90,22 +90,23 @@
   }
 
   &::before {
-    width: 18px;
-    height: 18px;
-    border: 1px solid $primary;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $primary;
+		border-radius: 3px;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
   }
 
   &::after {
-    border-left: 3px solid $primary;
-    border-bottom: 3px solid $primary;
-    width: 18px;
-    height: 10px;
+    border-left: 3px solid $main-color;
+    border-bottom: 3px solid $main-color;
+    width: 13px;
+    height: 5px;
     transform: rotate(-45deg);
     left: 4px;
-    top: calc(50% - 4px);
+    top: calc(50% - 2px);
     transform: translateY(-50%) rotate(-45deg);
   }
 }

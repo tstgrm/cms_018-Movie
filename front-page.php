@@ -18,7 +18,13 @@
 			the_row();
 			?>
 			<div class="p-top-visual">
-				<div class="p-top-visual__bg" style="background-image:url(<?php the_sub_field( 'img' ); ?>)"></div>
+				<?php if ( get_sub_field( 'movie' ) ) : ?>
+					<div class="p-top-visual__bg">
+						<figure>
+							<video src="<?php the_sub_field( 'movie' ); ?>" autoplay loop muted playsinline></video>
+						</figure>
+					</div>
+				<?php endif; ?>
 
 				<div class="l-inner p-top-visual__inner">
 
@@ -34,9 +40,13 @@
 							</p>
 						<?php endif; ?>
 
-						<div class="p-top-visual__image u-hidden-pc">
-							<img src="<?php the_sub_field( 'img' ); ?>">
+					<!-- <?php if ( get_sub_field( 'movie' ) ) : ?>
+						<div class="p-top-visual__bg">
+							<figure class="p-top-visual">
+								<video src="<?php the_sub_field( 'movie' ); ?>" autoplay loop muted playsinline></video>
+							</figure>
 						</div>
+					<?php endif; ?> -->
 
 						<div class="p-top-visual-cta">
 							<?php if ( have_rows( 'cta_contact', 'option' ) ) : ?>
@@ -190,15 +200,15 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-	<!-- ABOUT -->
-	<?php if ( get_field( 'top_about' )['disp'] ) : ?>
+	<!-- RECOMMEND -->
+	<?php if ( get_field( 'top_recommend' )['disp'] ) : ?>
 		<?php
-		while ( have_rows( 'top_about' ) ) :
+		while ( have_rows( 'top_recommend' ) ) :
 			the_row();
 			?>
-			<section id="about" class="c-section p-top-about">
-				<div class="l-inner p-top-about__inner">
-					<h2 class="c-section-ttl p-top-about__ttl">
+			<section id="recommend" class="c-section p-top-recommend">
+				<div class="l-inner p-top-recommend__inner">
+					<h2 class="c-section-ttl p-top-recommend__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
 							<span class="c-section-ttl__sub">
 								<?php the_sub_field( 'ttl_sub' ); ?>
@@ -209,31 +219,30 @@
 						<?php endif; ?>
 					</h2>
 
-					<?php if ( get_sub_field( 'desc' ) ) : ?>
-						<p class="c-section__desc p-top-about__desc">
-							<?php the_sub_field( 'desc' ); ?>
-						</p>
-					<?php endif; ?>
-
-					<?php if ( have_rows( 'list' ) ) : ?>
-						<div class="c-section__body p-top-about__body">
-							<ul class="p-top-about__list">
+					<div class="c-section__body p-top-recommend__body">
+						<?php
+							$img_sp = get_sub_field( 'img_sp' ) ? get_sub_field( 'img_sp' ) : get_sub_field( 'img' );
+						?>
+						<figure class="p-top-recommend__img u-ratio-4/3">
+							<picture>
+								<source srcset="<?php the_sub_field( 'img_sp' ); ?>" media="(max-width: 1024px)">
+								<source srcset="<?php the_sub_field( 'img' ); ?>" media="(min-width: 1025px)">
+								<img src="<?php the_sub_field( 'img' ); ?>" class="u-object-fill u-ratio-4/3">
+							</picture>
+						</figure>
+						<?php if ( have_rows( 'list' ) ) : ?>
+							<ul class="p-top-recommend__list">
 								<?php
 								while ( have_rows( 'list' ) ) :
 									the_row();
 									?>
-									<li class="p-top-about-item">
-										<div class="p-top-about-item__thumb">
-											<figure class="c-figure c-figure--square p-top-about-item__figure">
-												<img src="<?php the_sub_field( 'img' ); ?>" alt="" class="c-figure__img p-top-about-item__img">
-											</figure>
-										</div>
-										<p class="p-top-about-item__desc"><?php the_sub_field( 'desc' ); ?></p>
+									<li class="p-top-recommend-item">
+										<p class="p-top-recommend-item__desc"><i class="c-icon-checkbox"></i><?php the_sub_field( 'desc' ); ?></p>
 									</li>
 								<?php endwhile; ?>
 							</ul>
-						</div>
-					<?php endif; ?>
+						<?php endif; ?>
+					</div>
 
 				</div>
 			</section>

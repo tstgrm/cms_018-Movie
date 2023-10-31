@@ -15,7 +15,7 @@ body {
 	font-family: $font;
 	color: $primary;
 	@include fz(16);
-	font-weight: $medium;
+	font-weight: $regular;
 	line-height: 1.6;
 	// word-wrap: break-word;
 	// word-break: normal;
