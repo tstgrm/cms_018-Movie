@@ -103,7 +103,7 @@
 		while ( have_rows( 'top_voice' ) ) :
 			the_row();
 			?>
-			<section id="voice" class="c-section p-top-voice" style="background-image:url(<?php the_sub_field( 'bg' ); ?>)">
+			<section id="voice" class="c-section p-top-voice">
 				<div class="p-top-voice__inner">
 
 					<h2 class="c-section-ttl p-top-voice__ttl">
@@ -135,25 +135,25 @@
 										?>
 										<li class="p-top-voice__item swiper-slide">
 											<div class="p-top-voice__item-inner">
-												<div class="p-post-voice">
-													<?php
-														$course = get_sub_field( 'course' );
-													switch ( $course['value'] ) {
-														case 'basic':
-															$select_course = '';
-															break;
-														case 'standard':
-															$select_course = ' p-post-voice__label--standard';
-															break;
-														case 'premium':
-															$select_course = ' p-post-voice__label--premium';
-															break;
-														default:
-															$select_course = '';
-															break;
-													}
-													?>
-													<div class="p-post-voice__label<?php echo esc_attr( $select_course ); ?>"><?php echo esc_html( $course['label'] ); ?></div>
+												<?php
+													$course = get_sub_field( 'course' );
+												switch ( $course['value'] ) {
+													case 'basic':
+														$select_course = '--basic';
+														break;
+													case 'standard':
+														$select_course = '--standard';
+														break;
+													case 'premium':
+														$select_course = '--premium';
+														break;
+													default:
+														$select_course = '';
+														break;
+												}
+												?>
+												<div class="p-post-voice<?php echo esc_attr( ' p-post-voice' . $select_course ); ?> js-match-height">
+													<div class="p-post-voice__label"><?php echo esc_html( $course['label'] ); ?></div>
 													<div class="p-post-voice__profile">
 														<img src="<?php the_sub_field( 'img' ); ?>" alt="<?php the_sub_field( 'name' ); ?>" class="p-post-voice__img">
 														<p class="p-post-voice__name"><?php the_sub_field( 'name' ); ?></p>
@@ -171,14 +171,16 @@
 														while ( have_rows( 'before_after' ) ) :
 															the_row();
 															?>
-															<div class="p-post-voice__ba">
+															<dl class="p-post-voice__ba">
 																<div class="p-post-voice__before">
-																	<?php the_sub_field( 'before' ); ?>
+																	<dt>Before</dt>
+																	<dd><?php the_sub_field( 'before' ); ?></dd>
 																</div>
 																<div class="p-post-voice__after">
-																	<?php the_sub_field( 'after' ); ?>
+																	<dt>After</dt>
+																	<dd><?php the_sub_field( 'after' ); ?></dd>
 																</div>
-															</div>
+															</dl>
 														<?php endwhile; ?>
 													<?php endif; ?>
 												</div>
@@ -186,11 +188,9 @@
 										</li>
 									<?php	endwhile; ?>
 								</ul>
-								<div class="p-top-voice-slider-nav">
-									<div class="p-top-voice-slider-nav__prev swiper-button-prev"></div>
-									<div class="p-top-voice-slider-nav__next swiper-button-next"></div>
-									<div class="p-top-voice-slider-nav__pagination swiper-pagination"></div>
-								</div>
+								<div class="p-top-voice-slider-btn p-top-voice-slider-btn--prev swiper-button-prev"></div>
+								<div class="p-top-voice-slider-btn p-top-voice-slider-btn--next swiper-button-next"></div>
+								<div class="p-top-voice-slider__pagination swiper-pagination"></div>
 							</div>
 						</div>
 					<?php endif; ?>
@@ -514,7 +514,7 @@
 			the_row();
 			?>
 			<section id="contact" class="c-section p-top-contact">
-				<div class="l-inner l-inner--narrow p-top-contact__inner">
+				<div class="l-inner p-top-contact__inner">
 
 					<h2 class="c-section-ttl p-top-contact__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
@@ -527,7 +527,7 @@
 						<?php endif; ?>
 					</h2>
 
-					<div class="c-section__body">
+					<div class="l-inner l-inner--narrow c-section__body u-1/1">
 						<div class="p-top-contact__form">
 							<?php echo do_shortcode( '[contact-form-7 id="516a5e1" title="お問い合わせ"]' ); ?>
 						</div>

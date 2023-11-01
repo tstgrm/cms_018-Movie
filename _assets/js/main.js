@@ -121,8 +121,10 @@ $(window).on("load", function () {
 			},
 			slidesPerView: 1,
 			centeredSlides: true,
-			loopAdditionalSlides: 1, //クローンの数
+			loopAdditionalSlides: 3, //クローンの数
 			spaceBetween: 0,
+			observer: true, //これが大事！
+			observeParents: true, //これが大事！
 			breakpoints: {
 				// スライドの表示枚数：500px以上の場合
 				768: {
@@ -132,6 +134,8 @@ $(window).on("load", function () {
 			},
 		});
 	}
+
+	$(".js-match-height").matchHeight();
 
 	/*----------------------------------------
 		load contnet

@@ -3,10 +3,11 @@
 .p-top-voice {
 	&__body {
 		position: relative;
-		margin-top: 20px;
-		margin-right: -10px;
-		margin-left: -10px;
-		margin-bottom: -10px;
+		// margin-top: 20px;
+		// margin-right: -10px;
+		// margin-left: -10px;
+		// margin-bottom: -10px;
+		margin-top: 38px;
 
 		@include is-sp {
 			margin-right: 0;
@@ -22,21 +23,15 @@
 		// margin: 0 16px;
 	}
 
-	// &__list {
-	// 	display: flex;
-	// 	gap: 0px;
-	// 	width: 100%;
-
-	// 	@include is-sp {
-	// 		gap: 0;
-	// 	}
-	// }
+	&__list {
+		height: auto;
+	}
 
 	&__item {
 		// width: calc(100% / 3);
 		max-width: 580px;
 		width: 100%;
-		height: auto;
+		// height: auto;
 
 		@include is-sp {
 			width: 100%;
@@ -44,7 +39,7 @@
 	}
 
 	&__item-inner {
-		height: 100%;
+		// height: 100%;
 		padding: 10px;
 	}
 }
@@ -56,9 +51,30 @@
 	overflow: hidden;
 	border-radius: $radius;
 	box-shadow: $box-shadow;
+	// border: 1px solid $main-color-light;
+	// box-shadow: 8px 8px 0 $main-color-light;
 	padding: 24px 40px;
-	height: 100%;
+	// height: 100%;
 	width: 560px;
+	$this: &;
+
+	&--standard {
+		// border: 1px solid $main-color;
+		// box-shadow: 8px 8px 0 $main-color;
+
+		#{$this}__label {
+			background-color: $main-color;
+		}
+	}
+
+	&--premium {
+		// border: 1px solid $main-color-dark;
+		// box-shadow: 8px 8px 0 $main-color-dark;
+
+		#{$this}__label {
+			background-color: $main-color-dark;
+		}
+	}
 
 	&__label {
 		position: absolute;
@@ -71,15 +87,6 @@
 		background-color: $main-color-light;
 		padding: 16px 24px;
 		text-align: center;
-		// border-radius: 0 $radius 0 0;
-
-		&--standard {
-			background-color: $main-color;
-		}
-
-		&--premium {
-			background-color: $main-color-dark;
-		}
 	}
 
 	&__profile {
@@ -138,8 +145,7 @@
 		width: calc(100% - 36px);
 		padding: 20px;
 
-		&::before {
-			content: "";
+		dt {
 			position: absolute;
 			color: $main-color;
 			top: -0.9em;
@@ -149,38 +155,34 @@
 
 	&__before {
 		background-color: $main-color-bg;
-		&::before {
-			content: "Before";
-		}
 	}
 
 	&__after {
 		background-color: $main-color-bg-light;
-		&::before {
-			content: "After";
-		}
 	}
 }
 
-.p-top-voice-slider-nav {
-	&__prev {
+.p-top-voice-slider-btn {
+	margin-top: -48px;
+
+	&--prev {
 		left: calc(50% - 314px);
 	}
 
-	&__next {
+	&--next {
 		right: calc(50% - 314px);
 	}
+}
 
-	&__pagination {
-		position: relative;
-		margin-top: 40px;
+.p-top-voice-slider__pagination {
+	position: relative;
+	margin-top: 40px;
 
-		.swiper-pagination-bullet {
-			background-color: $secondary;
-		}
+	.swiper-pagination-bullet {
+		background-color: $secondary;
+	}
 
-		.swiper-pagination-bullet-active {
-			background-color: $main-color;
-		}
+	.swiper-pagination-bullet-active {
+		background-color: $main-color;
 	}
 }
