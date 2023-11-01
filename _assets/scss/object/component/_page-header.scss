@@ -9,11 +9,9 @@
 		padding: 64px 0;
 	}
 
-	&__inner {
-		position: relative;
-		z-index: 6;
-		text-align: center;
-	}
+	// &__inner {
+	// 	position: relative;
+	// }
 
 	&__desc {
 		margin-top: 40px;
@@ -58,7 +56,7 @@
 		@include fz(40);
 		// font-weight: $bold;
 		// line-height: 1.4;
-		line-height: 1.1;
+		// line-height: 1.1;
 		// letter-spacing: 0.05em;
 		// margin-left: -2px;
 
@@ -69,17 +67,12 @@
 
 	&__sub {
 		display: block;
-		margin-top: 16px;
+		// margin-bottom: 16px;
 		@include fz(16);
-		line-height: 1;
+		// line-height: 1;
 		// letter-spacing: 0.1em;
-
-		@include is-sp {
-			margin-top: 8px;
-		}
 	}
 }
-
 
 // archive-case slider
 .c-page-header-slider {

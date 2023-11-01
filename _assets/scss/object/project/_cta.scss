@@ -1,0 +1,45 @@
+@use "../../global-setting" as *;
+
+.p-cta {
+	position: relative;
+	padding: 40px 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: $main-color-alpha;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+	}
+
+	&__inner {
+		padding: 40px 120px;
+		position: relative;
+		z-index: 2;
+		max-width: 640px;
+		background-color: $white;
+		margin: 0 auto;
+	}
+
+	&__ttl {
+		@include fz(32);
+	}
+
+	&__desc {
+		margin-top: 20px;
+	}
+
+	&__btn {
+		margin-top: 32px;
+
+		a {
+			max-width: 400px;
+			height: 80px;
+			@include fz(24);
+		}
+	}
+}

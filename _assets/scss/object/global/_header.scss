@@ -10,7 +10,7 @@ body:not(.home),
 body[data-modal-menu="active"] {
 	.g-header {
 		box-shadow: none;
-		background-color: $white;
+		// background-color: $white;
 	}
 
 	.g-header-sp-menu-icon__line {
@@ -42,12 +42,13 @@ body[data-modal="active"] {
 	left: 0;
 	$this: &;
 	transition: 0.3s;
-	color: $white;
+	// color: $white;
+	background-color: $white;
 
 	&.is-scroll {
 		box-shadow: $box-shadow-header;
-		background-color: $white;
-		color: $primary;
+		// background-color: $white;
+		// color: $primary;
 	}
 
 	body:not(.home) & {

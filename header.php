@@ -48,8 +48,8 @@
 					</h1>
 			<?php endif; ?>
 
-			<?php	if ( get_field( 'nav', 'option' ) ) : ?>
-				<nav class="g-header-nav">
+			<nav class="g-header-nav">
+				<?php	if ( get_field( 'nav', 'option' ) ) : ?>
 					<ul class="g-header-nav__list">
 						<?php
 						while ( have_rows( 'nav', 'option' ) ) :
@@ -82,49 +82,44 @@
 								</li>
 						<?php endwhile; ?>
 					</ul>
+				<?php endif; ?>
 
+				<?php if ( get_field( 'header_cta', 'option' )['disp'] ) : ?>
 					<ul class="g-header-cta-nav">
-						<?php if ( get_field( 'header_contact', 'option' ) && have_rows( 'cta_contact', 'option' ) ) : ?>
+						<?php
+						while ( have_rows( 'header_cta', 'option' ) ) :
+							the_row();
+							?>
 							<?php
-							while ( have_rows( 'cta_contact', 'option' ) ) :
-								the_row();
-								if ( have_rows( 'btn', 'option' ) ) :
-									while ( have_rows( 'btn', 'option' ) ) :
-										the_row();
-										?>
+							$page_link = '';
+							$target    = false;
+							if ( get_sub_field( 'link' ) ) {
+								$page_link = get_sub_field( 'link' );
+							} else {
+								// 外部リンクが設定されてるとき.
+								$page_link = get_sub_field( 'url' );
+								if ( strpos( $page_link, isset( $_SERVER['SERVER_NAME'] ) ) === false ) :
+									$target = true;
+									endif;
+							}
+							if ( get_sub_field( 'tab' ) ) {
+								// アンカーリンクが設定されているとき.
+								$page_link .= '#' . get_sub_field( 'tab' );
+							}
+							?>
+								<li class="g-header-cta-nav__item g-header-cta-nav__item--contact c-btn c-btn--cv">
+									<a href="<?php echo esc_url( $page_link ); ?>"
 										<?php
-										$page_link = '';
-										$target    = false;
-										if ( get_sub_field( 'link' ) ) {
-											$page_link = get_sub_field( 'link' );
-										} else {
-											// 外部リンクが設定されてるとき.
-											$page_link = get_sub_field( 'url' );
-											if ( strpos( $page_link, isset( $_SERVER['SERVER_NAME'] ) ) === false ) :
-												$target = true;
-												endif;
-										}
-										if ( get_sub_field( 'tab' ) ) {
-											// アンカーリンクが設定されているとき.
-											$page_link .= '#' . get_sub_field( 'tab' );
-										}
+										if ( $target ) {
+											echo ' target="_blank" rel="nofollow noopener"';}
 										?>
-											<li class="g-header-cta-nav__item g-header-cta-nav__item--contact c-btn c-btn--cv">
-												<a href="<?php echo esc_url( $page_link ); ?>"
-													<?php
-													if ( $target ) {
-														echo ' target="_blank" rel="nofollow noopener"';}
-													?>
-												><?php the_sub_field( 'ttl' ); ?></a>
-											</li>
-									<?php endwhile; ?>
-								<?php endif; ?>
-							<?php endwhile; ?>
-						<?php endif; ?>
-
+									><?php the_sub_field( 'ttl' ); ?></a>
+								</li>
+						<?php endwhile; ?>
 					</ul>
-				</nav>
-			<?php endif; ?>
+				<?php endif; ?>
+			</nav>
+
 
 			<ul class="g-header-sp-menu">
 				<li class="g-header-sp-menu__item js-modal-menu-toggle">

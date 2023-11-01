@@ -16,7 +16,7 @@ Template Name: PRIVACYテンプレート
 	<?php get_template_part( 'parts/page-header' ); ?>
 
 	<section class="p-privacy">
-		<div class="l-inner l-inner--tiny p-privacy__inner">
+		<div class="l-inner p-privacy__inner">
 
 			<h2 class="p-privacy__ttl">
 				<?php the_field( 'privacy_ttl' ); ?>

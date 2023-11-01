@@ -215,7 +215,9 @@
 							</span>
 						<?php endif; ?>
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-							<?php the_sub_field( 'ttl_main' ); ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
 						<?php endif; ?>
 					</h2>
 
@@ -326,6 +328,8 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 
+	<?php get_template_part( 'parts/cta' ); ?>
+
 	<!-- COURSE -->
 	<?php if ( get_field( 'top_course' )['disp'] ) : ?>
 		<?php
@@ -406,7 +410,9 @@
 							</span>
 						<?php endif; ?>
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-							<?php the_sub_field( 'ttl_main' ); ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
 						<?php endif; ?>
 					</h2>
 
