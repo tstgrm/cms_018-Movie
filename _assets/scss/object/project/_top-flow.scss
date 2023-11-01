@@ -3,10 +3,8 @@
 .p-top-flow {
 	position: relative;
 
-	&.is-no-btn {
-		@include is-sp {
-			padding-bottom: 32px;
-		}
+	&__body {
+		margin-top: 66px;
 	}
 
 	.scroll-hint-icon-wrap {
@@ -19,28 +17,13 @@
 		height: 90px;
 	}
 
-	&__ttl {
-		text-align: center;
-
-		span {
-			color: $blue;
-		}
-	}
-
-	&__desc {
-		margin-top: 24px;
-	}
-
-	&__body {
-		position: relative;
-	}
-
 	&__list {
 		position: relative;
 		display: flex;
 		justify-content: space-between;
-		row-gap: 24px;
+		row-gap: 40px;
 		width: 100%;
+		// border-top: 1px dashed $main-color;
 
 		@include is-sp {
 			@include l-window-full();
@@ -51,12 +34,18 @@
 		&::before {
 			content: "";
 			position: absolute;
-			left: 110px;
-			right: 5vw;
-			top: 44px;
-			background-color: $blue;
-			height: 2px;
+			left: 160px;
+			right: 160px;
+			top: -12px;
+			// background-color: $blue;
+			height: 0;
 			z-index: -1;
+			border-top: 1px dashed $main-color;
+
+			@media screen and (max-width: 1115px) {
+				left: 15vw;
+				right: 15vw;
+			}
 
 			@include is-sp {
 				width: 800px;
@@ -69,37 +58,57 @@
 }
 
 .p-top-flow-item {
-	width: 220px;
-	column-gap: 32px;
-	counter-increment: item;
+	position: relative;
+	width: 352px;
+	width: calc(100% / 3 - 26.6666666667px);
 	z-index: 1;
 	text-align: center;
+	$this: &;
 
 	@include is-sp {
 		width: 200px;
 		flex-shrink: 0;
 	}
 
+	&:nth-child(1) {
+		#{$this}__index {
+			background-image: url(../img/step_01.png);
+		}
+	}
+	&:nth-child(2) {
+		#{$this}__index {
+			background-image: url(../img/step_02.png);
+		}
+	}
+	&:nth-child(3) {
+		#{$this}__index {
+			background-image: url(../img/step_03.png);
+		}
+	}
+
 	&__index {
 		display: flex;
-		width: 88px;
-		height: 88px;
+		width: 48px;
+		width: 56px;
+		height: 73px;
+		height: 85px;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		color: $blue;
-		border-radius: $radius-circle;
-		border: 2px solid $blue;
 		margin: 0 auto;
-		background-color: $white;
-		font-family: $font-en;
-		font-weight: $semi-bold;
-		line-height: 1.2;
-		letter-spacing: 0.04em;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 
-		&::after {
-			content: "0" counter(item);
+		&::before {
+			content: "";
+			position: absolute;
+			top: -18px;
 			display: block;
+			width: 13px;
+			height: 13px;
+			background-color: $main-color;
+			transform: rotate(45deg);
 		}
 	}
 
@@ -107,7 +116,6 @@
 		margin-top: 16px;
 		@include fz(20);
 		font-weight: $bold;
-		line-height: 1.6;
 
 		@include is-sp {
 			@include fz(16);
@@ -115,10 +123,9 @@
 	}
 
 	&__desc {
-		margin-top: 8px;
+		margin-top: 16px;
 		text-align: center;
 		color: $secondary;
-		line-height: 1.6;
 
 		span {
 			display: block;

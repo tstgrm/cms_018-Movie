@@ -48,11 +48,9 @@
 
 	.c-icon-checkbox {
 		padding-right: 36px;
-		top: 1px;
 
 		@include is-sp {
 			position: relative;
-			top: 1px;
 		}
 	}
 

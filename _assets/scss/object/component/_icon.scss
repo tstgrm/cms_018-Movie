@@ -132,22 +132,32 @@
 	&::before {
 		width: 20px;
 		height: 20px;
-		border: 2px solid $primary;
-		border-radius: 3px;
+		border: 1px solid $primary;
+		// border-radius: 3px;
 		left: 0;
-		top: 50%;
+		top: calc(50% + 1px);
 		transform: translateY(-50%);
 	}
 
 	&::after {
-		border-left: 3px solid $main-color;
-		border-bottom: 3px solid $main-color;
+		// border-left: 3px solid $main-color;
+		// border-bottom: 3px solid $main-color;
+		// width: 13px;
+		// height: 5px;
+		// transform: rotate(-45deg);
+		// left: 4px;
+		// top: calc(50% - 2px);
+		// transform: translateY(-50%) rotate(-45deg);
+
+		top: calc(50% - 1px);
+		left: 3px;
+		transform: translateY(-50%) rotate(135deg);
 		width: 13px;
 		height: 5px;
-		transform: rotate(-45deg);
-		left: 4px;
-		top: calc(50% - 2px);
-		transform: translateY(-50%) rotate(-45deg);
+		margin: 0;
+		border-right: 3px solid $main-color;
+		border-top: 3px solid $main-color;
+		// cursor: pointer;
 	}
 }
 

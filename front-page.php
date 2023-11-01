@@ -398,7 +398,7 @@
 				echo esc_attr( ' is-no-btn' );}
 			?>
 			">
-				<div class="l-inner p-top-flow__inner">
+				<div class="l-inner l-inner--narrow p-top-flow__inner">
 					<h2 class="c-section-ttl p-top-flow__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
 							<span class="c-section-ttl__sub">
@@ -424,9 +424,7 @@
 									the_row();
 									?>
 									<li class="p-top-flow-item">
-										<div class="p-top-flow-item__index">
-											STEP
-										</div>
+										<div class="p-top-flow-item__index"></div>
 										<p class="p-top-flow-item__ttl"><?php the_sub_field( 'ttl' ); ?></p>
 										<p class="p-top-flow-item__desc"><?php the_sub_field( 'desc' ); ?></p>
 									</li>
@@ -516,7 +514,7 @@
 			the_row();
 			?>
 			<section id="contact" class="c-section p-top-contact">
-				<div class="l-inner p-top-contact__inner">
+				<div class="l-inner l-inner--narrow p-top-contact__inner">
 
 					<h2 class="c-section-ttl p-top-contact__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
