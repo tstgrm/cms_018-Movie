@@ -333,7 +333,7 @@
 			the_row();
 			?>
 			<section id="course" class="c-section p-top-course">
-				<div class="p-top-course__inner">
+				<div class="l-inner p-top-course__inner">
 
 					<h2 class="c-section-ttl p-top-course__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>

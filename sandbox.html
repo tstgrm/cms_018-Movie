@@ -1,0 +1,35 @@
+<p class="c-form__lead">ご予約やお問い合わせは以下のフォームより承ります。<br>送信内容をご確認のうえ、問題ございませんでしたら「送信する」ボタンをクリックしてください。</p>
+<div class="c-form">
+	<table class="c-form__table">
+		<tbody class="c-form__tbody">
+			<tr class="c-form__row">
+				<th class="c-form__ttl"><label class="c-form__label" for=""><span class="c-form__label-txt">会社名</span><span class="c-form__label-val is-require">必須</span></label></th>
+				<td class="c-form__cnt">[text* company class:c-form__input placeholder "株式会社○○"]</td>
+			</tr>
+			<tr class="c-form__row">
+				<th class="c-form__ttl"><label class="c-form__label" for=""><span class="c-form__label-txt">ご担当者名</span><span class="c-form__label-val is-require">必須</span></label></th>
+				<td class="c-form__cnt">[text* your-name class:c-form__input placeholder "山田 太郎"]</td>
+			</tr>
+			<tr class="c-form__row">
+				<th class="c-form__ttl"><label class="c-form__label" for=""><span class="c-form__label-txt">メールアドレス</span><span class="c-form__label-val is-require">必須</span></label></th>
+				<td class="c-form__cnt">[email* email class:c-form__input placeholder "sample@example.com"]</td>
+			</tr>
+			<tr class="c-form__row">
+				<th class="c-form__ttl"><label class="c-form__label" for=""><span class="c-form__label-txt">電話番号</span><span class="c-form__label-val is-require">必須</span></label></th>
+				<td class="c-form__cnt">[tel* tel class:c-form__input placeholder "03-1234-5678"]</td>
+			</tr>
+			<tr class="c-form__row">
+				<th class="c-form__ttl"><label class="c-form__label" for=""><span class="c-form__label-txt">お問い合わせ内容</span></label></th>
+				<td class="c-form__cnt">[textarea question class:c-form__textarea placeholder "導入を検討しているため、料金の詳細が知りたいです。"]</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="c-form-consent">
+		<p class="c-form-consent__desc"><a href="./privacy" target="_blank" rel="noopener" style="text-decoration:underline;">プライバリーポリシー</a>をご確認のうえ「同意する」にチェックを入れてください。</p>
+		<p class="c-form-consent__checkbox">
+			[acceptance privacy]同意する[/acceptance]
+		</p>
+	</div>
+	<div class="c-form__btn-area">[submit class:c-form__btn "送信する"]</div>
+</div>
