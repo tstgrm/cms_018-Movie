@@ -7,6 +7,11 @@
 	background-size: cover;
 	background-position: center;
 
+	@include is-sp {
+		padding-left: $side-padding-sp;
+		padding-right: $side-padding-sp;
+	}
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -26,23 +31,45 @@
 		max-width: 640px;
 		background-color: $white;
 		margin: 0 auto;
+
+		@include is-sp {
+			padding: 24px;
+		}
 	}
 
 	&__ttl {
 		@include fz(32);
+
+		@include is-sp {
+			@include fz(24);
+		}
 	}
 
 	&__desc {
 		margin-top: 20px;
+
+		@include is-sp {
+			@include fz(14);
+			margin-top: 16px;
+		}
 	}
 
 	&__btn {
 		margin-top: 32px;
 
+		@include is-sp {
+			margin-top: 24px;
+		}
+
 		a {
 			max-width: 400px;
 			height: 80px;
 			@include fz(24);
+
+			@include is-sp {
+				@include fz(18);
+				height: 56px;
+			}
 		}
 	}
 }

@@ -30,6 +30,8 @@
 
 	@include is-sp {
 		margin-top: 0;
+		flex-direction: column;
+		gap: 32px;
 	}
 
 	& + #{$this} {
@@ -43,10 +45,18 @@
 	&:nth-child(even) {
 		#{$this}__content {
 			order: 2;
+
+			@include is-sp {
+				order: 1;
+			}
 		}
 
 		#{$this}__image {
 			order: 1;
+
+			@include is-sp {
+				order: 2;
+			}
 		}
 	}
 
@@ -104,7 +114,8 @@
 		width: calc(50% - 28px);
 
 		@include is-sp {
-			order: 2;
+			width: 100%;
+			order: 1;
 		}
 	}
 
@@ -121,6 +132,11 @@
 			1;
 		border: 1px solid;
 
+		@include is-sp {
+			width: 80px;
+			height: 80px;
+		}
+
 		&::before {
 			content: "";
 			position: relative;
@@ -129,28 +145,16 @@
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
+
+			@include is-sp {
+				width: 40px;
+				height: 48px;
+			}
 		}
 
 		@include is-sp {
 			margin-bottom: 8px;
 		}
-
-		// &::before {
-		// 	content: "";
-		// 	position: absolute;
-		// 	top: 50%;
-		// 	transform: translateY(-50%);
-		// 	left: 0;
-		// 	height: 1px;
-		// 	width: 32px;
-		// 	background-color: $blue;
-		// 	display: block;
-		// }
-
-		// &::after {
-		// 	content: "0" counter(section);
-		// 	margin-left: 0.5em;
-		// }
 	}
 
 	&__ttl {
@@ -161,7 +165,9 @@
 		z-index: 1;
 
 		@include is-sp {
+			margin-top: 10px;
 			@include fz(20);
+			letter-spacing: 0;
 		}
 
 		span {
@@ -172,11 +178,12 @@
 	&__desc {
 		margin-top: 24px;
 		line-height: 2;
-		font-weight: $semi-bold;
+		// font-weight: $semi-bold;
 		z-index: 1;
 
 		@include is-sp {
-			margin-top: 16px;
+			margin-top: 12px;
+			@include fz(14);
 		}
 	}
 
@@ -185,7 +192,8 @@
 		z-index: 1;
 
 		@include is-sp {
-			order: 1;
+			width: 100%;
+			order: 2;
 		}
 
 		figure {
@@ -200,7 +208,11 @@
 				width: 100%;
 				height: 100%;
 				z-index: -1;
-				background-image: linear-gradient(to right, $main-color-dark 0, $main-color-light 100%);
+				background-image: linear-gradient(
+					to right,
+					$main-color-dark 0,
+					$main-color-light 100%
+				);
 				transform: translate(12px, 12px);
 				box-shadow: none;
 			}

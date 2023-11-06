@@ -13,6 +13,11 @@
 	border-radius: $radius-circle;
 	background-color: #fff;
 
+	@include is-sp {
+		width: 36px;
+		height: 36px;
+	}
+
 	&::after {
 		color: $primary;
 		content: "";

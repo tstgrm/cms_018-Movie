@@ -49,7 +49,9 @@
 					</ul>
 				<?php endif; ?>
 
-				<?php if ( have_rows( 'sub_nav', 'option' ) ) : ?>
+				<?php
+				/*
+				if ( have_rows( 'sub_nav', 'option' ) ) : ?>
 					<div class="g-modal-menu-sub-nav">
 						<ul class="g-modal-menu-sub-nav__list">
 							<?php
@@ -91,7 +93,8 @@
 							<?php endwhile; ?>
 						</ul>
 					</div>
-				<?php endif; ?>
+				<?php endif; */
+				?>
 			</nav>
 
 			<?php if ( get_field( 'cta_contact', 'option' )['disp'] ) : ?>
@@ -124,7 +127,7 @@
 									}
 									?>
 									<li class="g-modal-menu-cta__item">
-										<div class="g-modal-menu-cta__btn c-btn c-btn--blue">
+										<div class="g-modal-menu-cta__btn c-btn c-btn--cv">
 											<a href="<?php echo esc_url( $page_link ); ?>"
 											<?php
 											if ( $target ) {

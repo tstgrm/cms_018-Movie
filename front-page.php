@@ -222,7 +222,7 @@
 					</h2>
 
 					<div class="c-section__body p-top-recommend__body">
-						<div class="u-col2 u-1/1">
+						<div class="u-pc-col2 u-1/1">
 							<?php
 								$img_sp = get_sub_field( 'img_sp' ) ? get_sub_field( 'img_sp' ) : get_sub_field( 'img' );
 							?>
@@ -353,35 +353,54 @@
 					</h2>
 
 					<?php	if ( have_rows( 'course' ) ) : ?>
-						<div class="c-section__body p-top-course__body">
-							<ul class="p-top-course__list">
-								<?php
-								while ( have_rows( 'course' ) ) :
-									the_row();
-									?>
-									<li class="p-top-course-item">
-										<div class="p-top-course-item__label"><?php the_sub_field( 'label' ); ?></div>
-										<?php if ( get_sub_field( 'ttl' ) ) : ?>
-											<h3 class="p-top-course-item__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
-											<p class="p-top-course-item__price"><?php the_sub_field( 'price' ); ?></p>
-										<?php endif; ?>
-										<?php
-										if ( have_rows( 'list' ) ) :
-											?>
-											<ul class="p-top-course-item__list">
-												<?php
-												while ( have_rows( 'list' ) ) :
-													the_row();
-													?>
-												<li class="p-top-course-item__item">
-													<p class="p-top-course-item__desc"><i class="c-icon-check-circle"></i><?php the_sub_field( 'desc' ); ?></p>
-												</li>
-												<?php endwhile; ?>
-											</ul>
-										<?php endif; ?>
-									</li>
-								<?php	endwhile; ?>
-							</ul>
+						<div class="c-section__body p-top-course__body js-top-course-slider">
+							<div class="p-top-course__slider swiper">
+								<ul class="p-top-course__list swiper-wrapper">
+									<?php
+									$count = 0;
+									while ( have_rows( 'course' ) ) :
+										the_row();
+										$count++;
+										$course = '';
+										switch ( $count ) {
+											case 1:
+												$course = ' p-top-course-item--basic';
+												break;
+											case 2:
+												$course = ' p-top-course-item--standard';
+												break;
+											case 3:
+												$course = ' p-top-course-item--premium';
+												break;
+										}
+										?>
+										<li class="p-top-course-item swiper-slide<?php echo esc_attr( $course ); ?>">
+											<div class="p-top-course-item__label"><?php the_sub_field( 'label' ); ?></div>
+											<?php if ( get_sub_field( 'ttl' ) ) : ?>
+												<h3 class="p-top-course-item__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+												<p class="p-top-course-item__price"><?php the_sub_field( 'price' ); ?></p>
+											<?php endif; ?>
+											<?php
+											if ( have_rows( 'list' ) ) :
+												?>
+												<ul class="p-top-course-item__list">
+													<?php
+													while ( have_rows( 'list' ) ) :
+														the_row();
+														?>
+													<li class="p-top-course-item__item">
+														<p class="p-top-course-item__desc"><i class="c-icon-check-circle"></i><?php the_sub_field( 'desc' ); ?></p>
+													</li>
+													<?php endwhile; ?>
+												</ul>
+											<?php endif; ?>
+										</li>
+									<?php	endwhile; ?>
+								</ul>
+								<div class="p-top-course-slider-btn p-top-course-slider-btn--prev swiper-button-prev"></div>
+								<div class="p-top-course-slider-btn p-top-course-slider-btn--next swiper-button-next"></div>
+								<div class="p-top-course-slider__pagination swiper-pagination"></div>
+							</div>
 						</div>
 					<?php endif; ?>
 

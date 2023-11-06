@@ -55,8 +55,13 @@
 	// box-shadow: 8px 8px 0 $main-color-light;
 	padding: 24px 40px;
 	// height: 100%;
-	width: 560px;
+	max-width: 560px;
+	width: 100%;
 	$this: &;
+
+	@include is-sp {
+		padding: 16px 12px;
+	}
 
 	&--standard {
 		// border: 1px solid $main-color;
@@ -78,7 +83,8 @@
 
 	&__label {
 		position: absolute;
-		width: 288px;
+		max-width: 288px;
+		width: 100%;
 		white-space: nowrap;
 		top: 0;
 		right: 0;
@@ -87,6 +93,12 @@
 		background-color: $main-color-light;
 		padding: 16px 24px;
 		text-align: center;
+
+		@include is-sp {
+			padding: 8px 16px;
+			@include fz(11);
+			max-width: 200px;
+		}
 	}
 
 	&__profile {
@@ -100,24 +112,50 @@
 		width: 80px;
 		height: 80px;
 		object-fit: cover;
+
+		@include is-sp {
+			width: 64px;
+			height: 64px;
+		}
 	}
 
 	&__name {
 		@include fz(18);
+
+		@include is-sp {
+			@include fz(14);
+			margin-top: 16px;
+			// padding-bottom: 4px;
+			// margin-top: auto;
+		}
 	}
 
 	&__ttl-wrap {
 		display: flex;
 		justify-content: center;
 		margin-top: 16px;
+
+		@include is-sp {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
 	}
 
 	&__ttl {
 		@include fz(20);
+
+		@include is-sp {
+			@include fz(16);
+		}
 	}
 
 	&__desc {
 		margin-top: 20px;
+
+		@include is-sp {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
 	}
 
 	&__ba {
@@ -126,6 +164,12 @@
 		display: flex;
 		gap: 72px;
 		justify-content: space-between;
+
+		@include is-sp {
+			flex-direction: column;
+			padding: 0 8px;
+			gap: 40px;
+		}
 
 		&::before {
 			content: "";
@@ -136,6 +180,15 @@
 			background-image: url("../img/triangles.png");
 			width: 48px;
 			height: 20px;
+
+			@include is-sp {
+				transform: translate(-50%, -50%) rotate(90deg);
+				top: 42.2%;
+				width: 28px;
+				height: 12px;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
 		}
 	}
 
@@ -144,6 +197,11 @@
 		position: relative;
 		width: calc(100% - 36px);
 		padding: 20px;
+
+		@include is-sp {
+			width: 100%;
+			padding: 18px;
+		}
 
 		dt {
 			position: absolute;
@@ -155,6 +213,12 @@
 
 	&__before {
 		background-color: $main-color-bg;
+
+		@include is-sp {
+			dd {
+				@include fz(14);
+			}
+		}
 	}
 
 	&__after {
@@ -167,10 +231,17 @@
 
 	&--prev {
 		left: calc(50% - 314px);
+
+		@include is-sp {
+			left: 4px;
+		}
 	}
 
 	&--next {
 		right: calc(50% - 314px);
+		@include is-sp {
+			right: 4px;
+		}
 	}
 }
 

@@ -119,9 +119,9 @@ $(window).on("load", function () {
 				type: "bullets", // 'bullets','fraction','progressbar'
 				clickable: true, // クリックによるスライド切り替えを有効にする
 			},
-			slidesPerView: 1,
+			slidesPerView: 1.2,
 			centeredSlides: true,
-			loopAdditionalSlides: 3, //クローンの数
+			// loopAdditionalSlides: 3, //クローンの数
 			spaceBetween: 0,
 			observer: true, //これが大事！
 			observeParents: true, //これが大事！
@@ -133,6 +133,45 @@ $(window).on("load", function () {
 				},
 			},
 		});
+	}
+
+	// TOP COURSE
+	if (window.matchMedia("(max-width: 767px)").matches) {
+		if ($(".js-top-course-slider .swiper-slide").length > 1) {
+			var topCourseSwiper = new Swiper(".js-top-course-slider .swiper", {
+				loop: true,
+				speed: 500,
+				effect: "slide", //slide,fade,cube,coverflow,flip
+				// autoplay: {
+				//   delay: 4500,
+				//   disableOnInteraction: false, //スワイプされたら自動再生停止するか
+				// },
+				navigation: {
+					nextEl: ".js-top-course-slider .swiper-button-next",
+					prevEl: ".js-top-course-slider .swiper-button-prev",
+				},
+				pagination: {
+					el: ".js-top-course-slider .swiper-pagination",
+					type: "bullets", // 'bullets','fraction','progressbar'
+					clickable: true, // クリックによるスライド切り替えを有効にする
+				},
+				slidesPerView: 1.15,
+				centeredSlides: true,
+				// loopAdditionalSlides: 3, //クローンの数
+				spaceBetween: 20,
+				// observer: true, //これが大事！
+				// observeParents: true, //これが大事！
+				breakpoints: {
+					// スライドの表示枚数：500px以上の場合
+					768: {
+						slidesPerView: "auto",
+						// slidesPerView: "3.4",
+					},
+				},
+			});
+		}
+	} else if (topCourseSwiper) {
+		topCourseSwiper.destroy(false, true);
 	}
 
 	$(".js-match-height").matchHeight();

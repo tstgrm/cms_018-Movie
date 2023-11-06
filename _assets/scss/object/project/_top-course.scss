@@ -4,7 +4,11 @@
 	$this: &;
 	padding-top: 120px;
 
-	&__inner{
+	@include is-sp {
+		padding-top: 64px;
+	}
+
+	&__inner {
 		max-width: 1360px;
 	}
 
@@ -16,8 +20,15 @@
 		// padding: 0 48px;
 
 		@include is-sp {
-			gap: 0;
+			gap: unset;
+			justify-content: unset;
 		}
+	}
+
+	&__slider {
+		width: 100%;
+		margin: 0 auto;
+		overflow: visible;
 	}
 }
 
@@ -35,7 +46,11 @@
 	padding-top: 112px;
 	border: 1px solid $main-color-light;
 
-	&:nth-child(1) {
+	@include is-sp {
+		padding: 96px 12px 16px;
+	}
+
+	&.p-top-course-item--basic {
 		box-shadow: 8px 8px 0 $main-color-light;
 
 		#{$this}__label,
@@ -43,7 +58,8 @@
 			background-color: $main-color-light;
 		}
 	}
-	&:nth-child(2) {
+
+	&.p-top-course-item--standard {
 		border-color: $main-color;
 		box-shadow: 8px 8px 0 $main-color;
 
@@ -52,7 +68,8 @@
 			background-color: $main-color;
 		}
 	}
-	&:nth-child(3) {
+
+	&.p-top-course-item--premium {
 		border-color: $main-color-dark;
 		box-shadow: 8px 8px 0 $main-color-dark;
 
@@ -60,6 +77,10 @@
 		.c-icon-check-circle {
 			background-color: $main-color-dark;
 		}
+	}
+
+	&__inner {
+		padding: 10px;
 	}
 
 	&__label {
@@ -74,18 +95,33 @@
 		background-color: $main-color-light;
 		padding: 16px 24px;
 		text-align: center;
+
+		@include is-sp {
+			padding: 12px 20px;
+			max-width: calc(100% - 20px);
+			@include fz(14);
+			top: 20px;
+		}
 	}
 
 	&__ttl {
 		@include fz(20);
 		text-align: center;
 		font-weight: $bold;
+
+		@include is-sp {
+			@include fz(18);
+		}
 	}
 
 	&__price {
 		text-align: center;
 		font-weight: $bold;
 		@include fz(28);
+
+		@include is-sp {
+			@include fz(24);
+		}
 
 		.tax {
 			@include fz(14);
@@ -95,6 +131,11 @@
 
 	&__list {
 		margin-top: 24px;
+
+		@include is-sp {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
 	}
 
 	&__item {
@@ -102,11 +143,19 @@
 
 		&:not(:last-child) {
 			margin-bottom: 16px;
+
+			@include is-sp {
+				margin-bottom: 8px;
+			}
 		}
 	}
 
 	&__desc {
 		display: flex;
+
+		@include is-sp {
+			@include fz(14);
+		}
 
 		.c-icon-check-circle {
 			position: relative;
@@ -114,5 +163,41 @@
 			min-width: 20px;
 			margin-right: 8px;
 		}
+	}
+}
+
+.p-top-course-slider-btn {
+	margin-top: -48px;
+	display: none;
+
+	@include is-sp {
+		display: flex;
+		margin-top: -8px;
+	}
+
+	&--prev {
+		left: -16px;
+	}
+
+	&--next {
+		right: -16px;
+	}
+}
+
+.p-top-course-slider__pagination {
+	position: relative;
+	margin-top: 40px;
+	display: none;
+
+	@include is-sp {
+		display: block;
+	}
+
+	.swiper-pagination-bullet {
+		background-color: $secondary;
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: $main-color;
 	}
 }

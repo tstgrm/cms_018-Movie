@@ -64,15 +64,6 @@
 		// top: 8px;
 		top: calc(50% - 1px);
 		transform: translateY(-50%) rotate(-45deg);
-
-		@include is-sp {
-			border-left: 3.5px solid #fff;
-			border-bottom: 3.5px solid #fff;
-			width: 15px;
-			height: 10px;
-			left: 1.5px;
-			top: calc(50% - 2px);
-		}
 	}
 }
 
@@ -119,7 +110,7 @@
 
 	@include is-sp {
 		width: 20px;
-		top: -5px;
+		// top: -5px;
 	}
 
 	&::before,
