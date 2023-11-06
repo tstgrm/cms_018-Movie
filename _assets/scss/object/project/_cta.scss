@@ -3,6 +3,9 @@
 .p-cta {
 	position: relative;
 	padding: 40px 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 
 	&::before {
 		content: "";

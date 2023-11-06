@@ -4,6 +4,10 @@
 	$this: &;
 	padding-top: 120px;
 
+	&__inner{
+		max-width: 1360px;
+	}
+
 	&__list {
 		display: flex;
 		justify-content: center;

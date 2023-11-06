@@ -1,6 +1,5 @@
 @use "../../global-setting" as *;
 
-
 .g-footer {
 	position: relative;
 	display: flex;
@@ -110,7 +109,7 @@
 	&__list {
 		display: flex;
 		// flex-direction: column;
-		gap: 24px;
+		gap: 32px;
 
 		&:last-child {
 			@include is-sp {
@@ -121,7 +120,6 @@
 	}
 
 	&__item {
-
 		@include is-sp {
 			min-width: 106px;
 		}
@@ -132,6 +130,7 @@
 		align-items: center;
 		transition: 0.3s;
 		color: $white;
+		font-weight: $bold;
 
 		&[target="_blank"]::after {
 			content: "";
