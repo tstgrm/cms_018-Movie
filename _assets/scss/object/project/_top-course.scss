@@ -5,7 +5,7 @@
 	padding-top: 120px;
 
 	@include is-sp {
-		padding-top: 64px;
+		padding-top: 56px;
 	}
 
 	&__inner {
@@ -19,7 +19,7 @@
 		width: 100%;
 		// padding: 0 48px;
 
-		@include is-sp {
+		@include is-tab {
 			gap: unset;
 			justify-content: unset;
 		}
@@ -45,6 +45,10 @@
 	$this: &;
 	padding-top: 112px;
 	border: 1px solid $main-color-light;
+
+	@include is-tab {
+		width: 400px;
+	}
 
 	@include is-sp {
 		padding: 96px 12px 16px;
@@ -170,17 +174,25 @@
 	margin-top: -48px;
 	display: none;
 
-	@include is-sp {
+	@include is-tab {
 		display: flex;
 		margin-top: -8px;
 	}
 
 	&--prev {
-		left: -16px;
+		left: 15vw;
+
+		@include is-sp {
+			left: -16px;
+		}
 	}
 
 	&--next {
-		right: -16px;
+		right: 15vw;
+
+		@include is-sp {
+			right: -16px;
+		}
 	}
 }
 
@@ -189,7 +201,7 @@
 	margin-top: 40px;
 	display: none;
 
-	@include is-sp {
+	@include is-tab {
 		display: block;
 	}
 

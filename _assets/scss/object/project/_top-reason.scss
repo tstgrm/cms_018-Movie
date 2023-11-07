@@ -3,6 +3,10 @@
 .p-top-reason {
 	position: relative;
 
+	@include is-sp {
+		padding-bottom: 68px;
+	}
+
 	&__ttl {
 		text-align: center;
 	}
@@ -164,6 +168,12 @@
 		@include ls(2);
 		z-index: 1;
 
+		@include is-tab {
+			@include fz(24);
+			line-height: 1.5;
+			letter-spacing: 0;
+		}
+
 		@include is-sp {
 			margin-top: 10px;
 			@include fz(20);
@@ -181,6 +191,10 @@
 		// font-weight: $semi-bold;
 		z-index: 1;
 
+		@include is-tab {
+			margin-top: 16px;
+		}
+
 		@include is-sp {
 			margin-top: 12px;
 			@include fz(14);
@@ -190,6 +204,11 @@
 	&__image {
 		width: calc(50% - 28px);
 		z-index: 1;
+
+		@include is-tab {
+			display: flex;
+			align-items: center;
+		}
 
 		@include is-sp {
 			width: 100%;

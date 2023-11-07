@@ -67,6 +67,11 @@
 	width: 84.375%;
 	margin: 0 auto;
 
+	@include is-tab {
+		width: 100%;
+		padding: 0 $side-padding-tab;
+	}
+
 	@include is-sp {
 		width: 100%;
 		padding: 0 $side-padding-sp;

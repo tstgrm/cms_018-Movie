@@ -17,10 +17,7 @@
 		margin: 0 auto;
 
 		@include is-sp {
-			padding-left: 24px;
-			padding-right: 24px;
-			padding-top: 40px;
-			padding-bottom: 16px;
+			padding: 40px 24px 24px 24px;
 		}
 	}
 
@@ -46,6 +43,10 @@
 				align-items: flex-start;
 				padding-top: 0;
 				margin-top: 48px;
+			}
+
+			@include is-sp {
+				margin-top: 16px;
 			}
 		}
 	}
@@ -106,16 +107,18 @@
 		margin-top: 48px;
 	}
 
+	@include is-sp {
+		margin-top: 32px;
+	}
+
 	&__list {
 		display: flex;
 		// flex-direction: column;
 		gap: 32px;
 
-		&:last-child {
-			@include is-sp {
-				flex-direction: row;
-				gap: 40px;
-			}
+		@include is-sp {
+			flex-direction: column;
+			gap: 0;
 		}
 	}
 
@@ -131,6 +134,11 @@
 		transition: 0.3s;
 		color: $white;
 		font-weight: $bold;
+
+		@include is-sp {
+			@include fz(14);
+			padding: 8px 0;
+		}
 
 		&[target="_blank"]::after {
 			content: "";

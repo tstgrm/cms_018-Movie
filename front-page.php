@@ -552,7 +552,7 @@
 						<?php endif; ?>
 					</h2>
 
-					<div class="l-inner l-inner--narrow c-section__body u-1/1">
+					<div class="l-inner l-inner--narrow c-section__body p-top-contact__body">
 						<div class="p-top-contact__form">
 							<?php echo do_shortcode( '[contact-form-7 id="516a5e1" title="お問い合わせ"]' ); ?>
 						</div>

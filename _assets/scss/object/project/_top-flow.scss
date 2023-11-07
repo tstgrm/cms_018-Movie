@@ -3,9 +3,13 @@
 .p-top-flow {
 	position: relative;
 
-	&__body {
-		margin-top: 66px;
+	@include is-sp {
+		// padding-bottom: 32px;
 	}
+
+	// &__body {
+	// 	padding-top: 22px;
+	// }
 
 	.scroll-hint-icon-wrap {
 		z-index: $zindex-scroll-hint;
@@ -21,37 +25,36 @@
 		position: relative;
 		display: flex;
 		justify-content: space-between;
-		row-gap: 40px;
+		gap: 40px;
 		width: 100%;
-		// border-top: 1px dashed $main-color;
+		padding-top: 22px;
 
 		@include is-sp {
 			@include l-window-full();
 			overflow-x: scroll;
 			padding-bottom: 32px;
+			gap: 20px;
 		}
 
 		&::before {
 			content: "";
 			position: absolute;
-			left: 160px;
-			right: 160px;
-			top: -12px;
-			// background-color: $blue;
+			left: 155px;
+			right: 155px;
+			top: 10px;
 			height: 0;
 			z-index: -1;
 			border-top: 1px dashed $main-color;
 
 			@media screen and (max-width: 1115px) {
-				left: 15vw;
-				right: 15vw;
+				left: 12vw;
+				right: 12vw;
 			}
 
 			@include is-sp {
-				width: 800px;
-				// left: 50%;
+				left: 35vw;
 				right: unset;
-				// transform: translateX(-50%);
+				width: 480px;
 			}
 		}
 	}
@@ -59,18 +62,22 @@
 
 .p-top-flow-item {
 	position: relative;
-	width: 352px;
+	// width: 352px;
 	width: calc(100% / 3 - 26.6666666667px);
 	z-index: 1;
 	text-align: center;
 	$this: &;
 
 	@include is-sp {
-		width: 200px;
+		width: 224px;
 		flex-shrink: 0;
 	}
 
 	&:nth-child(1) {
+		@include is-sp {
+			margin-left: $side-padding-sp;
+		}
+
 		#{$this}__index {
 			background-image: url(../img/step_01.png);
 		}
@@ -81,6 +88,10 @@
 		}
 	}
 	&:nth-child(3) {
+		@include is-sp {
+			margin-right: $side-padding-sp;
+		}
+
 		#{$this}__index {
 			background-image: url(../img/step_03.png);
 		}
@@ -119,6 +130,7 @@
 
 		@include is-sp {
 			@include fz(16);
+			margin-top: 12px;
 		}
 	}
 
@@ -126,6 +138,11 @@
 		margin-top: 16px;
 		text-align: center;
 		color: $secondary;
+
+		@include is-sp {
+			@include fz(12);
+			margin-top: 12px;
+		}
 
 		span {
 			display: block;

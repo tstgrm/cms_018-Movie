@@ -136,7 +136,7 @@ $(window).on("load", function () {
 	}
 
 	// TOP COURSE
-	if (window.matchMedia("(max-width: 767px)").matches) {
+	if (window.matchMedia("(max-width: 1024px)").matches) {
 		if ($(".js-top-course-slider .swiper-slide").length > 1) {
 			var topCourseSwiper = new Swiper(".js-top-course-slider .swiper", {
 				loop: true,
@@ -163,9 +163,12 @@ $(window).on("load", function () {
 				// observeParents: true, //これが大事！
 				breakpoints: {
 					// スライドの表示枚数：500px以上の場合
+					1024: {
+						slidesPerView: "auto",
+					},
 					768: {
 						slidesPerView: "auto",
-						// slidesPerView: "3.4",
+						spaceBetween: 40,
 					},
 				},
 			});

@@ -12,6 +12,14 @@
 		left: 0;
 		top: 0;
 		background-color: $main-color-bg;
+
+		@include is-tab {
+			width: 28%;
+		}
+
+		@include is-sp {
+			width: 100%;
+		}
 	}
 
 	&__body {
@@ -32,6 +40,10 @@
 		flex-direction: column;
 		justify-content: center;
 
+		@include is-tab {
+			padding-left: 32px;
+		}
+
 		@include is-sp {
 			padding-left: 0;
 			margin-top: 24px;
@@ -49,7 +61,7 @@
 	padding: 16px 20px;
 	border-bottom: 1px dashed $main-color;
 
-	@include is-sp {
+	@include is-tab {
 		padding: 16px 0px;
 	}
 
@@ -122,6 +134,7 @@
 
 	&__desc {
 		margin-top: 40px;
+		line-height: 1.7;
 
 		@include is-sp {
 			margin-top: 24px;
