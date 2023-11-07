@@ -1,36 +1,36 @@
 @use "../../global-setting" as *;
 
 .u-bg {
-  &-green {
-    background-color: $blue-pale;
-  }
-  &-blue {
-    background-color: $blue-pale;
-  }
-  // &-red {
-  //   background-color: $red-pale;
-  // }
-  &-yellow {
-    background-color: $yellow-pale;
-  }
-  &-gray {
-    background-color: $white-gray;
-  }
-  &-graphpaper {
-    background-image: url(../img/repeat-bg-graph-paper.png);
-    background-repeat: repeat;
-    background-size: 18px 18px;
-  }
+	&-green {
+		background-color: $main-color-pale;
+	}
+	&-blue {
+		background-color: $main-color-pale;
+	}
+	// &-red {
+	//   background-color: $red-pale;
+	// }
+	&-yellow {
+		background-color: $yellow-pale;
+	}
+	&-gray {
+		background-color: $white-gray;
+	}
+	&-graphpaper {
+		background-image: url(../img/repeat-bg-graph-paper.png);
+		background-repeat: repeat;
+		background-size: 18px 18px;
+	}
 
-  &--sp {
-    @media screen and (min-width: 1025px) {
-      background-color: unset;
-    }
-  }
+	&--sp {
+		@media screen and (min-width: 1025px) {
+			background-color: unset;
+		}
+	}
 
-  &--pc {
-    @include is-sp {
-      background-color: unset;
-    }
-  }
+	&--pc {
+		@include is-sp {
+			background-color: unset;
+		}
+	}
 }

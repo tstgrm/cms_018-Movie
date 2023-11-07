@@ -5,59 +5,57 @@
 //   line-height: 1.8;
 // }
 
-
-
 /*------------------------------------------------------------------------
 　マップ
 ------------------------------------------------------------------------*/
 .c-map {
-  width: 100%;
-  height: 560px;
+	width: 100%;
+	height: 560px;
 
-  @include is-sp {
-    height: 300px;
-  }
+	@include is-sp {
+		height: 300px;
+	}
 }
 
 /*------------------------------------------------------------------------
 　動画
 ------------------------------------------------------------------------*/
 .c-video {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding: 56.25% 0 0; /* 高さと幅の比を16:9に固定。9/16*100=56.25 */
-  // transition: transform $ease-fade 0.8s;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding: 56.25% 0 0; /* 高さと幅の比を16:9に固定。9/16*100=56.25 */
+	// transition: transform $ease-fade 0.8s;
 
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+	video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .c-link-icon-arrow-right {
-  &::after {
-    content: "";
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translate(0, -50%) rotate(45deg);
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid $blue;
-    border-top: 2px solid $blue;
-    border-radius: 1px;
-  }
+	&::after {
+		content: "";
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		transform: translate(0, -50%) rotate(45deg);
+		display: block;
+		width: 8px;
+		height: 8px;
+		border-right: 2px solid $main-color;
+		border-top: 2px solid $main-color;
+		border-radius: 1px;
+	}
 }

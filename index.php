@@ -18,6 +18,14 @@
 			the_row();
 			?>
 			<div class="p-top-visual">
+				<?php if ( get_sub_field( 'movie' ) ) : ?>
+					<div class="p-top-visual__bg">
+						<figure>
+							<video src="<?php the_sub_field( 'movie' ); ?>" autoplay loop muted playsinline></video>
+						</figure>
+					</div>
+				<?php endif; ?>
+
 				<div class="l-inner p-top-visual__inner">
 
 					<div class="p-top-visual__content">
@@ -32,9 +40,13 @@
 							</p>
 						<?php endif; ?>
 
-						<div class="p-top-visual__image u-hidden-pc">
-							<img src="<?php the_sub_field( 'img' ); ?>">
+					<!-- <?php if ( get_sub_field( 'movie' ) ) : ?>
+						<div class="p-top-visual__bg">
+							<figure class="p-top-visual">
+								<video src="<?php the_sub_field( 'movie' ); ?>" autoplay loop muted playsinline></video>
+							</figure>
 						</div>
+					<?php endif; ?> -->
 
 						<div class="p-top-visual-cta">
 							<?php if ( have_rows( 'cta_contact', 'option' ) ) : ?>
@@ -62,7 +74,7 @@
 												$page_link .= '#' . get_sub_field( 'tab' );
 											}
 											?>
-												<div class="c-btn p-top-visual-cta__btn">
+												<div class="c-btn c-btn--cv p-top-visual-cta__btn">
 													<a href="<?php echo esc_url( $page_link ); ?>"
 														<?php
 														if ( $target ) {
@@ -75,230 +87,31 @@
 								<?php endwhile; ?>
 							<?php endif; ?>
 						</div>
+
+						<div class="c-scroll">scroll</div>
 					</div>
 
-					<div class="p-top-visual__image u-hidden-sp">
-						<img src="<?php the_sub_field( 'img' ); ?>">
-					</div>
 
 				</div>
 			</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-	<!-- ABOUT -->
-	<?php if ( get_field( 'top_about' )['disp'] ) : ?>
+	<!-- VOICE -->
+	<?php if ( get_field( 'top_voice' )['disp'] ) : ?>
 		<?php
-		while ( have_rows( 'top_about' ) ) :
+		while ( have_rows( 'top_voice' ) ) :
 			the_row();
 			?>
-			<section id="about" class="c-section p-top-about">
-				<div class="l-inner p-top-about__inner">
-					<h2 class="c-section-ttl p-top-about__ttl">
-						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-							<?php the_sub_field( 'ttl_main' ); ?>
+			<section id="voice" class="c-section p-top-voice">
+				<div class="p-top-voice__inner">
+
+					<h2 class="c-section-ttl p-top-voice__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub">
+								<?php the_sub_field( 'ttl_sub' ); ?>
+							</span>
 						<?php endif; ?>
-					</h2>
-
-					<?php if ( get_sub_field( 'desc' ) ) : ?>
-						<p class="c-section__desc p-top-about__desc">
-							<?php the_sub_field( 'desc' ); ?>
-						</p>
-					<?php endif; ?>
-
-					<?php if ( have_rows( 'list' ) ) : ?>
-						<div class="c-section__body p-top-about__body">
-							<ul class="p-top-about__list">
-								<?php
-								while ( have_rows( 'list' ) ) :
-									the_row();
-									?>
-									<li class="p-top-about-item">
-										<div class="p-top-about-item__thumb">
-											<figure class="c-figure c-figure--square p-top-about-item__figure">
-												<img src="<?php the_sub_field( 'img' ); ?>" alt="" class="c-figure__img p-top-about-item__img">
-											</figure>
-										</div>
-										<p class="p-top-about-item__desc"><?php the_sub_field( 'desc' ); ?></p>
-									</li>
-								<?php endwhile; ?>
-							</ul>
-						</div>
-					<?php endif; ?>
-
-					<?php if ( get_sub_field( 'btn' )['disp'] ) : ?>
-						<?php
-						while ( have_rows( 'btn' ) ) :
-							the_row();
-							$color = get_sub_field( 'color' );
-							switch ( $color ) {
-								case 'white':
-									$color = '';
-									break;
-								case 'blue':
-									$color = ' c-btn--blue';
-									break;
-								case 'yellow':
-									$color = ' c-btn--yellow';
-									break;
-								default:
-									$color = '';
-									break;
-							}
-							?>
-							<div class="c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-about__btn c-btn--center">
-								<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
-									<?php
-									if ( get_sub_field( 'target' ) ) {
-										echo 'target="_blank" rel="nofollow noopener"';}
-									?>
-									>
-									<?php the_sub_field( 'label' ); ?>
-								</a>
-							</div>
-						<?php endwhile; ?>
-					<?php endif; ?>
-
-				</div>
-			</section>
-		<?php endwhile; ?>
-	<?php endif; ?>
-
-	<!-- INTRO -->
-	<?php if ( get_field( 'top_intro' )['disp'] ) : ?>
-		<?php
-		while ( have_rows( 'top_intro' ) ) :
-			the_row();
-			?>
-			<section id="instro" class="p-top-intro">
-				<div class="p-top-intro__inner">
-					<div class="c-section p-top-intro__problem">
-
-						<h2 class="c-section-ttl p-top-intro__ttl">
-							<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-								<span class="c-section-ttl__main">
-									<?php the_sub_field( 'ttl_main' ); ?>
-								</span>
-							<?php endif; ?>
-						</h2>
-
-						<?php if ( get_sub_field( 'desc' ) ) : ?>
-							<p class="c-section__desc p-top-intro__desc u-text-left">
-								<?php the_sub_field( 'desc' ); ?>
-							</p>
-						<?php endif; ?>
-
-						<div class="l-inner c-section__body">
-							<?php if ( have_rows( 'list' ) ) : ?>
-								<ul class="p-top-intro__list">
-									<?php
-									while ( have_rows( 'list' ) ) :
-										the_row();
-										?>
-										<li class="p-top-intro-item">
-											<figure class="p-top-intro-item__image">
-												<img src="<?php the_sub_field( 'img' ); ?>" alt="">
-											</figure>
-											<p class="p-top-intro-item__desc"><?php the_sub_field( 'desc' ); ?></p>
-										</li>
-									<?php endwhile; ?>
-								</ul>
-							<?php endif; ?>
-						</div>
-
-						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_static/dist/img/problem-bottom-bg.png" alt="" class="p-top-intro__problem-bg">
-					</div>
-
-					<?php if ( have_rows( 'section' ) ) : ?>
-						<div class="c-section p-top-intro__sections">
-							<?php
-							while ( have_rows( 'section' ) ) :
-								the_row();
-								?>
-								<section class="p-top-intro-section">
-									<div class="l-inner p-top-intro-section__inner">
-										<div class="p-top-intro-section__content">
-											<p class="p-top-intro-section__index">SOLUTION</p>
-											<h3 class="p-top-intro-section__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
-											<p class="p-top-intro-section__desc"><?php the_sub_field( 'desc' ); ?></p>
-											<div class="p-top-intro-section__bg-text">
-												<span>
-													<?php the_sub_field( 'bg_text' ); ?>
-												</span>
-											</div>
-										</div>
-										<div class="p-top-intro-section__image">
-											<?php
-											if ( get_sub_field( 'img' ) ) :
-												$img    = get_sub_field( 'img' );
-												$img_sp = get_sub_field( 'img_sp' ) ? get_sub_field( 'img_sp' ) : get_sub_field( 'img' );
-
-												$ttl = wp_strip_all_tags( get_sub_field( 'ttl' ) );
-												?>
-													<picture>
-														<source srcset="<?php echo esc_url( $img_sp ); ?>" media="(max-width: 1024px)">
-														<source srcset="<?php the_sub_field( 'img' ); ?>" media="(min-width: 1025px)">
-														<img src="<?php echo esc_url( $img_sp ); ?>" alt="<?php echo esc_html( $ttl ); ?>">
-													</picture>
-												<?php endif; ?>
-										</div>
-
-									</div>
-								</section>
-							<?php endwhile; ?>
-
-							<?php if ( get_sub_field( 'btn' )['disp'] ) : ?>
-								<?php
-								while ( have_rows( 'btn' ) ) :
-									the_row();
-									$color = get_sub_field( 'color' );
-									switch ( $color ) {
-										case 'white':
-											$color = '';
-											break;
-										case 'blue':
-											$color = ' c-btn--blue';
-											break;
-										case 'yellow':
-											$color = ' c-btn--yellow';
-											break;
-										default:
-											$color = '';
-											break;
-									}
-									?>
-									<div class="l-inner c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-intro__btn c-btn--center">
-										<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
-											<?php
-											if ( get_sub_field( 'target' ) ) {
-												echo 'target="_blank" rel="nofollow noopener"';}
-											?>
-											>
-											<?php the_sub_field( 'label' ); ?>
-										</a>
-									</div>
-								<?php endwhile; ?>
-							<?php endif; ?>
-						</div>
-					<?php endif; ?>
-
-
-
-				</div>
-			</section>
-		<?php endwhile; ?>
-	<?php endif; ?>
-
-	<!-- CASE -->
-	<?php if ( get_field( 'top_case' )['disp'] ) : ?>
-		<?php
-		while ( have_rows( 'top_case' ) ) :
-			the_row();
-			?>
-			<section id="case" class="c-section p-top-case" style="background-image:url(<?php the_sub_field( 'bg' ); ?>)">
-				<div class="l-inner p-top-case__inner">
-
-					<h2 class="c-section-ttl p-top-case__ttl">
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
 							<span class="c-section-ttl__main">
 								<?php the_sub_field( 'ttl_main' ); ?>
@@ -307,78 +120,288 @@
 					</h2>
 
 					<?php if ( get_sub_field( 'desc' ) ) : ?>
-						<p class="c-section__desc p-top-case__desc u-text-left">
+						<p class="c-section__desc p-top-voice__desc u-text-left">
 							<?php the_sub_field( 'desc' ); ?>
 						</p>
 					<?php endif; ?>
 
-					<?php
-						$args     = array(
-							'paged'          => get_query_var( 'paged' ),
-							'post_type'      => 'case',
-							'posts_per_page' => '3',
-							'orderby'        => 'date',
-							'order'          => 'DESC',
-						);
-						$my_query = new WP_Query( $args );
-
-						if ( $my_query->have_posts() ) :
-							?>
-							<div class="c-section__body p-top-case__body js-top-case-slider">
-								<div class="p-top-case__slider swiper">
-									<ul class="p-top-case__list swiper-wrapper">
-										<?php
-										while ( $my_query->have_posts() ) :
-											$my_query->the_post();
-											$category = get_the_category();
-											?>
-												<li class="p-top-case__item swiper-slide">
-													<div class="p-top-case__item-inner">
-														<?php get_template_part( 'parts/post-case' ); ?>
-													</div>
-												</li>
-											<?php
-										endwhile;
-										wp_reset_postdata();
+					<?php	if ( have_rows( 'list' ) ) : ?>
+						<div class="c-section__body p-top-voice__body js-top-voice-slider">
+							<div class="p-top-voice__slider swiper">
+								<ul class="p-top-voice__list swiper-wrapper">
+									<?php
+									while ( have_rows( 'list' ) ) :
+										the_row();
 										?>
-									</ul>
-								</div>
-								<div class="swiper-button-prev u-hidden-pc"></div>
-								<div class="swiper-button-next u-hidden-pc"></div>
+										<li class="p-top-voice__item swiper-slide">
+											<div class="p-top-voice__item-inner">
+												<?php
+													$course = get_sub_field( 'course' );
+												switch ( $course['value'] ) {
+													case 'basic':
+														$select_course = '--basic';
+														break;
+													case 'standard':
+														$select_course = '--standard';
+														break;
+													case 'premium':
+														$select_course = '--premium';
+														break;
+													default:
+														$select_course = '';
+														break;
+												}
+												?>
+												<div class="p-post-voice<?php echo esc_attr( ' p-post-voice' . $select_course ); ?> js-match-height">
+													<div class="p-post-voice__label"><?php echo esc_html( $course['label'] ); ?></div>
+													<div class="p-post-voice__profile">
+														<img src="<?php the_sub_field( 'img' ); ?>" alt="<?php the_sub_field( 'name' ); ?>" class="p-post-voice__img">
+														<p class="p-post-voice__name"><?php the_sub_field( 'name' ); ?></p>
+													</div>
+													<?php if ( get_sub_field( 'ttl' ) ) : ?>
+														<div class="p-post-voice__ttl-wrap">
+															<h3 class="p-post-voice__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+														</div>
+													<?php endif; ?>
+													<?php if ( get_sub_field( 'desc' ) ) : ?>
+														<p class="p-post-voice__desc"><?php the_sub_field( 'desc' ); ?></p>
+														<?php endif; ?>
+													<?php if ( have_rows( 'before_after' ) ) : ?>
+														<?php
+														while ( have_rows( 'before_after' ) ) :
+															the_row();
+															?>
+															<dl class="p-post-voice__ba">
+																<div class="p-post-voice__before">
+																	<dt>Before</dt>
+																	<dd><?php the_sub_field( 'before' ); ?></dd>
+																</div>
+																<div class="p-post-voice__after">
+																	<dt>After</dt>
+																	<dd><?php the_sub_field( 'after' ); ?></dd>
+																</div>
+															</dl>
+														<?php endwhile; ?>
+													<?php endif; ?>
+												</div>
+											</div>
+										</li>
+									<?php	endwhile; ?>
+								</ul>
+								<div class="p-top-voice-slider-btn p-top-voice-slider-btn--prev swiper-button-prev"></div>
+								<div class="p-top-voice-slider-btn p-top-voice-slider-btn--next swiper-button-next"></div>
+								<div class="p-top-voice-slider__pagination swiper-pagination"></div>
 							</div>
+						</div>
 					<?php endif; ?>
 
-					<?php if ( get_sub_field( 'btn' )['disp'] ) : ?>
-						<?php
-						while ( have_rows( 'btn' ) ) :
-							the_row();
-							$color = get_sub_field( 'color' );
-							switch ( $color ) {
-								case 'white':
-									$color = '';
-									break;
-								case 'blue':
-									$color = ' c-btn--blue';
-									break;
-								case 'yellow':
-									$color = ' c-btn--yellow';
-									break;
-								default:
-									$color = '';
-									break;
-							}
+				</div>
+			</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+	<!-- RECOMMEND -->
+	<?php if ( get_field( 'top_recommend' )['disp'] ) : ?>
+		<?php
+		while ( have_rows( 'top_recommend' ) ) :
+			the_row();
+			?>
+			<section id="recommend" class="c-section p-top-recommend">
+				<div class="l-inner p-top-recommend__inner">
+					<h2 class="c-section-ttl p-top-recommend__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub">
+								<?php the_sub_field( 'ttl_sub' ); ?>
+							</span>
+						<?php endif; ?>
+						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
+						<?php endif; ?>
+					</h2>
+
+					<div class="c-section__body p-top-recommend__body">
+						<div class="u-pc-col2 u-1/1">
+							<?php
+								$img_sp = get_sub_field( 'img_sp' ) ? get_sub_field( 'img_sp' ) : get_sub_field( 'img' );
 							?>
-							<div class="c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-case__btn c-btn--center">
-								<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
+							<figure class="p-top-recommend__img u-ratio-4/3">
+								<picture>
+									<source srcset="<?php the_sub_field( 'img_sp' ); ?>" media="(max-width: 1024px)">
+									<source srcset="<?php the_sub_field( 'img' ); ?>" media="(min-width: 1025px)">
+									<img src="<?php the_sub_field( 'img' ); ?>" class="u-object-fill u-ratio-4/3">
+								</picture>
+							</figure>
+							<?php if ( have_rows( 'list' ) ) : ?>
+								<ul class="p-top-recommend__list">
 									<?php
-									if ( get_sub_field( 'target' ) ) {
-										echo 'target="_blank" rel="nofollow noopener"';}
+									while ( have_rows( 'list' ) ) :
+										the_row();
+										?>
+										<li class="p-top-recommend-item">
+											<p class="p-top-recommend-item__desc"><i class="c-icon-checkbox"></i><?php the_sub_field( 'desc' ); ?></p>
+										</li>
+									<?php endwhile; ?>
+								</ul>
+							<?php endif; ?>
+						</div>
+
+						<?php if ( have_rows( 'text_box' ) ) : ?>
+							<?php
+							while ( have_rows( 'text_box' ) ) :
+								the_row();
+								?>
+								<div class="p-top-recommend-box">
+									<h3 class="c-section-ttl p-top-recommend-box__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+									<p class="p-top-recommend-box__desc"><?php the_sub_field( 'desc' ); ?></p>
+								</div>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+
+				</div>
+			</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+	<!-- REASON -->
+	<?php if ( get_field( 'top_reason' )['disp'] ) : ?>
+		<?php
+		while ( have_rows( 'top_reason' ) ) :
+			the_row();
+			?>
+			<section id="instro" class="c-section p-top-reason">
+				<div class="l-inner p-top-reason__inner">
+					<h2 class="c-section-ttl p-top-reason__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+						<span class="c-section-ttl__sub">
+							<?php the_sub_field( 'ttl_sub' ); ?>
+						</span>
+					<?php endif; ?>
+						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
+						<?php endif; ?>
+					</h2>
+
+					<?php if ( have_rows( 'list' ) ) : ?>
+						<div class="c-section__body p-top-reason__body">
+							<ol class="p-top-reason__list">
+								<?php
+								while ( have_rows( 'list' ) ) :
+									the_row();
 									?>
-									>
-									<?php the_sub_field( 'label' ); ?>
-								</a>
+										<li class="p-top-reason-item">
+											<div class="p-top-reason-item__content">
+												<div class="p-top-reason-item__index"></div>
+												<h3 class="p-top-reason-item__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+												<p class="p-top-reason-item__desc"><?php the_sub_field( 'desc' ); ?></p>
+											</div>
+											<div class="p-top-reason-item__image">
+												<?php
+												if ( get_sub_field( 'img' ) ) :
+													$img    = get_sub_field( 'img' );
+													$img_sp = get_sub_field( 'img_sp' ) ? get_sub_field( 'img_sp' ) : get_sub_field( 'img' );
+
+													$ttl = wp_strip_all_tags( get_sub_field( 'ttl' ) );
+													?>
+														<figure>
+															<picture>
+																<source srcset="<?php echo esc_url( $img_sp ); ?>" media="(max-width: 1024px)">
+																<source srcset="<?php the_sub_field( 'img' ); ?>" media="(min-width: 1025px)">
+																<img src="<?php echo esc_url( $img_sp ); ?>" alt="<?php echo esc_html( $ttl ); ?>">
+															</picture>
+														</figure>
+													<?php endif; ?>
+											</div>
+
+										</li>
+								<?php endwhile; ?>
+							</ol>
+						</div>
+					<?php endif; ?>
+
+				</div>
+			</section>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+	<?php get_template_part( 'parts/cta' ); ?>
+
+	<!-- COURSE -->
+	<?php if ( get_field( 'top_course' )['disp'] ) : ?>
+		<?php
+		while ( have_rows( 'top_course' ) ) :
+			the_row();
+			?>
+			<section id="course" class="c-section p-top-course">
+				<div class="l-inner p-top-course__inner">
+
+					<h2 class="c-section-ttl p-top-course__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub">
+								<?php the_sub_field( 'ttl_sub' ); ?>
+							</span>
+						<?php endif; ?>
+						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
+						<?php endif; ?>
+					</h2>
+
+					<?php	if ( have_rows( 'course' ) ) : ?>
+						<div class="c-section__body p-top-course__body js-top-course-slider">
+							<div class="p-top-course__slider swiper">
+								<ul class="p-top-course__list swiper-wrapper">
+									<?php
+									$count = 0;
+									while ( have_rows( 'course' ) ) :
+										the_row();
+										$count++;
+										$course = '';
+										switch ( $count ) {
+											case 1:
+												$course = ' p-top-course-item--basic';
+												break;
+											case 2:
+												$course = ' p-top-course-item--standard';
+												break;
+											case 3:
+												$course = ' p-top-course-item--premium';
+												break;
+										}
+										?>
+										<li class="p-top-course-item swiper-slide<?php echo esc_attr( $course ); ?>">
+											<div class="p-top-course-item__label"><?php the_sub_field( 'label' ); ?></div>
+											<?php if ( get_sub_field( 'ttl' ) ) : ?>
+												<h3 class="p-top-course-item__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+												<p class="p-top-course-item__price"><?php the_sub_field( 'price' ); ?></p>
+											<?php endif; ?>
+											<?php
+											if ( have_rows( 'list' ) ) :
+												?>
+												<ul class="p-top-course-item__list">
+													<?php
+													while ( have_rows( 'list' ) ) :
+														the_row();
+														?>
+													<li class="p-top-course-item__item">
+														<p class="p-top-course-item__desc"><i class="c-icon-check-circle"></i><?php the_sub_field( 'desc' ); ?></p>
+													</li>
+													<?php endwhile; ?>
+												</ul>
+											<?php endif; ?>
+										</li>
+									<?php	endwhile; ?>
+								</ul>
+								<div class="p-top-course-slider-btn p-top-course-slider-btn--prev swiper-button-prev"></div>
+								<div class="p-top-course-slider-btn p-top-course-slider-btn--next swiper-button-next"></div>
+								<div class="p-top-course-slider__pagination swiper-pagination"></div>
 							</div>
-						<?php endwhile; ?>
+						</div>
 					<?php endif; ?>
 
 				</div>
@@ -398,10 +421,17 @@
 				echo esc_attr( ' is-no-btn' );}
 			?>
 			">
-				<div class="l-inner p-top-flow__inner">
+				<div class="l-inner l-inner--narrow p-top-flow__inner">
 					<h2 class="c-section-ttl p-top-flow__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub">
+								<?php the_sub_field( 'ttl_sub' ); ?>
+							</span>
+						<?php endif; ?>
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-							<?php the_sub_field( 'ttl_main' ); ?>
+							<span class="c-section-ttl__main">
+								<?php the_sub_field( 'ttl_main' ); ?>
+							</span>
 						<?php endif; ?>
 					</h2>
 
@@ -419,48 +449,13 @@
 									the_row();
 									?>
 									<li class="p-top-flow-item">
-										<div class="p-top-flow-item__index">
-											STEP
-										</div>
+										<div class="p-top-flow-item__index"></div>
 										<p class="p-top-flow-item__ttl"><?php the_sub_field( 'ttl' ); ?></p>
 										<p class="p-top-flow-item__desc"><?php the_sub_field( 'desc' ); ?></p>
 									</li>
 								<?php endwhile; ?>
 							</ul>
 						</div>
-					<?php endif; ?>
-
-					<?php if ( get_sub_field( 'btn' )['disp'] ) : ?>
-						<?php
-						while ( have_rows( 'btn' ) ) :
-							the_row();
-							$color = get_sub_field( 'color' );
-							switch ( $color ) {
-								case 'white':
-									$color = '';
-									break;
-								case 'blue':
-									$color = ' c-btn--blue';
-									break;
-								case 'yellow':
-									$color = ' c-btn--yellow';
-									break;
-								default:
-									$color = '';
-									break;
-							}
-							?>
-							<div class="c-section__btn c-btn<?php echo esc_attr( $color ); ?> p-top-flow__btn c-btn--center">
-								<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
-									<?php
-									if ( get_sub_field( 'target' ) ) {
-										echo 'target="_blank" rel="nofollow noopener"';}
-									?>
-									>
-									<?php the_sub_field( 'label' ); ?>
-								</a>
-							</div>
-						<?php endwhile; ?>
 					<?php endif; ?>
 
 				</div>
@@ -478,6 +473,11 @@
 				<div class="l-inner l-inner--narrow p-top-faq__inner">
 
 					<h2 class="c-section-ttl p-top-faq__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub">
+								<?php the_sub_field( 'ttl_sub' ); ?>
+							</span>
+						<?php endif; ?>
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
 							<span class="c-section-ttl__main">
 								<?php the_sub_field( 'ttl_main' ); ?>
@@ -525,23 +525,6 @@
 								</ul>
 						<?php endif; ?>
 
-						<?php if ( get_sub_field( 'btn' )['disp'] ) : ?>
-							<?php
-							while ( have_rows( 'btn' ) ) :
-								the_row();
-								?>
-								<div class="c-section__btn c-btn p-top-faq__btn c-btn--center">
-									<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
-										<?php
-										if ( get_sub_field( 'target' ) ) {
-											echo 'target="_blank" rel="nofollow noopener"';}
-										?>
-										>
-										<?php the_sub_field( 'label' ); ?>
-									</a>
-								</div>
-							<?php endwhile; ?>
-						<?php endif; ?>
 					</div>
 
 				</div>
@@ -549,81 +532,19 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-	<!-- NEWS -->
-	<?php if ( get_field( 'top_news' )['disp'] ) : ?>
+	<!-- CONTACT -->
+	<?php if ( get_field( 'top_contact' )['disp'] ) : ?>
 		<?php
-		while ( have_rows( 'top_news' ) ) :
+		while ( have_rows( 'top_contact' ) ) :
 			the_row();
 			?>
-				<section id="news" class="c-section p-top-news">
-					<div class="l-inner l-inner--narrow p-top-news__inner">
-						<h2 class="c-section-ttl p-top-news__ttl">
-							<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
-								<span class="c-section-ttl__main">
-									<?php the_sub_field( 'ttl_main' ); ?>
-								</span>
-							<?php endif; ?>
-						</h2>
-						<?php
-							$args     = array(
-								'post_type'      => 'post',
-								'posts_per_page' => '3',
-								'orderby'        => 'date',
-								'order'          => 'DESC',
-							);
-							$my_query = new WP_Query( $args );
+			<section id="contact" class="c-section p-top-contact">
+				<div class="l-inner p-top-contact__inner">
 
-							if ( $my_query->have_posts() ) :
-								?>
-								<div class="c-section__body p-top-news__body">
-									<ul class="c-border-list p-top-news__list">
-										<?php
-										while ( $my_query->have_posts() ) :
-											$my_query->the_post();
-											?>
-												<li class="c-border-list__item p-top-news__item">
-													<?php get_template_part( 'parts/post-news' ); ?>
-												</li>
-											<?php
-										endwhile;
-										wp_reset_postdata();
-										?>
-									</ul>
-
-									<?php if ( get_sub_field( 'btn' )['disp'] ) : ?>
-										<?php
-										while ( have_rows( 'btn' ) ) :
-											the_row();
-											?>
-											<div class="c-section__btn c-btn p-top-faq__btn c-btn--center">
-												<a href="<?php echo esc_attr( get_sub_field( 'url' ) ? get_sub_field( 'url' ) : get_sub_field( 'link' ) ); ?>"
-													<?php
-													if ( get_sub_field( 'target' ) ) {
-														echo 'target="_blank" rel="nofollow noopener"';}
-													?>
-													>
-													<?php the_sub_field( 'label' ); ?>
-												</a>
-											</div>
-										<?php endwhile; ?>
-									<?php endif; ?>
-								</div>
+					<h2 class="c-section-ttl p-top-contact__ttl">
+						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
+							<span class="c-section-ttl__sub"><?php the_sub_field( 'ttl_sub' ); ?></span>
 						<?php endif; ?>
-					</div>
-				</section>
-		<?php endwhile; ?>
-	<?php endif; ?>
-
-	<!-- INSTAGRAM -->
-	<?php if ( get_field( 'top_sns' )['disp'] ) : ?>
-		<?php
-		while ( have_rows( 'top_sns' ) ) :
-			the_row();
-			?>
-			<section id="instagram" class="c-section p-top-sns">
-				<div class="l-inner p-top-sns__inner">
-
-					<h2 class="c-section-ttl p-top-sns__ttl">
 						<?php if ( get_sub_field( 'ttl_main' ) ) : ?>
 							<span class="c-section-ttl__main">
 								<?php the_sub_field( 'ttl_main' ); ?>
@@ -631,11 +552,14 @@
 						<?php endif; ?>
 					</h2>
 
-					<div class="c-section__body">
-						<?php echo do_shortcode( '[instagram-feed feed=2]' ); ?>
+					<div class="l-inner l-inner--narrow c-section__body p-top-contact__body">
+						<div class="p-top-contact__form">
+							<?php echo do_shortcode( '[contact-form-7 id="516a5e1" title="お問い合わせ"]' ); ?>
+						</div>
 					</div>
 
 				</div>
+
 			</section>
 		<?php endwhile; ?>
 	<?php endif; ?>
