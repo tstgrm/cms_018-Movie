@@ -19,7 +19,7 @@
 	&__slider {
 		width: 100%;
 		margin: 0 auto;
-		overflow: visible;
+		// overflow: visible;
 		// z-index: 0;
 		// margin: 0 16px;
 	}
@@ -172,26 +172,6 @@
 			padding: 0 8px;
 			gap: 40px;
 		}
-
-		&::before {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background-image: url("../img/triangles.png");
-			width: 48px;
-			height: 20px;
-
-			@include is-sp {
-				transform: translate(-50%, -50%) rotate(90deg);
-				top: 42.2%;
-				width: 28px;
-				height: 12px;
-				background-size: contain;
-				background-repeat: no-repeat;
-			}
-		}
 	}
 
 	&__before,
@@ -215,6 +195,27 @@
 
 	&__before {
 		background-color: $main-color-bg;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: calc(100% + 36px);
+			transform: translate(-50%, -50%);
+			background: url("../img/triangles.png") center / contain no-repeat;
+			width: 48px;
+			height: 20px;
+
+			@include is-sp {
+				transform: translate(-50%, -50%) rotate(90deg);
+				top: 42.2%;
+				top: calc(100% + 19px);
+				width: 28px;
+				height: 12px;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
 
 		@include is-sp {
 			dd {
@@ -241,6 +242,7 @@
 
 	&--next {
 		right: calc(50% - 314px);
+
 		@include is-sp {
 			right: 4px;
 		}

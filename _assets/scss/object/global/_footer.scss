@@ -133,7 +133,7 @@
 		align-items: center;
 		transition: 0.3s;
 		color: $white;
-		font-weight: $bold;
+		// font-weight: $bold;
 
 		@include is-sp {
 			@include fz(14);

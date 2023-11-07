@@ -337,7 +337,7 @@
 			the_row();
 			?>
 			<section id="course" class="c-section p-top-course">
-				<div class="l-inner p-top-course__inner">
+				<div class="p-top-course__inner">
 
 					<h2 class="c-section-ttl p-top-course__ttl">
 						<?php if ( get_sub_field( 'ttl_sub' ) ) : ?>
@@ -364,36 +364,40 @@
 										$course = '';
 										switch ( $count ) {
 											case 1:
-												$course = ' p-top-course-item--basic';
+												$course = ' p-post-course--basic';
 												break;
 											case 2:
-												$course = ' p-top-course-item--standard';
+												$course = ' p-post-course--standard';
 												break;
 											case 3:
-												$course = ' p-top-course-item--premium';
+												$course = ' p-post-course--premium';
 												break;
 										}
 										?>
-										<li class="p-top-course-item swiper-slide<?php echo esc_attr( $course ); ?>">
-											<div class="p-top-course-item__label"><?php the_sub_field( 'label' ); ?></div>
-											<?php if ( get_sub_field( 'ttl' ) ) : ?>
-												<h3 class="p-top-course-item__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
-												<p class="p-top-course-item__price"><?php the_sub_field( 'price' ); ?></p>
-											<?php endif; ?>
-											<?php
-											if ( have_rows( 'list' ) ) :
-												?>
-												<ul class="p-top-course-item__list">
+										<li class="p-top-course__item swiper-slide">
+											<div class="p-top-course__item-inner">
+												<div class="p-post-course<?php echo esc_attr( $course ); ?> js-match-height__course">
+													<div class="p-post-course__label"><?php the_sub_field( 'label' ); ?></div>
+													<?php if ( get_sub_field( 'ttl' ) ) : ?>
+														<h3 class="p-post-course__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+														<p class="p-post-course__price"><?php the_sub_field( 'price' ); ?></p>
+													<?php endif; ?>
 													<?php
-													while ( have_rows( 'list' ) ) :
-														the_row();
+													if ( have_rows( 'list' ) ) :
 														?>
-													<li class="p-top-course-item__item">
-														<p class="p-top-course-item__desc"><i class="c-icon-check-circle"></i><?php the_sub_field( 'desc' ); ?></p>
-													</li>
-													<?php endwhile; ?>
-												</ul>
-											<?php endif; ?>
+														<ul class="p-post-course__list">
+															<?php
+															while ( have_rows( 'list' ) ) :
+																the_row();
+																?>
+															<li class="p-post-course__item">
+																<p class="p-post-course__desc"><i class="c-icon-check-circle"></i><?php the_sub_field( 'desc' ); ?></p>
+															</li>
+															<?php endwhile; ?>
+														</ul>
+													<?php endif; ?>
+												</div>
+											</div>
 										</li>
 									<?php	endwhile; ?>
 								</ul>

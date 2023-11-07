@@ -80,7 +80,7 @@ input[type="file"] {
 		@include is-sp {
 			width: 100%;
 			padding-bottom: 8px;
-			@include fz(14);
+			// @include fz(14);
 		}
 	}
 
@@ -299,6 +299,7 @@ input[type="file"] {
 	&__desc {
 		@include is-sp {
 			text-align: left;
+			@include fz(14);
 		}
 	}
 

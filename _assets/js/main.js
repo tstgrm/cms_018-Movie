@@ -155,20 +155,16 @@ $(window).on("load", function () {
 					type: "bullets", // 'bullets','fraction','progressbar'
 					clickable: true, // クリックによるスライド切り替えを有効にする
 				},
-				slidesPerView: 1.15,
+				slidesPerView: 1.2,
 				centeredSlides: true,
 				// loopAdditionalSlides: 3, //クローンの数
-				spaceBetween: 20,
-				// observer: true, //これが大事！
-				// observeParents: true, //これが大事！
+				spaceBetween: 0,
+				observer: true, //これが大事！
+				observeParents: true, //これが大事！
 				breakpoints: {
 					// スライドの表示枚数：500px以上の場合
-					1024: {
-						slidesPerView: "auto",
-					},
 					768: {
 						slidesPerView: "auto",
-						spaceBetween: 40,
 					},
 				},
 			});
@@ -178,6 +174,7 @@ $(window).on("load", function () {
 	}
 
 	$(".js-match-height").matchHeight();
+	$(".js-match-height__course").matchHeight();
 
 	/*----------------------------------------
 		load contnet

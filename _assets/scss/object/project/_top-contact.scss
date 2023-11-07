@@ -22,7 +22,11 @@
 		@include is-tab {
 			// padding-left: $side-padding-sp;
 			// padding-right: $side-padding-sp;
-			padding: 40px 0 0 0;
+			padding: 64px 0 0 0;
+		}
+
+		@include is-sp {
+			padding: 40px 0 0;
 		}
 	}
 
