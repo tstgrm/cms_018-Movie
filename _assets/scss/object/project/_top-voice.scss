@@ -208,8 +208,9 @@
 
 			@include is-sp {
 				transform: translate(-50%, -50%) rotate(90deg);
-				top: 42.2%;
+				// top: 42.2%;
 				top: calc(100% + 19px);
+				left: 50%;
 				width: 28px;
 				height: 12px;
 				background-size: contain;

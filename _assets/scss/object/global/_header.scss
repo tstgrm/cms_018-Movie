@@ -80,7 +80,7 @@ body[data-modal="active"] {
 		}
 
 		@include is-sp {
-			padding: 0 0 0 20px;
+			padding: 0 4px 0 20px;
 			height: $header-height-sp;
 		}
 	}

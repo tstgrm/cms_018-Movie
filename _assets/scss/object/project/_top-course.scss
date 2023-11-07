@@ -4,6 +4,10 @@
 	$this: &;
 	// padding-top: 120px;
 
+	@include is-sp {
+		padding-bottom: 32px;
+	}
+
 	&__inner {
 		max-width: 1360px;
 		margin: 0 auto;
