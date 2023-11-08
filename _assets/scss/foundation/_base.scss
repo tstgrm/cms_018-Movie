@@ -76,8 +76,10 @@ body::before {
 }
 
 strong,
-b {
+b,
+em {
 	font-weight: $bold;
+	font-style: normal;
 }
 
 .u-hidden {

@@ -18,12 +18,18 @@ Template Name: PRIVACYテンプレート
 	<section class="p-privacy">
 		<div class="l-inner p-privacy__inner">
 
-			<h2 class="p-privacy__ttl">
-				<?php the_field( 'privacy_ttl' ); ?>
-			</h2>
-			<p class="p-privacy__txt">
-				<?php the_field( 'privacy_desc' ); ?>
-			</p>
+			<?php the_content(); ?>
+
+			<?php if ( get_field( 'privacy_ttl' ) ) : ?>
+				<h2 class="p-privacy__ttl">
+					<?php the_field( 'privacy_ttl' ); ?>
+				</h2>
+			<?php endif; ?>
+			<?php if ( get_field( 'privacy_desc' ) ) : ?>
+				<p class="p-privacy__txt">
+					<?php the_field( 'privacy_desc' ); ?>
+				</p>
+			<?php endif; ?>
 
 			<?php if ( have_rows( 'privacy_list' ) ) : ?>
 				<div class="p-privacy__list">

@@ -496,35 +496,27 @@
 					<?php endif; ?>
 
 					<div class="c-section__body p-top-faq__body">
-						<?php
-						$faq_page_id = get_page_by_path( 'faq' );
-						$faq_page_id = $faq_page_id->ID;
-						if ( have_rows( 'qa', $faq_page_id ) ) :
-							?>
+						<?php	if ( have_rows( 'list' ) ) : ?>
 								<ul class="c-faq-list u-1/1">
 									<?php
-									$count = 0;
-									while ( have_rows( 'qa', $faq_page_id ) ) :
+									while ( have_rows( 'list' ) ) :
 										the_row();
-										$count++;
-										if ( 4 > $count ) :
-											?>
+										?>
 											<li class="c-faq-list__item js-accordion-item">
 												<h3 class="c-faq-list__question js-accordion-btn">
 													<span class="c-faq-list__qa">Q</span>
 													<span class="c-faq-list__question-detail">
-														<?php the_sub_field( 'question' ); ?>
+														<?php the_sub_field( 'ttl' ); ?>
 													</span>
 													<span class="c-faq-list__icon"></span>
 												</h3>
 												<div class="c-faq-list__answer js-accordion-target">
 													<p class="c-faq-list__answer-detail">
 														<span class="c-faq-list__qa c-faq-list__qa--a">A</span>
-														<?php the_sub_field( 'answer' ); ?>
+														<?php the_sub_field( 'desc' ); ?>
 													</p>
 												</div>
 											</li>
-										<?php endif; ?>
 									<?php endwhile; ?>
 								</ul>
 						<?php endif; ?>
