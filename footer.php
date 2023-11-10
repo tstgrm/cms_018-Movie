@@ -11,11 +11,11 @@
 		<div class="l-inner g-footer__inner">
 
 			<div class="g-footer__section">
-				<?php if ( get_field( 'logo', 'option' ) || get_field( 'logo_txt', 'option' ) ) : ?>
+				<?php if ( get_field( 'logo_footer', 'option' ) || get_field( 'logo_txt', 'option' ) ) : ?>
 					<p class="g-footer__logo g-footer-logo">
 						<a href="<?php echo esc_url( home_url() ); ?>" class="g-footer-logo__link">
-							<?php if ( get_field( 'logo', 'option' ) ) : ?>
-								<img class="g-footer-logo__img" src="<?php the_field( 'logo', 'option' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+							<?php if ( get_field( 'logo_footer', 'option' ) ) : ?>
+								<img class="g-footer-logo__img" src="<?php the_field( 'logo_footer', 'option' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
 							<?php elseif ( get_field( 'logo_txt', 'option' ) ) : ?>
 								<span class="g-footer-logo__txt"><?php the_field( 'logo_txt', 'option' ); ?></span>
 							<?php endif; ?>
