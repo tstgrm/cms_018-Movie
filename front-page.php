@@ -380,6 +380,7 @@
 													<div class="p-post-course__label"><?php the_sub_field( 'label' ); ?></div>
 													<?php if ( get_sub_field( 'ttl' ) ) : ?>
 														<h3 class="p-post-course__ttl"><?php the_sub_field( 'ttl' ); ?></h3>
+														<p class="p-post-course__num"><?php the_sub_field( 'num' ); ?></p>
 														<p class="p-post-course__price"><?php the_sub_field( 'price' ); ?></p>
 													<?php endif; ?>
 													<?php

@@ -97,6 +97,9 @@
 		.c-icon-check-circle {
 			background-color: $main-color-light;
 		}
+		#{$this}__num .num {
+			color: $main-color-light;
+		}
 	}
 
 	&.p-post-course--standard {
@@ -107,6 +110,9 @@
 		.c-icon-check-circle {
 			background-color: $main-color;
 		}
+		#{$this}__num .num {
+			color: $main-color;
+		}
 	}
 
 	&.p-post-course--premium {
@@ -116,6 +122,9 @@
 		#{$this}__label,
 		.c-icon-check-circle {
 			background-color: $main-color-dark;
+		}
+		#{$this}__num .num {
+			color: $main-color-dark;
 		}
 	}
 
@@ -147,6 +156,25 @@
 
 		@include is-sp {
 			@include fz(18);
+		}
+	}
+
+	&__num {
+		font-weight: $bold;
+		text-align: center;
+		@include fz(18);
+
+		@include is-sp {
+			@include fz(16);
+		}
+
+		.num {
+			@include fz(26);
+			padding: 0 2px;
+
+			@include is-sp {
+				@include fz(22);
+			}
 		}
 	}
 
@@ -203,12 +231,11 @@
 }
 
 .p-top-course-slider-btn {
-	margin-top: -48px;
+	margin-top: -52px;
 	display: none;
 
 	@include is-tab {
 		display: flex;
-		margin-top: -64px;
 	}
 
 	&--prev {
